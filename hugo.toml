@@ -1,0 +1,12 @@
+baseURL = "https://experiments.romeosarkar10x.com/"
+languageCode = "en-us"
+title = "Romeo Sarkar's Experiments"
+
+theme = "basic"
+
+[markup]
+    [markup.goldmark]
+    [markup.goldmark.renderer]
+        unsafe = true  # Allows HTML in Markdown
+    [markup.highlight]
+    noClasses = false
