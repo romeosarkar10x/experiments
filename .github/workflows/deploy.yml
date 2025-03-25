@@ -19,6 +19,7 @@ jobs:
                 hugo --minify
     
     deploy:
+        environment: production
         needs: build
         runs-on: [ self-hosted, Linux, X64 ]
 
