@@ -1,0 +1,37 @@
+name: deploy to cloudflare pages
+
+on:
+    push:
+        branches:
+        - main
+
+jobs:
+    build:
+        runs-on: [ self-hosted, Linux, X64 ]
+
+        steps:
+          - name: checkout repository
+            uses: actions/checkout@v4
+
+          - name: build hugo site
+            run:
+                echo building hugo site at $(date)
+                hugo --minify
+    
+    deploy:
+        runs-on: [ self-hosted, Linux, X64 ]
+
+        steps:
+          - name: setup node
+            uses: actions/setup-node@v4
+            with:
+                node-version: "23"
+        
+          - name: install wrangler
+            run: npm install -g wrangler
+        
+          - name: deploy to cloudflare pages
+            run: wrangler pages deploy ./public --project-name=experiments --branch=main --commit-dirty=true
+            env:
+                CLOUDFLARE_API_TOKEN: ${{ secret.CLOUDFLARE_API_TOKEN }}
+
