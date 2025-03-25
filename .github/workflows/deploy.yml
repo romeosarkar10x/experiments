@@ -15,7 +15,7 @@ jobs:
             uses: actions/checkout@v4
 
           - name: build hugo site
-            run:
+            run: |
                 echo building hugo site at $(date)
                 hugo --minify
 
