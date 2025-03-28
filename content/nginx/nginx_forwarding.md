@@ -1,6 +1,6 @@
 ---
 title: "Nginx Forwarding"
-date: 2025-02-15T12:00:00+00:00 
+date: 2025-02-15T12:00:00+00:00
 ---
 
 # Experiments with Nginx Forwarding
@@ -8,11 +8,13 @@ date: 2025-02-15T12:00:00+00:00
 ## Experiment 1: Direct Request to Localhost (IP-based)
 
 ### Client Command
+
 ```bash
 curl http://localhost:3000
 ```
 
 ### Server Request
+
 ```
 GET / HTTP/1.1
 Host: localhost:3000
@@ -25,11 +27,13 @@ Accept: */*
 ## Experiment 2: Direct Request to 127.0.0.1 (IP-based)
 
 ### Client Command
+
 ```bash
 curl http://127.0.0.1:3000
 ```
 
 ### Server Request
+
 ```
 GET / HTTP/1.1
 Host: 127.0.0.1:3000
@@ -42,11 +46,13 @@ Accept: */*
 ## Experiment 3: Request Through Nginx Proxy (Without Custom Headers)
 
 ### Client Command
+
 ```bash
 curl http://test.mxroute.xyz
 ```
 
 ### Nginx Configuration
+
 ```nginx
 server {
     listen 80;
@@ -58,6 +64,7 @@ server {
 ```
 
 ### Server Request
+
 ```
 GET / HTTP/1.0
 Host: 127.0.0.1:3000
@@ -71,11 +78,13 @@ Accept: */*
 ## Experiment 4: Request Through Nginx Proxy (With Custom Headers)
 
 ### Client Command
+
 ```bash
 curl http://test.mxroute.xyz
 ```
 
 ### Nginx Configuration
+
 ```nginx
 server {
     listen 80;
@@ -90,6 +99,7 @@ server {
 ```
 
 ### Server Request
+
 ```
 GET / HTTP/1.0
 Host: test.mxroute.xyz
@@ -99,4 +109,3 @@ Connection: close
 User-Agent: curl/8.10.1
 Accept: */*
 ```
-

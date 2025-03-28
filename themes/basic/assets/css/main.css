@@ -1,29 +1,29 @@
 body {
-  color: #222;
-  font-family: "Poppins";
-  line-height: 1.5;
-  margin-top: 1rem;
-  max-width: 1080px;
-  padding-left: 40px;
-  padding-right: 40px;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 18px;
+    color: #222;
+    font-family: "Poppins";
+    line-height: 1.5;
+    margin-top: 1rem;
+    max-width: 1080px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
 }
 
 header {
-  border-bottom: 1px solid #222;
-  margin-bottom: 1rem;
+    border-bottom: 1px solid #222;
+    margin-bottom: 1rem;
 }
 
 footer {
-  border-top: 1px solid #222;
-  margin-top: 1rem;
+    border-top: 1px solid #222;
+    margin-top: 1rem;
 }
 
 a {
-  color: #00e;
-  text-decoration: none;
+    color: #00e;
+    text-decoration: none;
 }
 
 /*
@@ -37,43 +37,49 @@ pre {
 */
 
 code {
-  font-family: "Ubuntu Sans Mono";
-
+    font-family: "Ubuntu Sans Mono";
 }
 
-
 .highlight > div {
-  position: relative;
-  border: 3px solid orange;
-  border-radius: 10px;
+    position: relative;
+    border: 3px solid orange;
+    border-radius: 10px;
 }
 
 .highlight pre {
-  margin-top: 35px;
-  margin-bottom: 15px;
+    margin-top: 35px;
+    margin-bottom: 15px;
 }
 
 .highlight code[data-lang]::before {
-  content: attr(data-lang);
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 2px 15px;
-  background: #333;
-  color: white;
-  border-bottom-left-radius: 9px;
-  border-top-right-radius: 7px;
+    content: attr(data-lang);
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 2px 15px;
+    background: #333;
+    color: white;
+    border-bottom-left-radius: 9px;
+    border-top-right-radius: 7px;
 }
 
 table {
-  border-collapse: collapse;
-  margin-bottom: 1rem;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
 }
 
-table, th, td {
-  border: 1px solid #000
+table,
+th,
+td {
+    border: 1px solid #000;
 }
 
-th, td {
-  padding: 4px;
+th,
+td {
+    padding: 4px;
+}
+
+.icons {
+    height: 40px;
+    width: 40px;
 }

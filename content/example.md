@@ -1,3 +1,9 @@
+---
+title: "Example!"
+author: "Romeo Sarkar"
+date: "2025-03-28"
+---
+
 # Heading H1
 
 ## Heading H2
@@ -9,64 +15,69 @@ as there is no empty line before me.
 
 I am in the second paragraph.
 
-I am the third one. Even thought there are two line breaks before me, this does not create any newline characters. After me there are two spaces before the newline character. 
+I am the third one. Even thought there are two line breaks before me, this does not create any newline characters. After me there are two spaces before the newline character.
 
-Heading H1
-=
+# Heading H1
 
-Heading H2
--
+## Heading H2
 
 #Just a tag
 \# Not a Heading
 
 List:
-* This is a list element
-* This is another element
 
-- This is gadha
-- This is another gadha
+- This is a list element
+- This is another element
 
-+ This is yet another element
-+ This is a plus list
+* This is gadha
+* This is another gadha
+
+- This is yet another element
+- This is a plus list
 
 Numbered List:
-1) Point 1
-2) Point 2
-3) Point 3 with Subpoints
-    1) Subpoint 1
-    * Gadha
-    * Pig
-    2) Subpoint 2
-    3) Gadha Again
+
+1. Point 1
+2. Point 2
+3. Point 3 with Subpoints
+    1. Subpoint 1
+    - Gadha
+    - Pig
+    2. Subpoint 2
+    3. Gadha Again
 
 ```bash
 echo hello world this is a test line. we will make it a very very very very long line so, that we can test the limits of a single line in a code block. hope this helps!
 ```
 
 ---
-.
-***
-abc
----
-.xyz
-***
 
+.
+
+---
+
+## abc
+
+.xyz
+
+---
 
 gadha
+
 > block quote
+
     Performatted text
 
 [visible text](http://google.com "Tooltip")
 
-*this text is emphasised*
+_this text is emphasised_
 
 **this text is bold**
 
-***this text is bold and emphasised***
+**_this text is bold and emphasised_**
 
 _this text is italics_
-__this text is bold__
+**this text is bold**
 
 Copyright: &copy;
 Registered trademark: &reg;
@@ -77,6 +88,7 @@ Smiley: &#x1F604;
 Embedded HTML: x<sup>2</sup>
 
 #### Building the model
+
 <div style="display: inline-block; text-align: center;">
   <div style="border: solid black 2px; display: inline-block; margin: 5px;">
     <div style="border-bottom: solid black 2px;"><strong>Input Layer</strong></div>
@@ -152,23 +164,25 @@ Embedded HTML: x<sup>2</sup>
 </div>
 
 ## Tables, task lists, and code blocks
-Name  | Job
-------|----------------
-Alex  | Web Developer
-Bob   | Sys Admin
-Gabby | Technical Writer
+
+| Name  | Job              |
+| ----- | ---------------- |
+| Alex  | Web Developer    |
+| Bob   | Sys Admin        |
+| Gabby | Technical Writer |
 
 | Header 1 | Header 2 | Header 3 |
-|----------|----------|----------|
+| -------- | -------- | -------- |
 | Cell 1   | Cell 2   | Cell 3   |
 | Cell 4   | Cell 5   | Cell 6   |
 
 | Left-aligned | Center-aligned | Right-aligned |
-|:-|:-:|-:|
-| Left         | Center         | Right         |
-| Text         | Text           | Text          |
+| :----------- | :------------: | ------------: |
+| Left         |     Center     |         Right |
+| Text         |      Text      |          Text |
 
 ## Task list
+
 - [ ] task 1
 - [x] task 2
 - [ ] task 3
@@ -182,6 +196,7 @@ console.log(x);
 ```
 
 some c++ code block!
+
 ```cpp
 #include <iostream>
 #include <cstdint>
@@ -195,4 +210,5 @@ int main()
     return 0;
 }
 ```
+
 This is the end of document!
