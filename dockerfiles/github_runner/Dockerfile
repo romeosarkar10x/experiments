@@ -25,7 +25,7 @@ RUN useradd -m ${RUNNER_USER} \
     && usermod -aG sudo ${RUNNER_USER} \
     && echo "${RUNNER_USER} ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
-RUN echo 'su ${RUNNER_USER}; exec /home/${RUNNER_HOME}/run.sh' > /start.sh && chmod 777 /start.sh
+RUN echo 'su ${RUNNER_USER}; exec /home/${RUNNER_HOME}/run.sh' > /start.sh && chmod 111 /start.sh
 
 WORKDIR /home/${RUNNER_HOME}
 USER ${RUNNER_USER}
