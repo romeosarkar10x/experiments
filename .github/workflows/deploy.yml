@@ -3,36 +3,36 @@ name: build and deploy to cloudflare pages
 on:
     push:
         branches:
-        - main
+            - main
 
 jobs:
     build-and-deploy:
-        runs-on: [ self-hosted, Linux, X64 ]
+        runs-on: [self-hosted, Linux, X64]
         environment: production
 
         steps:
-          - name: checkout repository
-            uses: actions/checkout@v4
+            - name: checkout repository
+              uses: actions/checkout@v4
 
-          - name: install hugo
-            uses: peaceiris/actions-hugo@v3
-            with:
-                hugo-version: 'latest'
+            - name: install hugo
+              uses: peaceiris/actions-hugo@v3
+              with:
+                  hugo-version: "latest"
 
-          - name: build hugo site
-            run: |
-                echo building hugo site at $(date)
-                hugo --minify
+            - name: build hugo site
+              run: |
+                  echo building hugo site at $(date)
+                  hugo
 
-          - name: setup node
-            uses: actions/setup-node@v4
-            with:
-                node-version: "23"
-        
-          - name: install wrangler
-            run: npm install -g wrangler
-        
-          - name: deploy to cloudflare pages
-            run: wrangler pages deploy ./public --project-name=experiments --branch=main --commit-dirty=true
-            env:
-                CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+            - name: setup node
+              uses: actions/setup-node@v4
+              with:
+                  node-version: "23"
+
+            - name: install wrangler
+              run: npm install -g wrangler
+
+            - name: deploy to cloudflare pages
+              run: wrangler pages deploy ./public --project-name=experiments --branch=main --commit-dirty=true
+              env:
+                  CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
