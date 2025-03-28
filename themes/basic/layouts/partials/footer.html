@@ -1,2 +1,30 @@
-<p>Copyright {{ now.Year }}. All rights reserved.</p>
-<p>This is footer.html</p>
+<div class="footer-container">
+  <!-- Main Footer Content -->
+  <div class="footer-main">
+    <!-- About Section -->
+
+    <!-- Recent Posts -->
+    <div class="footer-section recent">
+      <h4>Recent Experiments</h4>
+      <ul>
+        {{ range first 3 (where .Site.RegularPages "Section" "posts") }}
+        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+    
+    <!-- Connect Section -->
+    <div class="footer-section connect">
+      <h4>Connect</h4>
+      <div class="social-links">
+        <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      </div>
+      <p><a href="mailto:your.email@example.com">your.email@example.com</a></p>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>Copyright © {{ now.Year }} `Romeo Sarkar`. All rights reserved.</p>
+    <p class="built-with">Built with <a href="https://gohugo.io/" target="_blank">Hugo</a></p>
+  </div>
+</div>
