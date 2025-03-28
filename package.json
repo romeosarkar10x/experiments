@@ -8,7 +8,8 @@
     "description": "\"🚀 a collection of my personal tech experiments, projects, and findings in linux, networking, programming, reverse engineering, and more. powered by hugo for fast, markdown-based documentation. hosted at `experiments.romeosarkar10x.com`. 💡\"",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "format": "npx prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+        "check-format": "npx prettier --check \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
     },
     "repository": {
         "type": "git",
