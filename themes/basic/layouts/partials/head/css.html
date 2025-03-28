@@ -1,11 +1,9 @@
 {{- $mainCSS := resources.Get "css/main.css" }}
-{{- $fontCSS := resources.Get "css/fonts/WinkySans.css" }}
-{{- $allCSS := slice $fontCSS $mainCSS | resources.Concat "css/bundle.css" }}
 
 {{- if eq hugo.Environment "development" }}
-  <link rel="stylesheet" href="{{ $allCSS.RelPermalink }}">
+  <link rel="stylesheet" href="{{ $mainCSS.RelPermalink }}">
 {{- else }}
-  {{- with $allCSS | minify | fingerprint }}
+  {{- with $mainCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
   {{- end }}
 {{- end }}
