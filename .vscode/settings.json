@@ -24,5 +24,7 @@
 
     "prettier.requireConfig": true,
     "prettier.configPath": "prettier.config.mjs",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "editor.indentSize": 4,
+    "editor.detectIndentation": false
 }
