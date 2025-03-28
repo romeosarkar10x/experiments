@@ -1,0 +1,16 @@
+goldmark:
+    renderer:
+        unsafe: true
+# [markup.goldmark]
+# [markup.goldmark.renderer]
+# unsafe = true  # Allows HTML in Markdown
+# [markup.highlight]
+# noClasses = false
+
+highlight:
+    codeFences: true
+    guessSyntax: false
+    lineNoStart: 1
+    lineNos: true
+    style: "catppuccin-latte"
+    tabWidth: 4
