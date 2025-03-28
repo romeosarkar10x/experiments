@@ -19,6 +19,9 @@ jobs:
               with:
                   node-version: "23"
 
+            - name: install dependencies
+              run: npm install
+
             - name: check
               run: npm run check-format
 
