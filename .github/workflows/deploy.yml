@@ -1,4 +1,4 @@
-name: build and deploy to cloudflare pages
+name: check, build and deploy to cloudflare pages
 
 on:
     push:
@@ -6,13 +6,21 @@ on:
             - main
 
 jobs:
-    build-and-deploy:
+    check-build-and-deploy:
         runs-on: [self-hosted, Linux, X64]
         environment: production
 
         steps:
             - name: checkout repository
               uses: actions/checkout@v4
+
+            - name: setup node
+              uses: actions/setup-node@v4
+              with:
+                  node-version: "23"
+
+            - name: check
+              run: npm run check-format
 
             - name: install hugo
               uses: peaceiris/actions-hugo@v3
@@ -23,11 +31,6 @@ jobs:
               run: |
                   echo building hugo site at $(date)
                   hugo
-
-            - name: setup node
-              uses: actions/setup-node@v4
-              with:
-                  node-version: "23"
 
             - name: install wrangler
               run: npm install -g wrangler
