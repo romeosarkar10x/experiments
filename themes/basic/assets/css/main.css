@@ -54,6 +54,20 @@ code {
     margin-bottom: 15px;
 }
 
+.highlight::before {
+    content: "copy";
+    font-family: "Ubuntu Sans Mono";
+    position: absolute;
+    padding: 2px 15px;
+    top: 0;
+    left: 0;
+    background: #333;
+    color: white;
+    border-top-left-radius: 9px;
+    border-bottom-right-radius: 7px;
+    cursor: pointer;
+}
+
 .highlight code[data-lang]::before {
     content: attr(data-lang);
     position: absolute;
