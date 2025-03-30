@@ -1,8 +1,5 @@
-<div class="footer-main">
-    {{ partial "contact.html" }}
-</div>
-
-<div class="footer-bottom">
+{{ partial "contact.html" }}
+<div>
     <p
         >Copyright © {{ now.Year }} `<a
             href="{{ .Site.Params.owner.url }}"
@@ -14,7 +11,7 @@
         Powered by
         <a
             style="text-decoration: underline"
-            href="https://gohugo.io/"
+            href="https://gohugo.io"
             target="_blank"
             >Hugo</a
         >

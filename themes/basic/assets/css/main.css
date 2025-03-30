@@ -13,12 +13,7 @@ body {
 
 header {
     border-bottom: 1px solid #222;
-    margin-bottom: 1rem;
-}
-
-footer {
-    border-top: 1px solid #222;
-    margin-top: 1rem;
+    margin-bottom: 20px;
 }
 
 a {
@@ -77,39 +72,4 @@ td {
 th,
 td {
     padding: 4px;
-}
-
-.icons {
-    height: 40px;
-    width: 40px;
-    margin: 10px;
-}
-
-.icons.email {
-    height: 48px;
-    width: 48px;
-}
-
-.icons.twitter {
-    height: 34px;
-    width: 34px;
-}
-
-.icons.youtube {
-    height: 47px;
-    width: 47px;
-}
-
-.icons.discord {
-    height: 38px;
-    width: 38px;
-}
-
-.icons.whatsapp {
-    height: 36px;
-    width: 36px;
-}
-
-.footer-bottom {
-    text-align: center;
 }

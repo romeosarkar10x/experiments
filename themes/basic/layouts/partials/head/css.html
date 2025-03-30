@@ -1,15 +1,25 @@
-{{- $mainCSS := resources.Get "css/main.css" }}
+{{ $files:= slice
+    (dict "path" "css/main.css")
+    (dict "path" "css/footer/icons.css")
+    (dict "path" "css/footer/_index.css")
+}}
 
 {{- if eq hugo.Environment "development" }}
-    <link
-        rel="stylesheet"
-        href="{{ $mainCSS.RelPermalink }}" />
-{{- else }}
-    {{- with $mainCSS | minify | fingerprint }}
+    {{ range $files }}
+        {{ $css := resources.Get .path }}
         <link
             rel="stylesheet"
-            href="{{ .RelPermalink }}"
-            integrity="{{ .Data.Integrity }}"
-            crossorigin="anonymous" />
-    {{- end }}
+            href="{{ $css.RelPermalink }}" />
+    {{ end }}
+{{- else }}
+    {{ range $files }}
+        {{ $css := resources.Get .path }}
+        {{- with . | minify | fingerprint }}
+            <link
+                rel="stylesheet"
+                href="{{ $css.RelPermalink }}"
+                integrity="{{ $css.Data.Integrity }}"
+                crossorigin="anonymous" />
+        {{- end }}
+    {{ end }}
 {{- end }}
