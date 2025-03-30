@@ -1,0 +1,27 @@
+{{/* type: "parent" | "leaf" */}}
+{{ $subsections := slice }}
+{{ $map := dict }}
+{{ $sectionPath := .sectionPath }}
+{{ $type := .type }}
+
+{{ range .site.RegularPages }}
+    {{ $relativeLink := strings.TrimSuffix "/" .RelPermalink }}
+    {{ if hasPrefix .RelPermalink $sectionPath }}
+        {{ $path := strings.TrimPrefix $sectionPath $relativeLink }}
+        {{ $pathParts := split $path "/" }}
+
+        {{ if and (eq $type "parent") (gt (len $pathParts) 1) }}
+            {{ $map = merge $map (dict (index $pathParts 0) true) }}
+        {{ else if and (eq $type "leaf") (eq (len $pathParts) 1) }}
+            {{ $map = merge $map (dict (index $pathParts 0) true) }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ range $key, $value := $map }}
+    {{ if ne $key "" }}
+        {{ $subsections = $subsections | append (add $key "/") }}
+    {{ end }}
+{{ end }}
+
+{{ return $subsections }}

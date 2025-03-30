@@ -1,0 +1,14 @@
+{{ $site := .site }}
+{{ $sectionPath := .sectionPath }}
+
+{{ range (partial "get_subsections.html" (dict "site" $site "sectionPath" $sectionPath "type" "leaf")) }}
+    <li><a href="{{ add $sectionPath . }}">{{ add $sectionPath . }}</a></li>
+{{ end }}
+
+{{ range (partial "get_subsections.html" (dict "site" $site "sectionPath" $sectionPath "type" "parent")) }}
+    {{ $sectionPathCurrent := add $sectionPath . }}
+    <li><a href="{{ $sectionPathCurrent }}">{{ $sectionPathCurrent }}</a></li>
+    <ul
+        >{{ partial "get_subsections_recursive.html" (dict "site" $site "sectionPath" $sectionPathCurrent) }}</ul
+    >
+{{ end }}
