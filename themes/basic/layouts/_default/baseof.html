@@ -6,15 +6,20 @@
         {{ partial "head.html" . }}
     </head>
     <body>
-        <p>This is baseof.html</p>
-        <header>
+        <header
+            style="height: 3.75rem; width: 100vw; position: fixed; top: 0; left: 0; background-color: white; border-bottom: var(--border-width) var(--border-style) var(--border-color); z-index: 1">
             {{ partial "header.html" . }}
         </header>
-        <main>
-            {{ block "main" . }}{{ end }}
-        </main>
-        <footer>
-            {{ partial "footer.html" . }}
-        </footer>
+        <div style="display: flex; justify-content: stretch; margin-top: 3.75rem">
+            {{ partial "sidebar.html" . }}
+            <div style="margin-left: calc(16rem + 1.5rem); flex-grow: 1">
+                <main style="min-height: calc(100vh - 3.75rem - 16rem);">
+                    {{ block "main" . }}{{ end }}
+                </main>
+                <footer>
+                    {{ partial "footer.html" . }}
+                </footer>
+            </div>
+        </div>
     </body>
 </html>

@@ -1,19 +1,24 @@
+:root {
+    --border-style: solid;
+    --border-color: black;
+    --border-width: 0.125rem;
+    --border-radius: 1rem;
+}
+* {
+    min-width: 0;
+    box-sizing: content-box;
+}
+
 body {
     color: #222;
     font-family: "Poppins";
-    line-height: 1.5;
+    line-height: 1.5rem;
     margin-top: 1rem;
-    max-width: 1080px;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
     margin-left: auto;
     margin-right: auto;
-    font-size: 18px;
-}
-
-header {
-    border-bottom: 1px solid #222;
-    margin-bottom: 20px;
+    font-size: 1rem;
 }
 
 a {
@@ -35,10 +40,13 @@ code {
     font-family: "Ubuntu Sans Mono";
 }
 
-.highlight > div {
+.highlight {
     position: relative;
-    border: 3px solid orange;
+}
+
+.highlight > div {
     border-radius: 10px;
+    overflow-x: scroll;
 }
 
 .highlight pre {
@@ -66,10 +74,21 @@ table {
 table,
 th,
 td {
-    border: 1px solid #000;
+    border: var(--border-width) var(--border-style) var(--border-color);
 }
 
 th,
 td {
     padding: 4px;
+}
+
+details ul {
+    padding-left: 0.5rem;
+    list-style-type: none;
+    margin: 0;
+    border-left: var(--border-width) var(--border-style) var(--border-color);
+}
+
+details li {
+    padding-left: 1rem;
 }
