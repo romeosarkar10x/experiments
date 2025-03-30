@@ -1,24 +1,3 @@
-<h1>{{ site.Title }}</h1>
-<!--{{ partial "menu.html" (dict "menuID" "main" "page" .) }}-->
-<h2>{{ .Permalink }}</h2>
-{{ $section := .Section }}
-<h2>{{ $section }}</h2>
-<h2>{{ .Title }}</h2>
-<h3>{{ .Site }}</h3>
-
-<p>this is the end of the primary header</p>
-
-{{ $subsections := partial "get_subsections" (dict "site" .Site "sectionPath" "/posts/" "type" "parent") }}
-
-
-<p>{{ printf "%#v" .RelPermalink }}</p>
-<p>{{ len $subsections }}</p>
-<ul>
-    {{ range $subsections }}
-        <li>{{ printf "%#v" . }}</li>
-    {{ end }}
-</ul>
-
-<p>this is the end of the header</p>
-
-{{ partial "get_subsections_recursive.html" (dict "site" .Site "sectionPath" "/") }}
+<div style="margin-top: 1.25rem; margin-left: 1.5rem; margin-right: 1.5rem;">
+    <h1 style="margin: 0; font-size: 2rem">{{ site.Title }}</h1>
+</div>
