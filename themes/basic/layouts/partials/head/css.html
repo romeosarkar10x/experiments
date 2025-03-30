@@ -14,7 +14,7 @@
 {{- else }}
     {{ range $files }}
         {{ $css := resources.Get .path }}
-        {{- with . | minify | fingerprint }}
+        {{- with $css | minify | fingerprint }}
             <link
                 rel="stylesheet"
                 href="{{ $css.RelPermalink }}"
