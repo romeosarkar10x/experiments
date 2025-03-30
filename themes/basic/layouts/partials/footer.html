@@ -1,35 +1,15 @@
 <div class="footer-main">
-    <div class="footer-section-connect">
-        <a
-            ><img
-                class="icons"
-                src="/mail.svg"
-        /></a>
-        <a
-            ><img
-                class="icons"
-                src="/mail.svg"
-        /></a>
-        <a
-            ><img
-                class="icons"
-                src="/mail.svg"
-        /></a>
-        <a
-            ><img
-                class="icons"
-                src="/mail.svg"
-        /></a>
-        <a
-            ><img
-                class="icons"
-                src="/mail.svg"
-        /></a>
-    </div>
+    {{ partial "contact.html" }}
 </div>
 
 <div class="footer-bottom">
-    <p>Copyright © {{ now.Year }} `Romeo Sarkar`. All rights reserved.</p>
+    <p
+        >Copyright © {{ now.Year }} `<a
+            href="{{ .Site.Params.owner.url }}"
+            style="text-decoration: underline"
+            >{{ .Site.Params.owner.name }}</a
+        >`. All rights reserved.</p
+    >
     <p class="built-with">
         Powered by
         <a

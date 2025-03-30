@@ -1,0 +1,14 @@
+<div style="display: flex; justify-content: center; align-items: center;">
+    <a href="mailto:{{- site.Params.owner.contact.email -}}"
+        ><img
+            class="icons email"
+            src="/email.png"
+    /></a>
+    {{ range slice "github" "linkedin" "twitter" "youtube" "discord" "whatsapp" "telegram" }}
+        <a href="{{- index site.Params.owner.contact . -}}"
+            ><img
+                class="icons {{ . }}"
+                src="/{{ . }}.png"
+        /></a>
+    {{ end }}
+</div>
