@@ -66,7 +66,7 @@ gadha
 
 > block quote
 
-    Performatted text
+Hello world this is a `Preformatted Text`. Thanks!
 
 [visible text](http://google.com "Tooltip")
 
