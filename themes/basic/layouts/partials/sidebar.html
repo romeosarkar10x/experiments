@@ -1,5 +1,5 @@
 <div
     class="sidebar"
-    style="width: 16rem; height: calc(100vh - 3.75rem); position: fixed; border-right: var(--border-width) var(--border-style) var(--border-color); overflow-y: scroll; padding-top: 1rem; word-break: break-all">
+    style="width: 16rem; height: calc(100vh - 3.75rem); position: fixed; border-right: var(--border-width) var(--border-style) var(--border-color); overflow-y: auto; padding-top: 1rem; word-break: break-all">
     {{ partial "get_subsections_recursive.html" (dict "site" .Site "sectionPath" "/") }}
 </div>

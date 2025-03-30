@@ -46,7 +46,7 @@ code {
 
 .highlight > div {
     border-radius: 10px;
-    overflow-x: scroll;
+    overflow-x: auto;
 }
 
 .highlight pre {
