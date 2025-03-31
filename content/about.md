@@ -1,7 +1,6 @@
 ---
 title: "About"
-date: 2025-03-31T12:00:00Z
-draft: false
+date: "2025-03-31"
 ---
 
 # Romeo Sarkar's Experiments
