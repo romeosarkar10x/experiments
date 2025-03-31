@@ -8,5 +8,5 @@
 </svg>
 
 <div class="sidebar-left"
-    >{{ partial "sidebar/get_subsections_recursive.html" (dict "site" .Site "sectionPath" "/") }}</div
+    >{{ partial "sidebar/get_subsections_recursive.html" (dict "context" . "site" .Site "sectionPath" "/") }}</div
 >
