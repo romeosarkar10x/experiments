@@ -1,0 +1,42 @@
+.sidebar-left {
+    width: 16rem;
+    height: calc(100vh - 3.75rem);
+    position: fixed;
+    border-right: var(--border-width) var(--border-style) var(--border-color);
+    overflow-y: auto;
+    padding-top: 1rem;
+    word-break: break-all;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    box-sizing: border-box;
+}
+
+.sidebar-left li {
+    list-style-type: none;
+    margin: 0;
+}
+
+.sidebar-left ul {
+    padding-left: 0.75rem;
+    list-style-type: none;
+    margin: 0;
+    border-left: var(--border-width) var(--border-style) rgb(200, 200, 200);
+}
+
+.sidebar-left summary {
+    list-style: none;
+}
+
+.sidebar-left details summary div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar-left details[open] > summary div svg {
+    transform: rotate(90deg);
+}
+
+.sidebar-left details summary div svg {
+    transition: transform 0.1s ease;
+}

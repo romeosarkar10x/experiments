@@ -14,8 +14,6 @@ body {
     font-family: "Poppins";
     line-height: 1.5rem;
     margin-top: 1rem;
-    padding-left: 1.5rem;
-    padding-right: 3.5rem;
     margin-left: auto;
     margin-right: auto;
     font-size: 1rem;
@@ -45,50 +43,6 @@ pre {
 }
 */
 
-code {
-    font-family: "Ubuntu Sans Mono";
-}
-
-.highlight {
-    position: relative;
-}
-
-.highlight > div {
-    border-radius: 10px;
-    overflow-x: auto;
-}
-
-.highlight pre {
-    margin-top: 35px;
-    margin-bottom: 15px;
-}
-
-.highlight::before {
-    content: "copy";
-    font-family: "Ubuntu Sans Mono";
-    position: absolute;
-    padding: 2px 15px;
-    top: 0;
-    left: 0;
-    background: #333;
-    color: white;
-    border-top-left-radius: 9px;
-    border-bottom-right-radius: 7px;
-    cursor: pointer;
-}
-
-.highlight code[data-lang]::before {
-    content: attr(data-lang);
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 2px 15px;
-    background: #333;
-    color: white;
-    border-bottom-left-radius: 9px;
-    border-top-right-radius: 7px;
-}
-
 table {
     border-collapse: collapse;
     margin-bottom: 1rem;
@@ -103,15 +57,4 @@ td {
 th,
 td {
     padding: 4px;
-}
-
-details ul {
-    padding-left: 0.5rem;
-    list-style-type: none;
-    margin: 0;
-    border-left: var(--border-width) var(--border-style) var(--border-color);
-}
-
-details li {
-    padding-left: 1rem;
 }

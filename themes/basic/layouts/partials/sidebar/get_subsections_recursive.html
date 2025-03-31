@@ -1,0 +1,28 @@
+{{ $site := .site }}
+{{ $sectionPath := .sectionPath }}
+
+{{ range (partial "sidebar/get_subsections.html" (dict "site" $site "sectionPath" $sectionPath "type" "leaf")) }}
+    <li
+        ><div><a href="{{ add $sectionPath . }}">{{ strings.TrimSuffix "/" . }}</a></div></li
+    >
+{{ end }}
+
+{{ range (partial "sidebar/get_subsections.html" (dict "site" $site "sectionPath" $sectionPath "type" "parent")) }}
+    {{ $sectionPathCurrent := add $sectionPath . }}
+    <details
+        ><summary
+            ><div
+                ><a href="{{ $sectionPathCurrent }}">{{ strings.TrimSuffix "/" . }}</a>
+                <svg
+                    aria-hidden="true"
+                    class="caret"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="red">
+                    <use href="#caret-icon"></use></svg></div></summary
+        ><ul
+            >{{ partial "sidebar/get_subsections_recursive.html" (dict "site" $site "sectionPath" $sectionPathCurrent) }}</ul
+        >
+    </details>
+{{ end }}
