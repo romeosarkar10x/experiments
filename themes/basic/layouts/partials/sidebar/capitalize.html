@@ -1,0 +1,11 @@
+{{ $result := "" }}
+{{ $words := split . "_" }}
+
+{{ range $words }}
+    {{ $firstCharacterCapitalized := substr . 0 1 | upper }}
+    {{ $rest := substr . 1 }}
+    {{ $result = add $result (add " " (add $firstCharacterCapitalized $rest)) }}
+{{ end }}
+
+{{ $result = strings.TrimPrefix " " $result }}
+{{ return $result }}
