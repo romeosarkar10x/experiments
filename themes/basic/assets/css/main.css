@@ -1,6 +1,6 @@
 :root {
-    --border-style: solid;
-    --border-color: black;
+    --border-style: dashed;
+    --border-color: rgb(205, 205, 205);
     --border-width: 0.125rem;
     --border-radius: 1rem;
 }
@@ -17,6 +17,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     font-size: 1rem;
+    background-color: white;
 }
 
 h1,
