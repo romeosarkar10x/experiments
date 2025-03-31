@@ -1,0 +1,6 @@
+footer {
+    text-align: center;
+    border-top: var(--border-width) var(--border-style) var(--border-color);
+    margin-top: 40px;
+    user-select: none;
+}
