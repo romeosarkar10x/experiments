@@ -8,5 +8,6 @@
 </svg>
 
 <div class="sidebar-left"
+    ><h2>{{ .Site.Title }}</h2
     >{{ partial "sidebar/get_subsections_recursive.html" (dict "context" . "site" .Site "sectionPath" "/") }}</div
 >
