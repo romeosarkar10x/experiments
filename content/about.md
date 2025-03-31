@@ -1,7 +1,9 @@
 ---
 title: "About"
-date: 2025-02-15T12:00:00Z
+date: 2025-03-31T12:00:00Z
 draft: false
 ---
 
-hello world, this is the about page!
+# Romeo Sarkar's Experiments
+
+🚀 a collection of my (Romeo Sarkar) personal tech experiments, projects, and findings in linux, networking, programming, reverse engineering, and more. powered by hugo for fast, markdown-based documentation. hosted at `experiments.romeosarkar10x.com`. 💡
