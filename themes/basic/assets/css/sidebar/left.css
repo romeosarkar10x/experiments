@@ -40,3 +40,8 @@
 .sidebar-left details summary div svg {
     transition: transform 0.1s ease;
 }
+
+.sidebar-left a {
+    color: rgb(30, 30, 30);
+    text-decoration: none;
+}
