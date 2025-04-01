@@ -1,5 +1,5 @@
 :root {
-    --border-style: dashed;
+    --border-style: solid;
     --border-color: rgb(205, 205, 205);
     --border-width: 0.125rem;
     --border-radius: 1rem;
@@ -7,6 +7,10 @@
 * {
     min-width: 0;
     box-sizing: content-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
