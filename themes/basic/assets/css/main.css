@@ -38,19 +38,3 @@ pre {
   padding: 10px;
 }
 */
-
-table {
-    border-collapse: collapse;
-    margin-bottom: 1rem;
-}
-
-table,
-th,
-td {
-    border: var(--border-width) var(--border-style) var(--border-color);
-}
-
-th,
-td {
-    padding: 4px;
-}
