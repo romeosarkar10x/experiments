@@ -32,11 +32,10 @@
                     width="20"
                     height="20"
                     viewBox="0 0 24 24">
-                    <use href="#caret-icon"></use></svg></div></summary
-        ><div
-            ><ul
-                >{{ partial "sidebar/get_subsections_recursive.html" (dict "context" $context "site" $site "sectionPath" $sectionPathCurrent) }}</ul
-            ></div
+                    <use href="#caret-icon"></use></svg></div
+        ></summary>
+        <ul
+            >{{ partial "sidebar/get_subsections_recursive.html" (dict "context" $context "site" $site "sectionPath" $sectionPathCurrent) }}</ul
         >
     </details>
 {{ end }}

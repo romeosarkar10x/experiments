@@ -23,21 +23,17 @@
     margin: 0;
 }
 
-.sidebar-left ul {
+.sidebar-left details > ul {
     list-style-type: none;
-    margin: 0;
     padding: 0;
-}
-
-.sidebar-left ul details {
-    padding: 0;
-}
-
-.sidebar-left details > div {
     margin-left: 1rem;
     border-left: var(--border-width) var(--border-style) var(--border-color);
     margin-top: 0.375rem;
     margin-bottom: 0.375rem;
+}
+
+.sidebar-left ul details {
+    padding: 0;
 }
 
 .sidebar-left summary {
@@ -51,16 +47,16 @@
     border-radius: 0.375rem;
 }
 
+.sidebar-left li div:hover,
+.sidebar-left summary div:hover {
+    background-color: rgb(225, 225, 225);
+}
+
 .sidebar-left details summary div {
     display: flex;
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
-}
-
-.sidebar-left li div:hover,
-.sidebar-left summary div:hover {
-    background-color: rgb(225, 225, 225);
 }
 
 .sidebar-left details[open] > summary div svg {
