@@ -1,9 +1,7 @@
 ---
-title: "Nginx Forwarding"
+title: "Experiments with Nginx Forwarding"
 date: 2025-02-15T12:00:00+00:00
 ---
-
-# Experiments with Nginx Forwarding
 
 ## Experiment 1: Direct Request to Localhost (IP-based)
 
