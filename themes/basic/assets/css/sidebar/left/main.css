@@ -19,13 +19,15 @@
 .sidebar-left li {
     list-style-type: none;
     margin: 0;
+    margin-top: 0.375rem;
+    margin-bottom: 0.375rem;
 }
 
 .sidebar-left details > ul {
     list-style-type: none;
     padding: 0;
     margin-left: 1rem;
-    border-left: var(--border-width) dashed var(--border-color);
+    border-left: var(--border-width) solid var(--border-color);
     margin-top: 0.375rem;
     margin-bottom: 0.375rem;
     border-bottom-left-radius: 2rem;
@@ -73,8 +75,13 @@
     text-decoration: none;
 }
 
+.sidebar-left a:hover {
+    color: rgb(105, 15, 200);
+    text-decoration: underline;
+}
+
 .sidebar-left a strong {
-    color: rgb(55, 0, 110);
+    color: rgb(105, 15, 200);
 }
 
 .sidebar-left h2 {
