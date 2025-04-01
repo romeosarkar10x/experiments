@@ -1,10 +1,10 @@
 # Fuzzy Set Cross Product
 
-## Introduction
+# Introduction
 
 A **fuzzy set** is an extension of a classical set where elements have a membership degree in the range \([0,1]\). Given two fuzzy sets **A** and **B**, their **cross product** is defined as a **matrix** where each element is computed using a **T-norm** (Triangular Norm), which generalizes intersection operations in fuzzy logic.
 
-### Notation
+## Notation
 
 - Let **A** and **B** be two fuzzy sets:
   $$ A = \{ (a_1, \mu_A(a_1)), (a_2, \mu_A(a_2)), ..., (a_m, \mu_A(a_m)) \} $$
@@ -41,28 +41,28 @@ $$ B = \{ (y_1, 0.5), (y_2, 0.7) \} $$
 
 The cross product matrix under different **T-norms** is:
 
-### **Mamdani's Minimum T-norm**
+## **Mamdani's Minimum T-norm**
 
 | A \ B   | 0.5 | 0.7 |
 | ------- | --- | --- |
 | **0.2** | 0.2 | 0.2 |
 | **0.8** | 0.5 | 0.7 |
 
-### **Algebraic Product T-norm**
+## **Algebraic Product T-norm**
 
 | A \ B   | 0.5 | 0.7  |
 | ------- | --- | ---- |
 | **0.2** | 0.1 | 0.14 |
 | **0.8** | 0.4 | 0.56 |
 
-### **Bounded Product T-norm**
+## **Bounded Product T-norm**
 
 | A \ B   | 0.5 | 0.7 |
 | ------- | --- | --- |
 | **0.2** | 0   | 0   |
 | **0.8** | 0.3 | 0.5 |
 
-### **Drastic Product T-norm**
+## **Drastic Product T-norm**
 
 | A \ B   | 0.5 | 0.7 |
 | ------- | --- | --- |
@@ -112,15 +112,15 @@ $$
 
 There are three main ways to interpret the **implication**:
 
-### **1. Material Implication**
+## **1. Material Implication**
 
 $$ R: A \rightarrow B = \bar{A} \cup B $$
 
-### **2. Propositional Calculus**
+## **2. Propositional Calculus**
 
 $$ R: A \rightarrow B = \bar{A} \cup (A \cap B) $$
 
-### **3. Extended Propositional Calculus**
+## **3. Extended Propositional Calculus**
 
 $$ R: A \rightarrow B = (\bar{A} \cap B) \cup B $$
 
@@ -162,8 +162,8 @@ $$ t\_{bf}(a, b) = (1 - a) \vee b $$
 
 ## **Goguen’s Fuzzy Rule**
 
-$ R*{gf} = \int*{x,y} M*A(x) \times M_B(y) \ $
+$$ R*{gf} = \int*{x,y} M*A(x) \times M_B(y) $$
 where,
-$ t*{gf}(a, b) = \begin{cases} 1, & \text{if } a \leq b \\ b/a, & \text{if } a > b \end{cases} $
+$$ t*{gf}(a, b) = \begin{cases} 1, & \text{if } a \leq b \\ b/a, & \text{if } a > b \end{cases} $$
 
 ---

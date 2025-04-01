@@ -3,7 +3,7 @@ title: "Experiments with Nginx Forwarding"
 date: 2025-02-15T12:00:00+00:00
 ---
 
-## Experiment 1: Direct Request to Localhost (IP-based)
+## Direct Request to Localhost (IP-based)
 
 ### Client Command
 
@@ -22,7 +22,7 @@ Accept: */*
 
 ---
 
-## Experiment 2: Direct Request to 127.0.0.1 (IP-based)
+## Direct Request to 127.0.0.1 (IP-based)
 
 ### Client Command
 
@@ -41,7 +41,7 @@ Accept: */*
 
 ---
 
-## Experiment 3: Request Through Nginx Proxy (Without Custom Headers)
+## Request Through Nginx Proxy (Without Custom Headers)
 
 ### Client Command
 
@@ -73,7 +73,7 @@ Accept: */*
 
 ---
 
-## Experiment 4: Request Through Nginx Proxy (With Custom Headers)
+## Request Through Nginx Proxy (With Custom Headers)
 
 ### Client Command
 

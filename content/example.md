@@ -87,7 +87,7 @@ Ampersand: &amp;
 Smiley: &#x1F604;
 Embedded HTML: x<sup>2</sup>
 
-#### Building the model
+## Building the model
 
 <div style="display: inline-block; text-align: center;">
   <div style="border: solid black 2px; display: inline-block; margin: 5px;">
