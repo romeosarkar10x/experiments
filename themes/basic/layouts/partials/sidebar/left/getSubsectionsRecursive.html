@@ -2,7 +2,7 @@
 {{ $sectionPath := .sectionPath }}
 {{ $context := .context }}
 
-{{ range (partial "sidebar/left/get_subsections.html" (dict "site" $site "sectionPath" $sectionPath "type" "leaf")) }}
+{{ range (partial "sidebar/left/getSubsections.html" (dict "site" $site "sectionPath" $sectionPath "type" "leaf")) }}
     {{ $link := add $sectionPath . }}
     {{ $sectionName := partial "sidebar/left/capitalize.html" (strings.TrimSuffix "/" .) }}
 
@@ -19,7 +19,7 @@
     {{ end }}
 {{ end }}
 
-{{ range (partial "sidebar/left/get_subsections.html" (dict "site" $site "sectionPath" $sectionPath "type" "parent")) }}
+{{ range (partial "sidebar/left/getSubsections.html" (dict "site" $site "sectionPath" $sectionPath "type" "parent")) }}
     {{ $sectionPathCurrent := add $sectionPath . }}
     {{ $sectionName := partial "sidebar/left/capitalize.html" (strings.TrimSuffix "/" .) }}
     <details
@@ -35,7 +35,7 @@
                     <use href="#caret-icon"></use></svg></div
         ></summary>
         <ul
-            >{{ partial "sidebar/left/get_subsections_recursive.html" (dict "context" $context "site" $site "sectionPath" $sectionPathCurrent) }}</ul
+            >{{ partial "sidebar/left/getSubsectionsRecursive.html" (dict "context" $context "site" $site "sectionPath" $sectionPathCurrent) }}</ul
         >
     </details>
 {{ end }}
