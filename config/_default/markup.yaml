@@ -14,3 +14,8 @@ highlight:
     lineNos: true
     style: "catppuccin-latte"
     tabWidth: 4
+
+tableOfContents:
+    endLevel: 4
+    ordered: false
+    startLevel: 1

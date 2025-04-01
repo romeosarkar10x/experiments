@@ -5,21 +5,21 @@
     <head>
         {{ partial "head.html" . }}
     </head>
-    <body>
-        <header>
-            {{ partial "header.html" . }}
+    <body
+        ><header>
+            {{- partial "header.html" . -}}
         </header>
         <div style="display: flex; justify-content: stretch; margin-top: 3.75rem">
-            {{ partial "sidebar/left/index.html" . }}
-            <div style="margin-left: 16rem; flex-grow: 1">
-                <main
-                    style="min-height: calc(100vh - 3.75rem - 16rem); padding-left: 3rem; padding-right: 3rem; padding-top: 1rem;">
-                    {{ block "main" . }}{{ end }}
-                </main>
-                <footer>
-                    {{ partial "footer.html" . }}
-                </footer>
+            {{- partial "sidebar/left/index.html" . -}}
+            <div style="margin-left: 16rem; flex-grow: 1; margin-right: 16rem"
+                ><main> {{- block "main" . -}}{{- end -}}</main
+                ><footer>
+                    {{- partial "footer.html" . -}}
+                </footer></div
+            >
+            <div class="sidebar-right-container">
+                {{- partial "sidebar/right/index.html" . -}}
             </div>
-        </div>
-    </body>
+        </div></body
+    >
 </html>
