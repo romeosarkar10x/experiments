@@ -8,8 +8,13 @@ html {
     scroll-padding-top: calc(3.75rem + 0.5rem);
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 body::-webkit-scrollbar {
-    width: 0.375rem;
+    width: 0.5rem;
+    display: block;
 }
 
 body::-webkit-scrollbar-track {
@@ -23,8 +28,4 @@ body::-webkit-scrollbar-thumb {
 
 body::-webkit-scrollbar-thumb:hover {
     background: var(--scrollbar-thumb-hover);
-}
-
-::-webkit-scrollbar {
-    display: none;
 }
