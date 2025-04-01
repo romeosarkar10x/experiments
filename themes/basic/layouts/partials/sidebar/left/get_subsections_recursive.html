@@ -2,9 +2,9 @@
 {{ $sectionPath := .sectionPath }}
 {{ $context := .context }}
 
-{{ range (partial "sidebar/get_subsections.html" (dict "site" $site "sectionPath" $sectionPath "type" "leaf")) }}
+{{ range (partial "sidebar/left/get_subsections.html" (dict "site" $site "sectionPath" $sectionPath "type" "leaf")) }}
     {{ $link := add $sectionPath . }}
-    {{ $sectionName := partial "sidebar/capitalize.html" (strings.TrimSuffix "/" .) }}
+    {{ $sectionName := partial "sidebar/left/capitalize.html" (strings.TrimSuffix "/" .) }}
 
     {{ if eq $link $context.RelPermalink }}
         <li
@@ -19,9 +19,9 @@
     {{ end }}
 {{ end }}
 
-{{ range (partial "sidebar/get_subsections.html" (dict "site" $site "sectionPath" $sectionPath "type" "parent")) }}
+{{ range (partial "sidebar/left/get_subsections.html" (dict "site" $site "sectionPath" $sectionPath "type" "parent")) }}
     {{ $sectionPathCurrent := add $sectionPath . }}
-    {{ $sectionName := partial "sidebar/capitalize.html" (strings.TrimSuffix "/" .) }}
+    {{ $sectionName := partial "sidebar/left/capitalize.html" (strings.TrimSuffix "/" .) }}
     <details
         ><summary
             ><div
@@ -35,7 +35,7 @@
                     <use href="#caret-icon"></use></svg></div
         ></summary>
         <ul
-            >{{ partial "sidebar/get_subsections_recursive.html" (dict "context" $context "site" $site "sectionPath" $sectionPathCurrent) }}</ul
+            >{{ partial "sidebar/left/get_subsections_recursive.html" (dict "context" $context "site" $site "sectionPath" $sectionPathCurrent) }}</ul
         >
     </details>
 {{ end }}
