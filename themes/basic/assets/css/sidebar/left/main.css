@@ -1,4 +1,11 @@
-.sidebar-left {
+:root {
+    --animation-delay-initialized: 0.2s;
+    --animation-delay: 0;
+    --list-elements-margin: 0.375rem;
+    --list-elements-padding-left: 1rem;
+}
+
+div.sidebar-left {
     width: 16rem;
     height: calc(100vh - 3.75rem);
     position: fixed;
@@ -10,84 +17,112 @@
     padding-right: 1rem;
     box-sizing: border-box;
     user-select: none;
+    interpolate-size: allow-keywords;
 }
 
-.sidebar-left .content {
+div.sidebar-left ul.content {
     margin-bottom: 1.25rem;
 }
 
-.sidebar-left li,
-.sidebar-left details {
+div.sidebar-left ul,
+div.sidebar-left li {
     list-style-type: none;
     margin: 0;
-    margin-top: 0.375rem;
-    margin-bottom: 0.375rem;
+    padding: 0;
 }
 
-.sidebar-left details > ul {
+div.sidebar-left li {
     list-style-type: none;
-    padding: 0;
+    margin: 0;
+    margin-top: var(--list-elements-margin);
+}
+
+div.sidebar-left li:first-child {
+    margin-top: 0;
+}
+
+div.sidebar-left details > ul {
+    list-style-type: none;
     margin-left: 1rem;
     border-left: var(--border-width) solid var(--border-color);
-    margin-top: 0.375rem;
-    margin-bottom: 0.375rem;
+    padding-top: var(--list-elements-margin);
     border-bottom-left-radius: 2rem;
 }
 
-.sidebar-left ul details {
+div.sidebar-left details {
     padding: 0;
+    overflow: hidden;
 }
 
-.sidebar-left summary {
+div.sidebar-left details::details-content {
+    block-size: 0;
+    transition:
+        block-size var(--animation-delay),
+        content-visibility var(--animation-delay);
+    transition-behavior: allow-discrete;
+}
+
+div.sidebar-left details.initialized::details-content {
+    transition:
+        block-size var(--animation-delay-initialized),
+        content-visibility var(--animation-delay-initialized);
+    transition-behavior: allow-discrete;
+}
+
+div.sidebar-left details[open]::details-content {
+    block-size: auto;
+}
+
+div.sidebar-left summary {
     list-style: none;
 }
 
-.sidebar-left li div,
-.sidebar-left summary div {
-    padding-left: 1rem;
-    padding-right: 1rem;
+div.sidebar-left li div,
+div.sidebar-left summary div {
+    padding-left: var(--list-elements-padding-left);
+    padding-right: var(--list-element-padding-left);
     border-radius: 0.375rem;
 }
 
-.sidebar-left li div:hover,
-.sidebar-left summary div:hover {
+div.sidebar-left li div:hover,
+div.sidebar-left summary div:hover {
     background-color: rgb(225, 225, 225);
 }
 
-.sidebar-left details summary div {
+div.sidebar-left details summary div {
     display: flex;
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
 }
 
-.sidebar-left details[open] > summary div svg {
+div.sidebar-left details[open] > summary div svg {
     transform: rotate(90deg);
 }
 
-.sidebar-left details summary div svg {
-    transition: transform 0.1s ease;
+div.sidebar-left details summary div svg {
+    transition: transform var(--animation-delay) ease;
     fill: rgb(55, 0, 110);
 }
 
-.sidebar-left a {
+div.sidebar-left a {
     font-size: 0.875rem;
     color: rgb(30, 30, 30);
     text-decoration: none;
 }
 
-.sidebar-left a:hover {
+div.sidebar-left a:hover {
     color: rgb(105, 15, 200);
     text-decoration: underline;
 }
 
-.sidebar-left a strong {
+div.sidebar-left a strong {
     color: rgb(105, 15, 200);
 }
 
-.sidebar-left h2 {
+div.sidebar-left h2 {
     font-size: 1.25rem;
-    padding-left: 0.875rem;
     margin-top: 0;
     margin-bottom: 0.5rem;
+    padding-left: var(--list-elements-padding-left);
 }

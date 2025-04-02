@@ -9,7 +9,7 @@
 
 <div class="sidebar-left"
     ><h2>{{ .Site.Title }}</h2
-    ><div class="content"
+    ><ul class="content"
         >{{ partial "sidebar/left/getSubsectionsRecursive.html" (dict "context" . "site" .Site "sectionPath" "/") }}</div
-    ></div
+    ></ul
 >
