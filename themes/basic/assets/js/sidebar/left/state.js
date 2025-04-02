@@ -10,12 +10,14 @@ document.addEventListener("DOMContentLoaded", function () {
     /* restore state */
     details.forEach((tag) => {
         const state = sessionStorage.getItem(generateKey(tag), tag.open);
+
         if (state != null) {
             tag.open = state === "true";
         }
     });
 
     const scrollTop = sessionStorage.getItem("sidebar-left-scroll-top");
+
     if (scrollTop != null) {
         sidebarLeft.scrollTop = parseFloat(scrollTop);
     }
