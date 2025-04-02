@@ -1,7 +1,3 @@
-function saveState() {
-    const details = document.querySelectorAll(".sidebar-left details");
-}
-
 function generateKey(tag) {
     const link = tag.querySelector("a").getAttribute("href");
     return `sidebar-left-${link}`;
