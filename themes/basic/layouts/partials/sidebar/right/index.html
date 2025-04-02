@@ -1,5 +1,7 @@
 <div class="sidebar-right"
     ><h2>On this page</h2>
-    {{- .TableOfContents -}}
-    {{- partial "sidebar/right/feedback.html" . -}}
+    <div class="content">
+        {{- .TableOfContents -}}
+        {{- partial "sidebar/right/feedback.html" . -}}
+    </div>
 </div>

@@ -1,21 +1,15 @@
-.sidebar-right-container {
+.sidebar-right {
     position: fixed;
     width: 16rem;
     right: 0;
-    direction: rtl;
     overflow-y: auto;
     height: calc(100vh - 3.75rem);
     border-left: var(--border-width) var(--border-style) var(--border-color);
-}
-
-.sidebar-right {
     padding-top: 1rem;
     padding-left: 1rem;
     padding-right: 1rem;
     box-sizing: border-box;
     user-select: none;
-    overflow-y: scroll;
-    direction: ltr;
 }
 
 .sidebar-right h2 {
