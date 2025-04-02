@@ -1,0 +1,21 @@
+.highlight > div {
+    overflow-x: auto;
+}
+
+.highlight > div::-webkit-scrollbar {
+    height: 0.75rem;
+    display: block;
+}
+
+.highlight > div::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+    border-left: var(--border-width) var(--border-style) var(--border-color);
+}
+
+.highlight > div::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+}
+
+.highlight > div::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover);
+}
