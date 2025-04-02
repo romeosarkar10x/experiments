@@ -1,15 +1,42 @@
+:root {
+    --table-inner-border-width: 0.125rem;
+    --table-inner-border-style: solid;
+}
 table {
-    border-collapse: collapse;
+    border-collapse: separate;
+    margin-top: 1rem;
     margin-bottom: 1rem;
-}
-
-table,
-th,
-td {
-    border: var(--border-width) var(--border-style) var(--border-color);
+    border-radius: 1rem;
+    padding: 0.25rem;
+    border: var(--border-width) dashed var(--border-color);
 }
 
 th,
 td {
-    padding: 4px;
+    padding: 0.5rem;
+    border: var(--table-inner-border-width) var(--table-inner-border-style) var(--border-color);
+}
+
+thead tr th {
+    border-top: none;
+}
+
+thead tr th:first-child {
+    border-left: none;
+}
+
+thead tr th:last-child {
+    border-right: none;
+}
+
+tbody td:first-child {
+    border-left: none;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody td:last-child {
+    border-right: none;
 }
