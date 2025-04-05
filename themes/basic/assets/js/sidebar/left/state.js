@@ -1,6 +1,8 @@
+const scrollTopKey = "sl-st";
+
 function generateKey(tag) {
     const link = tag.querySelector("a").getAttribute("href");
-    return `sidebar-left-${link}`;
+    return `sl-${link}`;
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -16,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        const scrollTop = sessionStorage.getItem("sidebar-left-scroll-top");
+        const scrollTop = sessionStorage.getItem(scrollTopKey);
 
         if (scrollTop != null) {
             sidebarLeft.scrollTop = parseFloat(scrollTop);
@@ -24,9 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     })();
 
     (function setAnimationDelay() {
-        details.forEach((tag) => {
-            tag.classList.add("initialized");
-        });
+        sidebarLeft.classList.add("initialized");
     })();
 
     (function saveStates() {
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         window.addEventListener("beforeunload", function () {
-            sessionStorage.setItem("sidebar-left-scroll-top", sidebarLeft.scrollTop);
+            sessionStorage.setItem(scrollTopKey, sidebarLeft.scrollTop);
         });
     })();
 });

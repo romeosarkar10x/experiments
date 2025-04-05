@@ -1,15 +1,22 @@
-<svg style="display: none;">
-    <symbol
-        id="caret-icon"
-        viewBox="0 0 24 24">
-        <path
-            d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"></path>
-    </symbol>
-</svg>
-
+{{- partial "sidebar/left/svg.html" | strings.TrimSpace | safeHTML -}}
 <div class="sidebar-left"
-    ><h2>{{ .Site.Title }}</h2
-    ><ul class="content"
-        >{{ partial "sidebar/left/getSubsectionsRecursive.html" (dict "context" . "site" .Site "sectionPath" "/") }}
-    </ul></div
+    ><div class="inner-when-collapsed"
+        ><div class="svg-wrapper"
+            ><svg
+                aria-hidden="true"
+                stroke="currentColor">
+                <use href="#right-arrow-2"></use></svg></div
+        ><div class="h2-wrapper"><h2>{{ .Site.Title }}</h2></div
+        ><div class="svg-wrapper"
+            ><svg
+                aria-hidden="true"
+                stroke="currentColor">
+                <use href="#right-arrow-2"></use></svg></div
+    ></div>
+    <div class="inner"
+        ><div class="title"><h2>{{- .Site.Title -}}</h2></div
+        ><ul class="content"
+            >{{ partial "sidebar/left/getSubsectionsRecursive.html" (dict "context" . "site" .Site "sectionPath" "/") | strings.TrimSpace | safeHTML }}
+        </ul></div
+    ></div
 >

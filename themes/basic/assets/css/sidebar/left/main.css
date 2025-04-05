@@ -1,8 +1,8 @@
 :root {
-    --animation-delay-initialized: 0.2s;
-    --animation-delay: 0;
+    --transition-delay: 0.2s;
     --list-elements-margin: 0.375rem;
     --list-elements-padding-left: 1rem;
+    --sidebar-left-link-color: rgb(85, 30, 255);
 }
 
 div.sidebar-left {
@@ -12,36 +12,37 @@ div.sidebar-left {
     left: 0;
     border-right: var(--border-width) var(--border-style) var(--border-color);
     overflow-y: auto;
-    padding-top: 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    box-sizing: border-box;
     user-select: none;
-    interpolate-size: allow-keywords;
 }
 
-div.sidebar-left ul.content {
+div.sidebar-left > div.inner {
+    padding-top: 1rem;
+}
+
+div.sidebar-left > div.inner > ul.content {
     margin-bottom: 1.25rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
-div.sidebar-left ul,
-div.sidebar-left li {
+div.sidebar-left > div.inner ul,
+div.sidebar-left > div.inner li {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-div.sidebar-left li {
+div.sidebar-left > div.inner > ul.content li {
     list-style-type: none;
     margin: 0;
     margin-top: var(--list-elements-margin);
 }
 
-div.sidebar-left li:first-child {
+div.sidebar-left > div.inner > ul.content li:first-child {
     margin-top: 0;
 }
 
-div.sidebar-left details > ul {
+div.sidebar-left > div.inner > ul.content details > ul {
     list-style-type: none;
     margin-left: 1rem;
     border-left: var(--border-width) solid var(--border-color);
@@ -49,82 +50,92 @@ div.sidebar-left details > ul {
     border-bottom-left-radius: 2rem;
 }
 
-div.sidebar-left details {
+div.sidebar-left > div.inner > ul.content details {
     padding: 0;
     overflow: hidden;
 }
 
-div.sidebar-left details::details-content {
+div.sidebar-left > div.inner > ul.content details::details-content {
     block-size: 0;
-    transition:
-        block-size var(--animation-delay),
-        content-visibility var(--animation-delay);
-    transition-behavior: allow-discrete;
 }
 
-div.sidebar-left details.initialized::details-content {
-    transition:
-        block-size var(--animation-delay-initialized),
-        content-visibility var(--animation-delay-initialized);
-    transition-behavior: allow-discrete;
-}
-
-div.sidebar-left details[open]::details-content {
+div.sidebar-left > div.inner > ul.content details[open]::details-content {
     block-size: auto;
 }
 
-div.sidebar-left summary {
+div.sidebar-left > div.inner > ul.content summary {
     list-style: none;
 }
 
-div.sidebar-left li div,
-div.sidebar-left summary div {
+div.sidebar-left > div.inner > ul.content li > div,
+div.sidebar-left > div.inner > ul.content summary > div {
     padding-left: var(--list-elements-padding-left);
     padding-right: var(--list-element-padding-left);
     border-radius: 0.375rem;
 }
 
-div.sidebar-left li div:hover,
-div.sidebar-left summary div:hover {
+div.sidebar-left div.inner ul.content li div:hover,
+div.sidebar-left div.inner ul.content summary div:hover,
+div.sidebar-left div.title:hover {
     background-color: rgb(225, 225, 225);
 }
 
-div.sidebar-left details summary div {
+div.sidebar-left div.inner ul.content details summary div {
     display: flex;
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
 }
 
-div.sidebar-left details[open] > summary div svg {
+div.sidebar-left > div.inner > ul.content details[open] > summary div > svg {
     transform: rotate(90deg);
 }
 
-div.sidebar-left details summary div svg {
-    transition: transform var(--animation-delay) ease;
+div.sidebar-left > div.inner > ul.content details > summary div > svg {
     fill: rgb(55, 0, 110);
     height: 1.5rem;
     width: 1.5rem;
 }
 
-div.sidebar-left a {
+div.sidebar-left div.inner ul.content a {
     font-size: 0.875rem;
     color: rgb(30, 30, 30);
     text-decoration: none;
 }
 
-div.sidebar-left a:hover {
-    color: rgb(105, 15, 200);
+div.sidebar-left div.inner ul.content a:hover {
+    color: var(--sidebar-left-link-color);
     text-decoration: underline;
 }
 
-div.sidebar-left a strong {
-    color: rgb(105, 15, 200);
+div.sidebar-left div.inner ul.content a strong {
+    color: var(--sidebar-left-link-color);
 }
 
-div.sidebar-left h2 {
-    font-size: 1.25rem;
-    margin-top: 0;
-    margin-bottom: 0.5rem;
+div.sidebar-left > div.inner > div.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
     padding-left: var(--list-elements-padding-left);
+    border-radius: 0.375rem;
+}
+
+div.sidebar-left > div.inner > div.title h2 {
+    display: inline;
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+/* sidebar-left initialized */
+div.sidebar-left.initialized div.inner ul.content details::details-content {
+    transition:
+        block-size var(--transition-delay),
+        content-visibility var(--transition-delay) allow-discrete;
+}
+
+div.sidebar-left.initialized > div.inner > ul.content details > summary div > svg {
+    transition: transform var(--transition-delay);
 }
