@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "Catppuccin.catppuccin-vsc",
+        "catppuccin.catppuccin-vsc-pack",
+        "Catppuccin.catppuccin-vsc-icons",
+
+        "esbenp.prettier-vscode",
+        "jinliming2.vscode-go-template"
+    ]
+}
