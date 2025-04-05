@@ -9,19 +9,16 @@ const config = {
     htmlWhitespaceSensitivity: "strict",
     bracketSameLine: true,
     singleAttributePerLine: true,
-    plugins: [
-        "prettier-plugin-go-template"
-    ],
+    plugins: ["prettier-plugin-go-template"],
 
     overrides: [
         {
-            "files": ["*.html"],
-            "options": {
-                "parser": "go-template",
+            files: ["*.html"],
+            options: {
+                parser: "go-template",
             },
         },
-    ]
-    
+    ],
 };
 
 export default config;
