@@ -18,13 +18,14 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[jsonc]": {
-        // JSON with comments. This file is a [jsonc] file!
+        /* JSON with comments. This file is a [jsonc] file! */
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
 
     "prettier.requireConfig": true,
     "prettier.configPath": "prettier.config.mjs",
-    "editor.formatOnSave": true,
+
     "editor.indentSize": 4,
-    "editor.detectIndentation": false
+    "editor.detectIndentation": false,
+    "editor.formatOnSave": true
 }
