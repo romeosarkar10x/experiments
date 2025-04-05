@@ -1,0 +1,5 @@
+{{ $svgs := resources.Match "svg/**.html" }}
+
+{{ range $svgs }}
+    {{ .Content | safeHTML }}
+{{ end }}
