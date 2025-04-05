@@ -29,11 +29,8 @@
                     ><a href="{{ $sectionPathCurrent }}">{{ $sectionName }}</a>
                     <svg
                         aria-hidden="true"
-                        class="caret"
-                        width="20"
-                        height="20"
                         viewBox="0 0 24 24">
-                        <use href="#caret-icon"></use></svg></div
+                        <use href="#caret"></use></svg></div
             ></summary>
             <ul
                 >{{ partial "sidebar/left/getSubsectionsRecursive.html" (dict "context" $context "site" $site "sectionPath" $sectionPathCurrent) }}</ul

@@ -103,6 +103,8 @@ div.sidebar-left details[open] > summary div svg {
 div.sidebar-left details summary div svg {
     transition: transform var(--animation-delay) ease;
     fill: rgb(55, 0, 110);
+    height: 1.5rem;
+    width: 1.5rem;
 }
 
 div.sidebar-left a {
