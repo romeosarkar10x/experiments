@@ -1,8 +1,4 @@
 {
-    "dependencies": {
-        "prettier": "^3.5.3",
-        "prettier-plugin-go-template": "^0.0.15"
-    },
     "name": "experiments",
     "version": "1.0.0",
     "description": "\"🚀 a collection of my personal tech experiments, projects, and findings in linux, networking, programming, reverse engineering, and more. powered by hugo for fast, markdown-based documentation. hosted at `experiments.romeosarkar10x.com`. 💡\"",
@@ -27,5 +23,9 @@
     "bugs": {
         "url": "https://github.com/romeosarkar10x/experiments/issues"
     },
-    "homepage": "https://github.com/romeosarkar10x/experiments#readme"
+    "homepage": "https://github.com/romeosarkar10x/experiments#readme",
+    "dependencies": {
+        "prettier": "^3.5.3",
+        "prettier-plugin-go-template": "^0.0.15"
+    }
 }
