@@ -1,6 +1,4 @@
 main div.content {
-    border-left: var(--border-width) var(--border-style) var(--border-color);
-    border-right: var(--border-width) var(--border-style) var(--border-color);
     min-height: calc(100vh - 3.75rem - 15rem);
     padding-left: 3rem;
     padding-right: 3rem;
@@ -8,6 +6,8 @@ main div.content {
 }
 
 main {
+    border-left: var(--border-width) var(--border-style) var(--border-color);
+    border-right: var(--border-width) var(--border-style) var(--border-color);
     margin-left: 16rem;
     flex-grow: 1;
     margin-right: 16rem;
