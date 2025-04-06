@@ -1,10 +1,11 @@
 ---
-title: "Example!"
-author: "Romeo Sarkar"
 date: "2025-03-28"
+author:
+    name: "Romeo Sarkar"
+    imageUrl: "https://pub-b61cfa1258734ed6ba1ddf94ae5a46ed.r2.dev"
 ---
 
-# Heading H1
+# This is the page title!
 
 ## Heading H2
 
@@ -17,14 +18,12 @@ I am in the second paragraph.
 
 I am the third one. Even thought there are two line breaks before me, this does not create any newline characters. After me there are two spaces before the newline character.
 
-# Heading H1
-
-## Heading H2
+## Another heading H2
 
 #Just a tag
 \# Not a Heading
 
-List:
+### List:
 
 - This is a list element
 - This is another element
@@ -35,7 +34,7 @@ List:
 - This is yet another element
 - This is a plus list
 
-Numbered List:
+### Numbered List:
 
 1. Point 1
 2. Point 2
@@ -45,6 +44,8 @@ Numbered List:
     - Pig
     2. Subpoint 2
     3. Gadha Again
+
+### Code block
 
 ```bash
 echo hello world this is a test line. we will make it a very very very very long line so, that we can test the limits of a single line in a code block. hope this helps!
@@ -87,7 +88,7 @@ Ampersand: &amp;
 Smiley: &#x1F604;
 Embedded HTML: x<sup>2</sup>
 
-## Building the model
+## Some raw html
 
 <div style="display: inline-block; text-align: center;">
   <div style="border: solid black 2px; display: inline-block; margin: 5px;">
@@ -163,7 +164,7 @@ Embedded HTML: x<sup>2</sup>
   </div>
 </div>
 
-## Tables, task lists, and code blocks
+## Tables
 
 | Name  | Job              |
 | ----- | ---------------- |
@@ -181,13 +182,13 @@ Embedded HTML: x<sup>2</sup>
 | Left         |     Center     |         Right |
 | Text         |      Text      |          Text |
 
-## Task list
+## Task lists
 
 - [ ] task 1
 - [x] task 2
 - [ ] task 3
 
-## Code Block
+## Code Blocks
 
 ```js
 var x = 10;
@@ -195,7 +196,7 @@ x++;
 console.log(x);
 ```
 
-some c++ code block!
+Some c++ code block!
 
 ```cpp
 #include <iostream>
