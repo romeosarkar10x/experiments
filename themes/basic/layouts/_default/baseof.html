@@ -9,12 +9,7 @@
         >{{ partial "svg.html" }}<header>{{ partial "header/index.html" . }}</header>
         <div style="display: flex; justify-content: stretch; margin-top: 3.75rem">
             {{- partial "sidebar/left/index.html" . -}}
-            <div style="margin-left: 16rem; flex-grow: 1; margin-right: 16rem"
-                ><main> {{- block "main" . -}}{{- end -}}</main
-                ><footer>
-                    {{- partial "footer/index.html" . -}}
-                </footer></div
-            >
+            <main> {{- block "main" . -}}{{- end -}}</main>
             {{- partial "sidebar/right/index.html" . -}}
         </div></body
     >
