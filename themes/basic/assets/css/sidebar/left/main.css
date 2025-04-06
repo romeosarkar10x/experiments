@@ -12,6 +12,7 @@ div.sidebar-left {
     left: 0;
     overflow-y: auto;
     user-select: none;
+    border-top: var(--border-width) var(--border-style) var(--border-color);
 }
 
 div.sidebar-left > div.inner {
