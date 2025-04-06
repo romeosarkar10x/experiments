@@ -10,7 +10,6 @@ div.sidebar-left {
     height: calc(100vh - 3.75rem);
     position: fixed;
     left: 0;
-    border-right: var(--border-width) var(--border-style) var(--border-color);
     overflow-y: auto;
     user-select: none;
 }
