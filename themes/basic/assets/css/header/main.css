@@ -24,36 +24,36 @@ header h1 {
     font-size: 1.5rem;
 }
 
-header div.navbar {
+header nav {
     display: flex;
     align-items: center;
     margin-left: 2rem;
     margin-right: 2rem;
 }
 
-header div.navbar div.mode {
+header nav div.mode {
     cursor: pointer;
 }
 
-header div.navbar svg {
+header nav svg {
     display: block;
     width: 2rem;
     height: 2rem;
 }
 
-header div.navbar * {
+header nav * {
     display: block;
 }
 
-header div.navbar .icon {
+header nav .icon {
     margin-left: 1rem;
 }
 
-header div.navbar .icon:first-child {
+header nav .icon:first-child {
     margin-left: 0;
 }
 
-header > div.navbar .icon img.github {
+header > nav .icon img.github {
     height: 1.875rem;
     width: 1.875rem;
 }
