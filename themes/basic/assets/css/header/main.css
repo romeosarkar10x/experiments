@@ -4,18 +4,56 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgb(240, 240, 240);
-    border-bottom: var(--border-width) var(--border-style) var(--border-color);
     z-index: 1;
+
+    border-bottom: var(--border-width) var(--border-style) var(--border-color);
+    background-color: rgba(245, 245, 245, 0.402);
+    backdrop-filter: blur(0.375rem);
+    box-shadow: 0 0.03125rem 0.5rem rgb(185, 185, 185);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
 
-header div {
-    margin-top: 1rem;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-}
-
-header div h1 {
+header h1 {
     margin: 0;
     font-size: 1.5rem;
+}
+
+header div.navbar {
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+header div.navbar div.mode {
+    cursor: pointer;
+}
+
+header div.navbar svg {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+}
+
+header div.navbar * {
+    display: block;
+}
+
+header div.navbar .icon {
+    margin-left: 1rem;
+}
+
+header div.navbar .icon:first-child {
+    margin-left: 0;
+}
+
+header > div.navbar .icon img.github {
+    height: 1.875rem;
+    width: 1.875rem;
 }
