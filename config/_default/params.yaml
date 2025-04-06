@@ -1,3 +1,6 @@
+version: "1.0"
+githubURL: "https://github.com/romeosarkar10x/experiments"
+
 owner:
     name: Romeo Sarkar
     username: romeosarkar10x
