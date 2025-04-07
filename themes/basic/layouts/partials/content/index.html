@@ -1,5 +1,10 @@
-<div class="content">
-    <h1 id="title">{{ .Title }}</h1>
+{{ .Scratch.Delete "Title" }}
+{{ .Scratch.Delete "RawContent" }}
+{{ $temp := partial "content/extract-title.html" . }}
+
+
+<article>
+    <h1 id="{{ .Scratch.Get "Title" | urlize }}">{{ .Scratch.Get "Title" }}</h1>
 
     {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
     {{ $dateHuman := .Date | time.Format ":date_long" }}
@@ -7,8 +12,8 @@
 
     <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
 
-    {{- .Content -}}
-    {{- partial "terms.html" (dict "taxonomy" "tags" "page" .) -}} </div
+    {{ markdownify (.Scratch.Get "RawContent") }}
+    {{- partial "terms.html" (dict "taxonomy" "tags" "page" .) -}} </article
 ><footer>
     {{- partial "footer/index.html" . -}}
 </footer>
