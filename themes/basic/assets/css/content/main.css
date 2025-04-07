@@ -19,6 +19,8 @@ article h4,
 article h5,
 article h6 {
     line-height: 1.25;
+    margin-top: 3rem;
+    margin-bottom: 0.875rem;
 }
 
 article h1 {
@@ -29,30 +31,20 @@ article h1 {
 
 article h2 {
     font-size: 2rem;
-    margin-top: 2.5rem;
-    margin-bottom: 0.875rem;
 }
 
 article h3 {
     font-size: 1.75rem;
-    margin-top: 2.5rem;
-    margin-bottom: 0.875rem;
 }
 
 article h4 {
     font-size: 1.5rem;
-    margin-top: 2.5rem;
-    margin-bottom: 0.875rem;
 }
 
 article h5 {
     font-size: 1.25rem;
-    margin-top: 2.5rem;
-    margin-bottom: 0.875rem;
 }
 
 article h6 {
     font-size: 1rem;
-    margin-top: 2.5rem;
-    margin-bottom: 0.875rem;
 }
