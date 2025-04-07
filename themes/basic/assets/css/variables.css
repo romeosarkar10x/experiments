@@ -10,4 +10,7 @@
     --border-color: rgb(205, 205, 205);
     --border-width: 0.125rem;
     --border-radius: 1rem;
+
+    /* Dimensions */
+    --header-h: 3.75rem;
 }

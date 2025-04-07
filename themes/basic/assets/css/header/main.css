@@ -1,5 +1,5 @@
 body > header {
-    height: 3.75rem;
+    height: var(--header-h);
     width: 100vw;
 
     position: fixed;
