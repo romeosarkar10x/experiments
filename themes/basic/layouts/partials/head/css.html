@@ -1,13 +1,13 @@
-{{ $styles := resources.Match "css/**.css" }}
+{{ $stylesheets := resources.Match "css/**.css" }}
 
 {{- if eq hugo.Environment "development" }}
-    {{ range $styles }}
+    {{ range $stylesheets }}
         <link
             rel="stylesheet"
             href="{{ .RelPermalink }}" />
     {{ end }}
 {{- else }}
-    {{ range $styles }}
+    {{ range $stylesheets }}
         {{- with . | minify | fingerprint }}
             <link
                 rel="stylesheet"
