@@ -1,8 +1,7 @@
-main div.content {
+main > article {
     min-height: calc(100vh - 3.75rem - 15rem);
     padding-left: 3rem;
     padding-right: 3rem;
-    padding-top: 1rem;
 }
 
 main {
@@ -11,4 +10,49 @@ main {
     margin-left: 16rem;
     flex-grow: 1;
     margin-right: 16rem;
+}
+
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
+    line-height: 1.25;
+}
+
+article h1 {
+    font-size: 2.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+article h2 {
+    font-size: 2rem;
+    margin-top: 2.5rem;
+    margin-bottom: 0.875rem;
+}
+
+article h3 {
+    font-size: 1.75rem;
+    margin-top: 2.5rem;
+    margin-bottom: 0.875rem;
+}
+
+article h4 {
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 0.875rem;
+}
+
+article h5 {
+    font-size: 1.25rem;
+    margin-top: 2.5rem;
+    margin-bottom: 0.875rem;
+}
+
+article h6 {
+    font-size: 1rem;
+    margin-top: 2.5rem;
+    margin-bottom: 0.875rem;
 }
