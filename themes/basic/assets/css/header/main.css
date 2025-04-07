@@ -20,6 +20,8 @@ body > header {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     border-bottom: var(--border-width) var(--border-style) var(--border-color);
+
+    transition: transform var(--transition-duration);
 }
 
 body > header h1 {
