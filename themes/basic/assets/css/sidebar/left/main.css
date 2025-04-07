@@ -99,7 +99,7 @@ div.sidebar-left > div.inner > ul.content details > summary div > svg {
 
 div.sidebar-left div.inner ul.content a {
     font-size: 0.875rem;
-    color: rgb(30, 30, 30);
+    color: var(--text-color);
     text-decoration: none;
 }
 

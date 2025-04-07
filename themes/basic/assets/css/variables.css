@@ -1,0 +1,10 @@
+:root {
+    --text-color: black;
+    --bg-color: white;
+
+    /* Border */
+    --border-style: solid;
+    --border-color: rgb(205, 205, 205);
+    --border-width: 0.125rem;
+    --border-radius: 1rem;
+}
