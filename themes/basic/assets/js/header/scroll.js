@@ -2,8 +2,9 @@ window.addEventListener("DOMContentLoaded", function () {
     /*
     let yTransform = 0;
     */
+
     let scrollYPrevious = window.scrollY;
-    const nav = document.querySelector("header");
+    const header = document.querySelector("header");
 
     window.addEventListener("scroll", () => {
         const scrollYCurrent = window.scrollY;
@@ -21,9 +22,9 @@ window.addEventListener("DOMContentLoaded", function () {
         */
 
         if (scrollYCurrent > scrollYPrevious) {
-            nav.style.transform = `translateY(-${nav.offsetHeight}px)`;
+            header.style.transform = `translateY(-${header.offsetHeight}px)`;
         } else {
-            nav.style.transform = `translateY(0)`;
+            header.style.transform = `translateY(0)`;
         }
 
         scrollYPrevious = scrollYCurrent;
