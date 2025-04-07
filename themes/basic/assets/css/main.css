@@ -1,5 +1,7 @@
 * {
     min-width: 0;
+    margin: 0;
+    padding: 0;
     box-sizing: content-box;
     interpolate-size: allow-keywords;
     /* The interpolate-size CSS property allows you to enable animations and transitions between a <length-percentage>
