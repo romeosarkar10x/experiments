@@ -5,7 +5,8 @@
 }
 
 html {
-    scroll-padding-top: calc(3.75rem + 0.5rem);
+    scroll-padding-top: calc(3.75rem + 2.5rem + 0.125rem);
+    scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {

@@ -12,10 +12,6 @@
         value and an intrinsic size value such as auto, fit-content, or max-content. */
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     color: #222;
     font-family: "Poppins";
