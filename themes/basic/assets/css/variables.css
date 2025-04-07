@@ -2,6 +2,9 @@
     --text-color: black;
     --bg-color: white;
 
+    /* Transition */
+    --transition-duration: 200ms;
+
     /* Border */
     --border-style: solid;
     --border-color: rgb(205, 205, 205);
