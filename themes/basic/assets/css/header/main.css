@@ -1,4 +1,4 @@
-header {
+body > header {
     height: 3.75rem;
     width: 100vw;
     position: fixed;
@@ -19,41 +19,41 @@ header {
     padding-right: 1.5rem;
 }
 
-header h1 {
+body > header h1 {
     margin: 0;
     font-size: 1.5rem;
 }
 
-header nav {
+body > header nav {
     display: flex;
     align-items: center;
     margin-left: 2rem;
     margin-right: 2rem;
 }
 
-header nav div.mode {
+body > header nav div.mode {
     cursor: pointer;
 }
 
-header nav svg {
+body > header nav svg {
     display: block;
     width: 2rem;
     height: 2rem;
 }
 
-header nav * {
+body > header nav * {
     display: block;
 }
 
-header nav .icon {
+body > header nav .icon {
     margin-left: 1rem;
 }
 
-header nav .icon:first-child {
+body > header nav .icon:first-child {
     margin-left: 0;
 }
 
-header > nav .icon img.github {
+body > header > nav .icon img.github {
     height: 1.875rem;
     width: 1.875rem;
 }
