@@ -13,11 +13,9 @@ aside.sidebar-left {
     left: 0;
     overflow-y: auto;
     user-select: none;
-    border-top: var(--border-width) var(--border-style) var(--border-color);
 }
 
 aside.sidebar-left > div.inner > header {
-    box-sizing: border-box;
     width: 100%;
     height: var(--header-h);
     border-bottom: var(--border-width) var(--border-style) var(--border-color);
