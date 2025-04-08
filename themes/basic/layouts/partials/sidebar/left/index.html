@@ -1,5 +1,5 @@
 {{- partial "sidebar/left/svg.html" | strings.TrimSpace | safeHTML -}}
-<div class="sidebar-left"
+<aside class="sidebar-left"
     ><div class="inner-when-collapsed"
         ><div class="svg-wrapper"
             ><svg
@@ -18,5 +18,5 @@
         ><ul class="content"
             >{{ partial "sidebar/left/getSubsectionsRecursive.html" (dict "context" . "site" .Site "sectionPath" "/") | strings.TrimSpace | safeHTML }}
         </ul></div
-    ></div
+    ></aside
 >

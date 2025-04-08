@@ -6,8 +6,8 @@ function generateKey(tag) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    const details = document.querySelectorAll("div.sidebar-left details");
-    const sidebarLeft = document.querySelector("div.sidebar-left");
+    const details = document.querySelectorAll("aside.sidebar-left details");
+    const sidebarLeft = document.querySelector("aside.sidebar-left");
 
     (function restoreState() {
         details.forEach((tag) => {

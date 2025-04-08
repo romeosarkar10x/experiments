@@ -1,58 +1,58 @@
-div.sidebar-left {
+aside.sidebar-left {
     transition: width 0.2s;
 }
 
-div.sidebar-left.collapsed {
+aside.sidebar-left.collapsed {
     overflow: visible;
 }
 
-div.sidebar-left div.title {
+aside.sidebar-left div.title {
     cursor: pointer;
 }
 
-div.sidebar-left div.inner-when-collapsed {
+aside.sidebar-left div.inner-when-collapsed {
     display: none;
 }
 
-div.sidebar-left.collapsed div.inner.collapsed {
+aside.sidebar-left.collapsed div.inner.collapsed {
     display: none;
 }
 
-div.sidebar-left.collapsed div.inner-when-collapsed.collapsed {
+aside.sidebar-left.collapsed div.inner-when-collapsed.collapsed {
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 100%;
 }
 
-div.sidebar-left.collapsed {
+aside.sidebar-left.collapsed {
     width: 3rem;
 }
 
-div.sidebar-left.collapsed.transition-end:hover {
+aside.sidebar-left.collapsed.transition-end:hover {
     background-color: rgb(225, 225, 225);
 }
 
-div.sidebar-left.collapsed {
+aside.sidebar-left.collapsed {
     cursor: pointer;
 }
 
-div.sidebar-left div.inner.collapsed {
+aside.sidebar-left div.inner.collapsed {
     display: none;
 }
 
-div.sidebar-left > div.inner-when-collapsed > div.svg-wrapper,
-div.sidebar-left > div.inner-when-collapsed > div.h2-wrapper {
+aside.sidebar-left > div.inner-when-collapsed > div.svg-wrapper,
+aside.sidebar-left > div.inner-when-collapsed > div.h2-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 
-div.sidebar-left > div.inner-when-collapsed > div.h2-wrapper {
+aside.sidebar-left > div.inner-when-collapsed > div.h2-wrapper {
     flex-grow: 1;
 }
 
-div.sidebar-left > div.inner-when-collapsed > div.h2-wrapper > h2 {
+aside.sidebar-left > div.inner-when-collapsed > div.h2-wrapper > h2 {
     display: block;
     writing-mode: vertical-rl;
     transform: rotate(180deg);
@@ -60,7 +60,7 @@ div.sidebar-left > div.inner-when-collapsed > div.h2-wrapper > h2 {
     margin: 0;
 }
 
-div.sidebar-left > div.inner-when-collapsed > div.svg-wrapper > svg {
+aside.sidebar-left > div.inner-when-collapsed > div.svg-wrapper > svg {
     display: block;
     height: 2rem;
     width: 2rem;
