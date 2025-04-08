@@ -2,7 +2,7 @@
     min-width: 0;
     margin: 0;
     padding: 0;
-    box-sizing: content-box;
+    box-sizing: border-box;
     interpolate-size: allow-keywords;
     /* The interpolate-size CSS property allows you to enable animations and transitions between a <length-percentage>
         value and an intrinsic size value such as auto, fit-content, or max-content. */
