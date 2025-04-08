@@ -1,10 +1,10 @@
-.sidebar-right .feedback h2 {
+aside.sidebar-right .feedback h2 {
     font-size: 1.25rem;
     margin-top: 2rem;
     margin-bottom: 0;
 }
 
-.sidebar-right .feedback button {
+aside.sidebar-right .feedback button {
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -12,7 +12,7 @@
     margin: 0.375rem;
 }
 
-.sidebar-right .feedback button svg {
+aside.sidebar-right .feedback button svg {
     height: 2rem;
     width: 2rem;
 }

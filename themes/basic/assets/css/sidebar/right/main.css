@@ -1,4 +1,4 @@
-.sidebar-right {
+aside.sidebar-right {
     position: fixed;
     width: 16rem;
     right: 0;
@@ -13,40 +13,40 @@
     border-top: var(--border-width) var(--border-style) var(--border-color);
 }
 
-.sidebar-right h2 {
+aside.sidebar-right h2 {
     font-size: 1.25rem;
     margin-top: 0;
     margin-bottom: 0.5rem;
 }
 
-#TableOfContents ul {
+aside.sidebar-right #TableOfContents ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-#TableOfContents ul li {
+aside.sidebar-right #TableOfContents ul li {
     margin-top: 0.375rem;
     margin-bottom: 0.375rem;
 }
 
-#TableOfContents li ul {
+aside.sidebar-right #TableOfContents li ul {
     padding-left: 1rem;
     border-left: var(--border-width) solid var(--border-color);
     border-bottom-left-radius: 2rem;
 }
 
-#TableOfContents ul li a {
+aside.sidebar-right #TableOfContents ul li a {
     text-decoration: none;
     color: var(--text-color);
     font-size: 0.875rem;
 }
 
-#TableOfContents ul li a:hover {
+aside.sidebar-right #TableOfContents ul li a:hover {
     color: rgb(105, 15, 200);
     text-decoration: underline;
 }
 
-#TableOfContents ul li a strong {
+aside.sidebar-right #TableOfContents ul li a strong {
     font-weight: normal;
 }

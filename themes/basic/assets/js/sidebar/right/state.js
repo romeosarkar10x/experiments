@@ -3,7 +3,7 @@ function generateKey() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    const sidebarRight = document.querySelector("div.sidebar-right");
+    const sidebarRight = document.querySelector("aside.sidebar-right");
 
     (function restoreState() {
         const scrollTop = sessionStorage.getItem(generateKey());
