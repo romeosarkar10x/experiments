@@ -16,14 +16,26 @@ div.sidebar-left {
     border-top: var(--border-width) var(--border-style) var(--border-color);
 }
 
-div.sidebar-left > div.inner {
-    padding-top: 1rem;
+div.sidebar-left > div.inner > header {
+    box-sizing: border-box;
+    width: 100%;
+    height: var(--header-h);
+    border-bottom: var(--border-width) var(--border-style) var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+div.sidebar-left > div.inner > header > h1 {
+    margin-left: calc(var(--list-elements-padding-left) + 1rem);
+    font-size: 1.5rem;
 }
 
 div.sidebar-left > div.inner > ul.content {
-    margin-bottom: 1.25rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1.25rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 div.sidebar-left > div.inner ul,
@@ -76,8 +88,7 @@ div.sidebar-left > div.inner > ul.content summary > div {
 }
 
 div.sidebar-left div.inner ul.content li div:hover,
-div.sidebar-left div.inner ul.content summary div:hover,
-div.sidebar-left div.title:hover {
+div.sidebar-left div.inner ul.content summary div:hover {
     background-color: rgb(225, 225, 225);
 }
 
@@ -111,23 +122,6 @@ div.sidebar-left div.inner ul.content a:hover {
 
 div.sidebar-left div.inner ul.content a strong {
     color: var(--sidebar-left-link-color);
-}
-
-div.sidebar-left > div.inner > div.title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    margin-bottom: 1rem;
-    padding-left: var(--list-elements-padding-left);
-    border-radius: 0.375rem;
-}
-
-div.sidebar-left > div.inner > div.title h2 {
-    display: inline;
-    font-size: 1.25rem;
-    margin: 0;
 }
 
 /* sidebar-left initialized */

@@ -14,7 +14,7 @@
                 <use href="#right-arrow-2"></use></svg></div
     ></div>
     <div class="inner"
-        ><div class="title"><h2>{{- .Site.Title -}}</h2></div
+        ><header><h1>{{- .Site.Title -}}</h1></header
         ><ul class="content"
             >{{ partial "sidebar/left/getSubsectionsRecursive.html" (dict "context" . "site" .Site "sectionPath" "/") | strings.TrimSpace | safeHTML }}
         </ul></div
