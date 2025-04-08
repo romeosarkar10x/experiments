@@ -12,10 +12,10 @@
                 aria-hidden="true"
                 stroke="currentColor">
                 <use href="#right-arrow-2"></use></svg></div></div
-    ><div class="inner"
+    ><nav class="inner"
         ><header><h1>{{- .Site.Title -}}</h1></header
         ><ul class="content"
             >{{ partial "sidebar/left/getSubsectionsRecursive.html" (dict "context" . "site" .Site "sectionPath" "/") | strings.TrimSpace | safeHTML }}
-        </ul></div
+        </ul></nav
     ></aside
 >
