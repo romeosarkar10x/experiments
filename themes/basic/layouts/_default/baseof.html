@@ -7,10 +7,8 @@
     >
     <body
         >{{ partial "svg.html" }}<header>{{ partial "header/index.html" . }}</header>
-        <div style="display: flex; justify-content: stretch; margin-top: 3.75rem">
-            {{- partial "sidebar/left/index.html" . -}}
-            <main> {{- block "main" . -}}{{- end -}}</main>
-            {{- partial "sidebar/right/index.html" . -}}
-        </div></body
-    >
+        {{- partial "sidebar/left/index.html" . -}}
+        <main> {{- block "main" . -}}{{- end -}}</main>
+        {{- partial "sidebar/right/index.html" . -}}
+    </body>
 </html>
