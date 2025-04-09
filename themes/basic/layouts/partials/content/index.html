@@ -4,7 +4,7 @@
 
 
 <article>
-    <h1 id="{{ .Scratch.Get "Title" | urlize }}">{{ .Scratch.Get "Title" }}</h1>
+    <h1 id="heading-0">{{ .Scratch.Get "Title" }}</h1>
 
     {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
     {{ $dateHuman := .Date | time.Format ":date_long" }}
@@ -12,7 +12,7 @@
 
     <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
 
-    {{ markdownify (.Scratch.Get "RawContent") }}
+    {{ partial "content/replace-heading-ids.html" (markdownify (.Scratch.Get "RawContent")) }}
     {{- partial "terms.html" (dict "taxonomy" "tags" "page" .) -}} </article
 ><footer>
     {{- partial "footer/index.html" . -}}

@@ -1,0 +1,13 @@
+{{ $content := . }}
+{{ $headingRE := `<h[1-6][^>]*id="[^"]*"[^>]*>.*?</h[1-6]>` }}
+{{ $headings := findRE $headingRE $content }}
+
+{{ range $index, $heading := $headings }}
+    {{ $idRE := `(id=\"[^\"]*\")` }}
+    {{ $newId := printf `id="heading-%d"` (add $index 1) }}
+    {{ $newHeading := replaceRE $idRE $newId $heading }}
+    {{ $content = replace $content $heading $newHeading }}
+{{ end }}
+
+{{ $content = $content | safeHTML }}
+{{ return $content }}
