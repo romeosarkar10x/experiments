@@ -9,6 +9,18 @@ author:
 
 ## Heading H2
 
+Some content
+
+## Heading H2
+
+Another content
+
+## Heading 😂 H2
+
+Some more content
+
+## Heading H2 2
+
 I am a paragraph in Markdown with line
 wrapping so it fits this width.
 I am a continuation of the first paragraph
