@@ -13,4 +13,12 @@
 
     /* Dimensions */
     --header-h: 3.75rem;
+
+    /* Sidebar Right */
+    --sidebar-right-w: 18rem;
+    --sidebar-right-font-size: 0.75rem;
+    --sidebar-right-transition-delay: 2s;
+    --sidebar-right-list-elements-margin: 0.375rem;
+    --sidebar-right-list-elements-padding-left: 1rem;
+    --sidebar-right-links-color: hotpink;
 }
