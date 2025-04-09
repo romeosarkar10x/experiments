@@ -8,7 +8,7 @@ main {
     border-left: var(--border-width) var(--border-style) var(--border-color);
     border-right: var(--border-width) var(--border-style) var(--border-color);
     margin-left: 16rem;
-    margin-right: 16rem;
+    margin-right: var(--sidebar-right-w);
     padding-top: var(--header-h);
 }
 
