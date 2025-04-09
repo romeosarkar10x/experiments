@@ -1,0 +1,21 @@
+{{ $headings := .headings }}
+{{ $length := len $headings }}
+{{ $currentLevel := .level }}
+{{ $index := .index }}
+{{ $subsections := slice }}
+
+{{ if le (add $index 1) (sub $length 1) }}
+    {{ range $i := seq (add $index 1) (sub $length 1) }}
+        {{ $heading := (index $headings $i) }}
+        {{ $hash := index (findRE "^#{1,6}" $heading 1) 0 }}
+        {{ $level := len $hash }}
+
+        {{ if eq $level (add $currentLevel 1) }}
+            {{ $subsections = $subsections | append $i }}
+        {{ else if le $level $currentLevel }}
+            {{ break }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ return $subsections }}
