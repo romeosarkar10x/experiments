@@ -54,7 +54,6 @@ aside.sidebar-left > nav.inner > ul.content li:first-child {
 }
 
 aside.sidebar-left > nav.inner > ul.content details > ul {
-    list-style-type: none;
     margin-left: 1rem;
     border-left: var(--border-width) solid var(--border-color);
     padding-top: var(--list-elements-margin);
