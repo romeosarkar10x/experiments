@@ -1,8 +1,10 @@
 ---
 date: "2025-03-28"
-author:
-    name: "Romeo Sarkar"
-    imageUrl: "https://pub-b61cfa1258734ed6ba1ddf94ae5a46ed.r2.dev"
+params:
+    readTime: "5 min"
+    author:
+        name: "Romeo Sarkar"
+        imageUrl: "/profile-photos/romeosarkar10x.jpeg"
 ---
 
 # This is the page title!
