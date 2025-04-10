@@ -1,5 +1,9 @@
 <aside class="sidebar-right"
-    ><header><h1>Table of contents</h1></header
+    ><header
+        ><div style="flex-grow: 1; display: flex; align-items: center; justify-content: space-around;"
+            ><h1>Table of Contents</h1></div
+        >
+        <hr class="diagonal-checkered" /></header
     ><section>
         <nav id="table-of-contents">{{- partial "sidebar/right/table-of-contents/index.html" . -}}</nav>
         {{- partial "sidebar/right/feedback.html" . -}}
