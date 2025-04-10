@@ -1,15 +1,17 @@
-:root {
-    --text-color: black;
-    --background-color: white;
+@use "abstracts/variables";
 
-    /* Transition */
-    --transition-duration: 200ms;
+:root {
+    /* Colors */
+    --text-color: #{variables.$text-color};
+    --background-color: #{variables.$background-color};
+
+    /* Transitions */
+    --transition-duration: #{variables.$transition-duration};
 
     /* Border */
-    --border-style: solid;
-    --border-color: rgb(215, 215, 215);
-    --border-width: 0.125rem;
-    --border-radius: 1rem;
+    --border-style: #{variables.$border-style};
+    --border-color: #{variables.$border-color};
+    --border-width: #{variables.$border-width};
 
     /* Dimensions */
     --header-h: 3.75rem;
