@@ -1,0 +1,22 @@
+{{ $allScssFiles := resources.Match "scss/*.scss" }}
+{{ $scssFiles := slice }}
+
+{{ range $allScssFiles }}
+    {{ if not (hasPrefix (path.Base .Name) "_") }}
+        {{ $scssFiles = $scssFiles | append . }}
+    {{ end }}
+{{ end }}
+
+{{ if eq hugo.Environment "development" }}
+    {{ range $scssFiles }}
+        {{ $css := . | toCSS }}
+        <link
+            rel="stylesheet"
+            href="{{ $css.RelPermalink }}" />
+    {{ end }}
+{{ else if eq hugo.Environment "production" }}
+    {{ $bundle := $scssFiles | resources.Concat "css/bundle.css" | toCSS | minify }}
+    <link
+        rel="stylesheet"
+        href="{{ $bundle.RelPermalink }}" />
+{{ end }}
