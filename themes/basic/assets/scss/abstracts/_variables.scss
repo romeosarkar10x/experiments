@@ -1,6 +1,13 @@
+@use "sass:color";
+
 /* Colors */
 $text-color: rgb(50, 0, 50);
 $background-color: white;
+
+/* Scrollbar colors */
+$scrollbar-track-color: #f1f1f1;
+$scrollbar-thumb-color: #acacac;
+$scrollbar-thumb-hover-color: color.adjust($scrollbar-thumb-color, $blackness: 25%);
 
 /* Borders */
 $border-style: solid;
