@@ -8,8 +8,14 @@
 {{ end }}
 
 {{ if eq hugo.Environment "development" }}
+    {{ $options := dict
+        "enableSourceMap" true
+        "outputStyle" "expanded"
+        "transpiler" "dartsass"
+    }}
+
     {{ range $scssFiles }}
-        {{ $css := . | toCSS }}
+        {{ $css := . | css.Sass $options }}
         <link
             rel="stylesheet"
             href="{{ $css.RelPermalink }}" />
