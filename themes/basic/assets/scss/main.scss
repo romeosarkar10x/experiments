@@ -1,5 +1,4 @@
 * {
-    min-width: 0;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -13,29 +12,13 @@ body {
     background-color: var(--bg-color);
 
     font-family: Poppins, Verdana;
+    font-size: 1rem;
     line-height: 1.375rem;
+
     margin-left: auto;
     margin-right: auto;
-    font-size: 1rem;
-    /*
-    background-image: url("/images/background.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center center;
-*/
-}
 
-body > svg {
-    display: none;
+    > svg {
+        display: none;
+    }
 }
-
-/*
-pre {
-  color: white;
-  background-color: black;
-  border: red 4px solid;
-  border-radius: 10px;
-  padding: 10px;
-}
-*/
