@@ -1,0 +1,13 @@
+aside.sidebar-left > nav.inner > header {
+    width: 100%;
+    height: var(--header-h);
+    border-bottom: var(--border-width) var(--border-style) var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+    > h1 {
+        margin-left: calc(var(--sidebar-left-ul-li-indentation) + 1rem);
+        font-size: 1.5rem;
+    }
+}

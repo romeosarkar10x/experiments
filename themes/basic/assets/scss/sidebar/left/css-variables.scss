@@ -1,0 +1,5 @@
+@use "variables";
+
+:root {
+    --sidebar-left-width: #{variables.$width};
+}

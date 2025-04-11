@@ -1,0 +1,10 @@
+/* sidebar-left initialized */
+aside.sidebar-left.initialized nav.inner ul.content details::details-content {
+    transition:
+        block-size var(--transition-duration),
+        content-visibility var(--transition-duration) allow-discrete;
+}
+
+aside.sidebar-left.initialized > nav.inner > ul.content details > summary div > svg {
+    transition: transform var(--transition-duration);
+}

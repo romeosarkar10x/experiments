@@ -1,0 +1,9 @@
+aside.sidebar-left {
+    width: var(--sidebar-left-width);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    user-select: none;
+}
