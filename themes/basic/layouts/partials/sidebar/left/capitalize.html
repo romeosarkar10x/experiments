@@ -1,5 +1,5 @@
 {{ $result := "" }}
-{{ $words := split . "_" }}
+{{ $words := split . "-" }}
 
 {{ range $words }}
     {{ $firstCharacterCapitalized := substr . 0 1 | upper }}
