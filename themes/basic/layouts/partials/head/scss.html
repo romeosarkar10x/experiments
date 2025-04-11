@@ -1,4 +1,4 @@
-{{ $allScssFiles := resources.Match "scss/*.scss" }}
+{{ $allScssFiles := resources.Match "scss/**.scss" }}
 {{ $scssFiles := slice }}
 
 {{ range $allScssFiles }}
