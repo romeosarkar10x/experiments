@@ -11,15 +11,14 @@ aside.sidebar-right {
 /* Header */
 aside.sidebar-right > header {
     width: 100%;
-    display: flex;
     height: var(--header-h);
     border-bottom: var(--border-width) var(--border-style) var(--border-color);
-    align-items: center;
-    justify-content: left;
+    display: flex;
+    flex-direction: column;
 }
 
-aside.sidebar-right > header > h1 {
-    margin-left: calc(1rem);
+aside.sidebar-right > header > div > h1 {
+    text-align: center;
 }
 
 /* Section */
