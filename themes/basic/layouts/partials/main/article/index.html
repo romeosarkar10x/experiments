@@ -4,10 +4,13 @@
 
 
 <article>
-    <h1 id="heading-0">{{ .Scratch.Get "Title" }}</h1>
-    {{ partial "content/about.html" . }}
-
-    {{ partial "content/replace-heading-ids.html" (markdownify (.Scratch.Get "RawContent")) }}
+    <header>
+        <h1 id="heading-0">{{ .Scratch.Get "Title" }}</h1>
+        {{ partial "content/about.html" . }}
+    </header>
+    <section>
+        {{ partial "content/replace-heading-ids.html" (markdownify (.Scratch.Get "RawContent")) }}
+    </section>
     {{- partial "terms.html" (dict "taxonomy" "tags" "page" .) -}} </article
 ><footer>
     {{- partial "footer/index.html" . -}}
