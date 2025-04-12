@@ -21,7 +21,18 @@
             href="{{ $css.RelPermalink }}" />
     {{ end }}
 {{ else if eq hugo.Environment "production" }}
-    {{ $bundle := $scssFiles | resources.Concat "css/bundle.css" | toCSS | minify }}
+    {{ $options := dict
+        "outputStyle" "compressed"
+        "transpiler" "dartsass"
+    }}
+
+    {{ $cssFiles := slice }}
+    {{ range $scssFiles }}
+        {{ $cssFile := . | css.Sass $options }}
+        {{ $cssFiles = $cssFiles | append $cssFile }}
+    {{ end }}
+
+    {{ $bundle := $cssFiles | resources.Concat "css/bundle.css" | minify }}
     <link
         rel="stylesheet"
         href="{{ $bundle.RelPermalink }}" />
