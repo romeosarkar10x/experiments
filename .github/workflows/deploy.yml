@@ -5,6 +5,9 @@ on:
         branches:
             - main
 
+env:
+    DART_SASS_VERSION: 1.86.3
+
 jobs:
     check-build-and-deploy:
         runs-on: [self-hosted, Linux, X64]
@@ -29,6 +32,9 @@ jobs:
               uses: peaceiris/actions-hugo@v3
               with:
                   hugo-version: "latest"
+
+            - name: install dart-sass
+              uses: dw-labs-org/dart-sass-gha@v1
 
             - name: build hugo site
               run: |
