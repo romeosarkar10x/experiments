@@ -1,7 +1,8 @@
+/* 
 document.addEventListener("DOMContentLoaded", function () {
-    const sidebarLeft = document.querySelector("div.sidebar-left");
+    const sidebarLeft = document.querySelector("aside.sidebar-left");
     const innerWhenCollapsed = sidebarLeft.querySelector("div.inner-when-collapsed");
-    const inner = sidebarLeft.querySelector("div.inner");
+    const ul = sidebarLeft.querySelector("ul");
     const title = inner.querySelector("div.title");
 
     function titleOnClick(event) {
@@ -46,3 +47,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
     title.addEventListener("click", titleOnClick, { once: true });
 });
+*/
