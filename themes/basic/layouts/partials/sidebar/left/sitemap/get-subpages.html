@@ -1,0 +1,26 @@
+{{ $page := .page }}
+{{ $subpagesDictionary := dict }}
+
+{{ range .Context.Site.RegularPages }}
+    {{ $currentPage := .RelPermalink }}
+
+    {{ if and (strings.HasPrefix $currentPage $page) (ne $currentPage $page) }}
+        {{ $currentPageWithoutPrefix := strings.TrimPrefix $page $currentPage }}
+        {{ $count := strings.Count "/" $currentPageWithoutPrefix }}
+
+        {{ if ne $count 1 }}
+            {{ $strings := strings.Split $currentPageWithoutPrefix "/" }}
+            {{ $currentPageWithoutPrefix = add (index $strings 0) "/" }}
+        {{ end }}
+
+        {{ $subpagesDictionary = collections.Merge $subpagesDictionary (dict $currentPageWithoutPrefix true) }}
+    {{ end }}
+{{ end }}
+
+{{ $subpages := slice }}
+
+{{ range $key, $value := $subpagesDictionary }}
+    {{ $subpages = collections.Append (add $page $key) $subpages }}
+{{ end }}
+
+{{ return $subpages }}

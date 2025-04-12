@@ -1,0 +1,38 @@
+{{ $page := .page }}
+{{ $Context := .Context }}
+
+{{ $subpages := partial "sidebar/left/sitemap/get-subpages.html" (dict "page" $page "Context" .Context) }}
+<ul>
+    {{ range $currentPage := $subpages }}
+        {{ $currentSubpages := partial "sidebar/left/sitemap/get-subpages.html" (dict "page" $currentPage "Context" $Context) }}
+        {{ $filename := partial "sidebar/left/sitemap/beautify-filename" (strings.TrimSuffix "/" (strings.TrimPrefix $page $currentPage)) }}
+
+        {{ if eq (len $currentSubpages) 0 }}
+            {{ $class := "" }}
+            {{ if eq $currentPage $Context.Page.RelPermalink }}
+                {{ $class = " this" }}
+            {{ end }}
+            <li class="leaf{{ $class }}"
+                ><div><a href="{{ $currentPage }}">{{ $filename }}</a></div></li
+            >
+        {{ else }}
+            {{ $pageExists := partial "sidebar/left/sitemap/page-exists.html" (dict "page" $currentPage "Context" $Context) }}
+            {{ $class := " exists" }}
+            {{ $attribute := printf `href="%s"` $currentPage }}
+            {{ if not $pageExists }}
+                {{ $class = "" }}
+                {{ $attribute = "" }}
+            {{ end }}
+            <li class="parent{{ $class }}">
+                <details>
+                    <summary
+                        ><div
+                            ><a {{ $attribute | safeHTMLAttr }}>{{ $filename }}</a>
+                            <svg aria-hidden="true"><use href="#caret"></use></svg></div
+                    ></summary>
+                    {{ partial "sidebar/left/sitemap/generate-sitemap-html.html" (dict "page" $currentPage "Context" $Context) }}
+                </details>
+            </li>
+        {{ end }}
+    {{ end }}
+</ul>
