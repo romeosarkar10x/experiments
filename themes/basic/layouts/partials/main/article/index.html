@@ -1,17 +1,10 @@
-{{ .Scratch.Delete "Title" }}
 {{ .Scratch.Delete "RawContent" }}
-{{ $temp := partial "content/extract-title.html" . }}
 
 
 <article>
-    <header>
-        <h1 id="heading-0">{{ .Scratch.Get "Title" }}</h1>
-        {{ partial "content/about.html" . }}
-    </header>
-    <section>
-        {{ partial "content/replace-heading-ids.html" (markdownify (.Scratch.Get "RawContent")) }}
-    </section>
-    {{- partial "terms.html" (dict "taxonomy" "tags" "page" .) -}} </article
+    {{ partial "main/article/header/index.html" . }}
+    {{ partial "main/article/replace-heading-ids.html" (markdownify (.Scratch.Get "RawContent")) }}
+    {{/* - partial "terms.html" (dict "taxonomy" "tags" "page" .) - */}} </article
 ><footer>
     {{- partial "footer/index.html" . -}}
 </footer>
