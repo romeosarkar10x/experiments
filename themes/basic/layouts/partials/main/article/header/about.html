@@ -1,0 +1,54 @@
+{{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+{{ $dateHuman := .Date | time.Format ":date_long" }}
+{{ $author := partial "main/article/header/get-author.html" . }}
+
+
+<hr
+    style="border: none;height: 0.125rem;             background: repeating-linear-gradient(
+            -45deg,
+            #aeaeae 0rem,
+            #aeaeae 0.5rem,
+            #cecece 0.5rem,
+            #cecece 1rem,
+            #e0e0e0 1rem,
+            #e0e0e0 1.5rem,
+            #cecece 1.5rem,
+            #cecece 2rem
+            );" />
+<div
+    class="info"
+    style="display: flex; align-items: center; margin-top: 1rem">
+    <img
+        class="profile-photo"
+        src="{{ $author.imageRelPermalink }}" />
+    <div>
+        <a
+            class="author-name"
+            href=""
+            rel="author"
+            >{{ $author.name }}</a
+        >
+        Created:
+        <time
+            class="creation-date"
+            datetime="{{ $dateMachine }}"
+            >{{ $dateHuman }}</time
+        >
+    </div>
+</div>
+<div class="meta">
+    <p>Read: {{ .Page.Params.readTime }}</p>
+    <p>Tags: </p>
+</div>
+<hr
+    style="border: none;height: 0.125rem;             background: repeating-linear-gradient(
+            -45deg,
+            #aeaeae 0rem,
+            #aeaeae 0.5rem,
+            #cecece 0.5rem,
+            #cecece 1rem,
+            #e0e0e0 1rem,
+            #e0e0e0 1.5rem,
+            #cecece 1.5rem,
+            #cecece 2rem
+            );" />

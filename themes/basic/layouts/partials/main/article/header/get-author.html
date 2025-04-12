@@ -1,0 +1,24 @@
+{{ $username := .Page.Params.author }}
+{{ $author := index .Site.Data.authors $username }}
+
+{{ $author = merge $author (dict "username" $username) }}
+
+{{ $imageDir := "profile-photos" }}
+{{ $imagePath := "" }}
+
+{{ $files := readDir (add "static/" $imageDir) }}
+
+{{ range $files }}
+    {{ $filename := .Name }}
+    {{ $fileExtension := path.Ext $filename }}
+    {{ $filenameWithoutExtension := strings.TrimSuffix $fileExtension $filename }}
+
+    {{ if eq $filenameWithoutExtension $author.username }}
+        {{ if in (slice ".jpg" ".jpeg" ".png" ".gif" "webp" ".svg") $fileExtension }}
+            {{ $imagePath = printf "/%s/%s" $imageDir $filename }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ $author = merge $author (dict "imageRelPermalink" $imagePath) }}
+{{ return $author }}
