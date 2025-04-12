@@ -1,0 +1,21 @@
+main > article > header {
+    img.profile-photo {
+        height: 4rem;
+        width: 4rem;
+        border-radius: 50%;
+        border: var(--border-width) var(--border-style) var(--border-color);
+    }
+
+    a.author-name {
+        display: block;
+    }
+
+    > div.info > div {
+        margin-left: 1rem;
+    }
+
+    > div.meta {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+}
