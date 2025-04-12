@@ -19,6 +19,8 @@ aside.sidebar-right > header {
 
 aside.sidebar-right > header > div > h1 {
     text-align: center;
+    font-style: italic;
+    font-weight: bold;
 }
 
 /* Section */
@@ -77,7 +79,8 @@ aside.sidebar-right > section > nav > ul summary {
     list-style: none;
 }
 
-aside.sidebar-right > section > nav > ul div {
+aside.sidebar-right > section > nav > ul li > div,
+aside.sidebar-right > section > nav > ul details > summary > div {
     padding-left: var(--sidebar-right-list-elements-hover-padding-left);
     border-radius: var(--sidebar-right-list-elements-hover-border-radius);
 }
