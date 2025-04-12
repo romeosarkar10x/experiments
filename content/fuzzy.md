@@ -1,10 +1,10 @@
 # Fuzzy Set Cross Product
 
-# Introduction
+## Introduction
 
 A **fuzzy set** is an extension of a classical set where elements have a membership degree in the range \([0,1]\). Given two fuzzy sets **A** and **B**, their **cross product** is defined as a **matrix** where each element is computed using a **T-norm** (Triangular Norm), which generalizes intersection operations in fuzzy logic.
 
-## Notation
+### Notation
 
 - Let **A** and **B** be two fuzzy sets:
   $$ A = \{ (a_1, \mu_A(a_1)), (a_2, \mu_A(a_2)), ..., (a_m, \mu_A(a_m)) \} $$
@@ -13,7 +13,7 @@ A **fuzzy set** is an extension of a classical set where elements have a members
   $$ A \times B = \sum T(\mu_A(a), \mu_B(b)) $$
   where **T(a, b)** represents a **T-norm** function.
 
-## T-Norm Functions
+### T-Norm Functions
 
 There are different ways to define the T-norm function:
 
@@ -32,7 +32,7 @@ There are different ways to define the T-norm function:
     \end{cases}
     $$
 
-## Example Calculation
+### Example Calculation
 
 Consider two fuzzy sets:
 
@@ -41,28 +41,28 @@ $$ B = \{ (y_1, 0.5), (y_2, 0.7) \} $$
 
 The cross product matrix under different **T-norms** is:
 
-## **Mamdani's Minimum T-norm**
+### **Mamdani's Minimum T-norm**
 
 | A \ B   | 0.5 | 0.7 |
 | ------- | --- | --- |
 | **0.2** | 0.2 | 0.2 |
 | **0.8** | 0.5 | 0.7 |
 
-## **Algebraic Product T-norm**
+### **Algebraic Product T-norm**
 
 | A \ B   | 0.5 | 0.7  |
 | ------- | --- | ---- |
 | **0.2** | 0.1 | 0.14 |
 | **0.8** | 0.4 | 0.56 |
 
-## **Bounded Product T-norm**
+### **Bounded Product T-norm**
 
 | A \ B   | 0.5 | 0.7 |
 | ------- | --- | --- |
 | **0.2** | 0   | 0   |
 | **0.8** | 0.3 | 0.5 |
 
-## **Drastic Product T-norm**
+### **Drastic Product T-norm**
 
 | A \ B   | 0.5 | 0.7 |
 | ------- | --- | --- |
@@ -73,7 +73,7 @@ The cross product matrix under different **T-norms** is:
 
 ---
 
-# **Bounded Product Operator**
+## **Bounded Product Operator**
 
 The **Bounded Product** of two fuzzy sets \( A \) and \( B \) is defined as:
 
@@ -89,7 +89,7 @@ $$ t\_{bp} = 0 \vee (a + b - 1) $$
 
 ---
 
-# **Drastic Product Operator**
+## **Drastic Product Operator**
 
 The **Drastic Product** of two fuzzy sets \( A \) and \( B \) is defined as:
 
@@ -108,29 +108,29 @@ $$
 
 ---
 
-# **Interpretation of $ A \rightarrow B $**
+## **Interpretation of $ A \rightarrow B $**
 
 There are three main ways to interpret the **implication**:
 
-## **1. Material Implication**
+### **1. Material Implication**
 
 $$ R: A \rightarrow B = \bar{A} \cup B $$
 
-## **2. Propositional Calculus**
+### **2. Propositional Calculus**
 
 $$ R: A \rightarrow B = \bar{A} \cup (A \cap B) $$
 
-## **3. Extended Propositional Calculus**
+### **3. Extended Propositional Calculus**
 
 $$ R: A \rightarrow B = (\bar{A} \cap B) \cup B $$
 
 ---
 
-# **Fuzzy Implication Functions**
+## **Fuzzy Implication Functions**
 
 Given the above interpretations, there are multiple **fuzzy implication functions** commonly used in **fuzzy rule-based systems**.
 
-## **Zadeh’s Arithmetic Rule**
+### **Zadeh’s Arithmetic Rule**
 
 $$ R*{za} = \bar{A} \cup B = \int*{x,y} 1 \wedge (1 - M_A(x) + M_B(y)) $$
 
@@ -140,7 +140,7 @@ $$ t\_{za} = 1 \wedge (1 - a + b) $$
 
 ---
 
-## **Zadeh’s Max-Min Rule**
+### **Zadeh’s Max-Min Rule**
 
 $$ R*{mm} = \bar{A} \cup (A \cap B) = \int*{x,y} (1 - M_A(x)) \vee (M_A(x) \wedge M_B(y)) $$
 
@@ -150,7 +150,7 @@ $$ t\_{mm}(a, b) = (1 - a) \vee (a \wedge b) $$
 
 ---
 
-## **Boolean Fuzzy Rule**
+### **Boolean Fuzzy Rule**
 
 $$ R\_{bf} = \bar{A} \cup B $$
 
@@ -160,7 +160,7 @@ $$ t\_{bf}(a, b) = (1 - a) \vee b $$
 
 ---
 
-## **Goguen’s Fuzzy Rule**
+### **Goguen’s Fuzzy Rule**
 
 $$ R*{gf} = \int*{x,y} M*A(x) \times M_B(y) $$
 where,

@@ -1,17 +1,19 @@
 ---
-title: "Experiments with Nginx Forwarding"
+title: ""
 date: 2025-02-15T12:00:00+00:00
 ---
 
-# Direct Request to Localhost (IP-based)
+# Experiments with Nginx Forwarding
 
-## Client Command
+## Direct Request to Localhost (IP-based)
+
+### Client Command
 
 ```bash
 curl http://localhost:3000
 ```
 
-## Server Request
+### Server Request
 
 ```
 GET / HTTP/1.1
@@ -22,15 +24,15 @@ Accept: */*
 
 ---
 
-# Direct Request to 127.0.0.1 (IP-based)
+## Direct Request to 127.0.0.1 (IP-based)
 
-## Client Command
+### Client Command
 
 ```bash
 curl http://127.0.0.1:3000
 ```
 
-## Server Request
+### Server Request
 
 ```
 GET / HTTP/1.1
@@ -41,15 +43,15 @@ Accept: */*
 
 ---
 
-# Request Through Nginx Proxy (Without Custom Headers)
+## Request Through Nginx Proxy (Without Custom Headers)
 
-## Client Command
+### Client Command
 
 ```bash
 curl http://test.mxroute.xyz
 ```
 
-## Nginx Configuration
+### Nginx Configuration
 
 ```nginx
 server {
@@ -61,7 +63,7 @@ server {
 }
 ```
 
-## Server Request
+### Server Request
 
 ```
 GET / HTTP/1.0
@@ -73,15 +75,15 @@ Accept: */*
 
 ---
 
-# Request Through Nginx Proxy (With Custom Headers)
+## Request Through Nginx Proxy (With Custom Headers)
 
-## Client Command
+### Client Command
 
 ```bash
 curl http://test.mxroute.xyz
 ```
 
-## Nginx Configuration
+### Nginx Configuration
 
 ```nginx
 server {
@@ -96,7 +98,7 @@ server {
 }
 ```
 
-## Server Request
+### Server Request
 
 ```
 GET / HTTP/1.0

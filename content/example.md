@@ -2,64 +2,67 @@
 date: "2025-03-28"
 params:
     readTime: "5 min"
-    author:
-        name: "Romeo Sarkar"
-        imageUrl: "/profile-photos/romeosarkar10x.jpeg"
+    author: "romeosarkar10x"
+tags:
+    - linux
+    - system-programming
+    - c
+    - network-programming
 ---
 
-# This is the page title!
+# this is the page title!
 
-## Heading H2
+## heading h2
 
-Some content
+some content
 
-## Heading H2
+## heading h2
 
-Another content
+another content
 
-## Heading 😂 H2
+## heading 😂 h2
 
-Some more content
+some more content
 
-## Heading H2 2
+## heading h2 2
 
-I am a paragraph in Markdown with line
+i am a paragraph in markdown with line
 wrapping so it fits this width.
-I am a continuation of the first paragraph
+i am a continuation of the first paragraph
 as there is no empty line before me.
 
-I am in the second paragraph.
+i am in the second paragraph.
 
-I am the third one. Even thought there are two line breaks before me, this does not create any newline characters. After me there are two spaces before the newline character.
+i am the third one. even thought there are two line breaks before me, this does not create any newline characters. after me there are two spaces before the newline character.
 
-## Another heading H2
+## another heading h2
 
-#Just a tag
-\# Not a Heading
+#just a tag
+\# not a heading
 
-### List:
+### list:
 
-- This is a list element
-- This is another element
+- this is a list element
+- this is another element
 
-* This is gadha
-* This is another gadha
+* this is gadha
+* this is another gadha
 
-- This is yet another element
-- This is a plus list
+- this is yet another element
+- this is a plus list
 
-### Numbered List:
+### numbered list:
 
-1. Point 1
-2. Point 2
-3. Point 3 with Subpoints
-    1. Subpoint 1
-    - Gadha
-    - Pig
-    2. Subpoint 2
-    3. Gadha Again
+1. point 1
+2. point 2
+3. point 3 with subpoints
+    1. subpoint 1
+    - gadha
+    - pig
+    2. subpoint 2
+    3. gadha again
 
-### Code block
+### code block
 
 ```bash
 echo hello world this is a test line. we will make it a very very very very long line so, that we can test the limits of a single line in a code block. hope this helps!
@@ -81,9 +84,9 @@ gadha
 
 > block quote
 
-Hello world this is a `Preformatted Text`. Thanks!
+hello world this is a `preformatted text`. thanks!
 
-[visible text](http://google.com "Tooltip")
+[visible text](http://google.com "tooltip")
 
 _this text is emphasised_
 
@@ -94,22 +97,22 @@ _this text is emphasised_
 _this text is italics_
 **this text is bold**
 
-Copyright: &copy;
-Registered trademark: &reg;
-Less than: &lt;
-Greater than: &gt;
-Ampersand: &amp;
-Smiley: &#x1F604;
-Embedded HTML: x<sup>2</sup>
+copyright: &copy;
+registered trademark: &reg;
+less than: &lt;
+greater than: &gt;
+ampersand: &amp;
+smiley: &#x1f604;
+embedded html: x<sup>2</sup>
 
-## Some raw html
+## some raw html
 
 <div style="display: inline-block; text-align: center;">
   <div style="border: solid black 2px; display: inline-block; margin: 5px;">
-    <div style="border-bottom: solid black 2px;"><strong>Input Layer</strong></div>
+    <div style="border-bottom: solid black 2px;"><strong>input layer</strong></div>
     <div style="padding: 10px;">
-        <p style="margin: 0; text-align: center;">Shape: (512, 512, 3)</p>
-        <p style="margin: 0; text-align: center;">Input image dimensions: 3 (RGB)</p>
+        <p style="margin: 0; text-align: center;">shape: (512, 512, 3)</p>
+        <p style="margin: 0; text-align: center;">input image dimensions: 3 (rgb)</p>
     </div>
   </div>
 
@@ -118,11 +121,11 @@ Embedded HTML: x<sup>2</sup>
   </div>
 
   <div style="border: solid black 2px; display: inline-block; margin: 5px;">
-    <div style="border-bottom: solid black 2px;"><strong>Xception Base Model</strong></div>
+    <div style="border-bottom: solid black 2px;"><strong>xception base model</strong></div>
     <div style="padding: 10px;">
-        <p style="margin: 0; text-align: center;">Pre-trained on ImageNet</p>
-        <p style="margin: 0; text-align: center;">Output: (16, 16, 2048)</p>
-        <p style="margin: 0; text-align: center;">Feature map</p>
+        <p style="margin: 0; text-align: center;">pre-trained on imagenet</p>
+        <p style="margin: 0; text-align: center;">output: (16, 16, 2048)</p>
+        <p style="margin: 0; text-align: center;">feature map</p>
     </div>
   </div>
 
@@ -131,10 +134,10 @@ Embedded HTML: x<sup>2</sup>
   </div>
 
   <div style="border: solid black 2px; display: inline-block; margin: 5px;">
-    <div style="border-bottom: solid black 2px;"><strong>Flatten Layer</strong></div>
+    <div style="border-bottom: solid black 2px;"><strong>flatten layer</strong></div>
     <div style="padding: 10px;">
-        <p style="margin: 0; text-align: center;">Output: (524288,)</p>
-        <p style="margin: 0; text-align: center;">Converts feature map to 1D vector</p>
+        <p style="margin: 0; text-align: center;">output: (524288,)</p>
+        <p style="margin: 0; text-align: center;">converts feature map to 1d vector</p>
     </div>
   </div>
 
@@ -143,11 +146,11 @@ Embedded HTML: x<sup>2</sup>
   </div>
 
   <div style="border: solid black 2px; display: inline-block; margin: 5px;">
-    <div style="border-bottom: solid black 2px;"><strong>Dense Layer</strong></div>
+    <div style="border-bottom: solid black 2px;"><strong>dense layer</strong></div>
     <div style="padding: 10px;">
-        <p style="margin: 0; text-align: center;">64 Neurons, ReLU</p>
-        <p style="margin: 0; text-align: center;">Output: (64,)</p>
-        <p style="margin: 0; text-align: center;">First fully connected layer</p>
+        <p style="margin: 0; text-align: center;">64 neurons, relu</p>
+        <p style="margin: 0; text-align: center;">output: (64,)</p>
+        <p style="margin: 0; text-align: center;">first fully connected layer</p>
     </div>
   </div>
 
@@ -156,11 +159,11 @@ Embedded HTML: x<sup>2</sup>
   </div>
 
   <div style="border: solid black 2px; display: inline-block; margin: 5px;">
-    <div style="border-bottom: solid black 2px;"><strong>Dense Layer</strong></div>
+    <div style="border-bottom: solid black 2px;"><strong>dense layer</strong></div>
     <div style="padding: 10px;">
-        <p style="margin: 0; text-align: center;">32 Neurons, ReLU</p>
-        <p style="margin: 0; text-align: center;">Output: (32,)</p>
-        <p style="margin: 0; text-align: center;">Second fully connected layer</p>
+        <p style="margin: 0; text-align: center;">32 neurons, relu</p>
+        <p style="margin: 0; text-align: center;">output: (32,)</p>
+        <p style="margin: 0; text-align: center;">second fully connected layer</p>
     </div>
   </div>
 
@@ -169,40 +172,40 @@ Embedded HTML: x<sup>2</sup>
   </div>
 
   <div style="border: solid black 2px; display: inline-block; margin: 5px;">
-    <div style="border-bottom: solid black 2px;"><strong>Dense Layer</strong></div>
+    <div style="border-bottom: solid black 2px;"><strong>dense layer</strong></div>
     <div style="padding: 10px;">
-        <p style="margin: 0; text-align: center;">1 Neuron, Linear</p>
-        <p style="margin: 0; text-align: center;">Output: (1,)</p>
-        <p style="margin: 0; text-align: center;">Final regression output</p>
+        <p style="margin: 0; text-align: center;">1 neuron, linear</p>
+        <p style="margin: 0; text-align: center;">output: (1,)</p>
+        <p style="margin: 0; text-align: center;">final regression output</p>
     </div>
   </div>
 </div>
 
-## Tables
+## tables
 
-| Name  | Job              |
+| name  | job              |
 | ----- | ---------------- |
-| Alex  | Web Developer    |
-| Bob   | Sys Admin        |
-| Gabby | Technical Writer |
+| alex  | web developer    |
+| bob   | sys admin        |
+| gabby | technical writer |
 
-| Header 1 | Header 2 | Header 3 |
+| header 1 | header 2 | header 3 |
 | -------- | -------- | -------- |
-| Cell 1   | Cell 2   | Cell 3   |
-| Cell 4   | Cell 5   | Cell 6   |
+| cell 1   | cell 2   | cell 3   |
+| cell 4   | cell 5   | cell 6   |
 
-| Left-aligned | Center-aligned | Right-aligned |
+| left-aligned | center-aligned | right-aligned |
 | :----------- | :------------: | ------------: |
-| Left         |     Center     |         Right |
-| Text         |      Text      |          Text |
+| left         |     center     |         right |
+| text         |      text      |          text |
 
-## Task lists
+## task lists
 
 - [ ] task 1
 - [x] task 2
 - [ ] task 3
 
-## Code Blocks
+## code blocks
 
 ```js
 var x = 10;
@@ -210,7 +213,7 @@ x++;
 console.log(x);
 ```
 
-Some c++ code block!
+some c++ code block!
 
 ```cpp
 #include <iostream>
@@ -226,4 +229,4 @@ int main()
 }
 ```
 
-This is the end of document!
+this is the end of document!
