@@ -1,4 +1,4 @@
-aside.sidebar-left > nav.inner {
+aside.sidebar-left > nav {
     ul,
     li {
         list-style-type: none;
@@ -6,7 +6,7 @@ aside.sidebar-left > nav.inner {
         padding: 0;
     }
 
-    > ul.content {
+    > ul {
         padding-top: 1rem;
         padding-bottom: 1.25rem;
         padding-left: 1rem;
