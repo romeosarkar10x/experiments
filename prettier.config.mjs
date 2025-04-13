@@ -13,6 +13,12 @@ const config = {
 
     overrides: [
         {
+            files: ["*.yaml", "*.yml"],
+            options: {
+                tabWidth: 2,
+            },
+        },
+        {
             files: ["*.html"],
             options: {
                 parser: "go-template",
