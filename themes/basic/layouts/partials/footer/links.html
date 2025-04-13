@@ -4,8 +4,16 @@
             class="icons email"
             src="/icons/email.png"
     /></a>
-    {{ range slice "github" "linkedin" "twitter" "youtube" "discord" "whatsapp" "telegram" }}
+    {{ range slice "whatsapp" "telegram" }}
         <a href="{{- index site.Params.owner.contact . -}}"
+            ><img
+                class="icons {{ . }}"
+                src="/icons/{{ . }}.png"
+        /></a>
+    {{ end }}
+
+    {{ range slice "github" "linkedin" "twitter" "youtube" "discord" }}
+        <a href="{{- index site.Params.owner.social . -}}"
             ><img
                 class="icons {{ . }}"
                 src="/icons/{{ . }}.png"
