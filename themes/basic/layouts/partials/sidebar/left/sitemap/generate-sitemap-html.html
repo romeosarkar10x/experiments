@@ -12,8 +12,14 @@
             {{ if eq $currentPage $Context.Page.RelPermalink }}
                 {{ $class = " this" }}
             {{ end }}
-            <li class="leaf{{ $class }}"
-                ><div><a href="{{ $currentPage }}">{{ $filename }}</a></div></li
+            <li class="leaf"
+                ><div
+                    ><a
+                        class="exists"
+                        href="{{ $currentPage }}"
+                        >{{ $filename }}</a
+                    ></div
+                ></li
             >
         {{ else }}
             {{ $pageExists := partial "sidebar/left/sitemap/page-exists.html" (dict "page" $currentPage "Context" $Context) }}
@@ -23,11 +29,15 @@
                 {{ $class = "" }}
                 {{ $attribute = "" }}
             {{ end }}
-            <li class="parent{{ $class }}">
+            <li class="parent">
                 <details>
                     <summary
                         ><div
-                            ><a {{ $attribute | safeHTMLAttr }}>{{ $filename }}</a>
+                            ><a
+                                class="{{ $class }}"
+                                {{ $attribute | safeHTMLAttr }}
+                                >{{ $filename }}</a
+                            >
                             <svg aria-hidden="true"><use href="#caret"></use></svg></div
                     ></summary>
                     {{ partial "sidebar/left/sitemap/generate-sitemap-html.html" (dict "page" $currentPage "Context" $Context) }}

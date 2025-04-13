@@ -26,13 +26,9 @@ aside.sidebar-left > nav {
                 color: var(--text-color);
                 text-decoration: none;
 
-                &:hover {
-                    color: var(--sidebar-left-link-color);
+                &.exists:hover {
+                    color: var(--sidebar-left-link-hover-color);
                     text-decoration: underline;
-                }
-
-                > strong {
-                    color: var(--sidebar-left-link-color);
                 }
             }
         }
