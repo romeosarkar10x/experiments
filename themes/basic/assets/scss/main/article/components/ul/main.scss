@@ -1,0 +1,10 @@
+main > article ul > li {
+    list-style-position: inside;
+    list-style-image: url("/images/right-arrow-7.svg");
+
+    &::marker {
+        font-size: 1.25rem;
+        display: block;
+        align-items: center;
+    }
+}

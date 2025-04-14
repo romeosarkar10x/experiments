@@ -1,0 +1,8 @@
+main > article ol > li {
+    list-style-position: inside;
+
+    &::marker {
+        font-weight: bold;
+        font-family: "Ubuntu Sans Mono";
+    }
+}
