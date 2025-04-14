@@ -1,10 +1,4 @@
 main {
-    border-left: var(--border-width) var(--border-style) var(--border-color);
-    border-right: var(--border-width) var(--border-style) var(--border-color);
-    margin-left: var(--sidebar-left-width);
-    margin-right: var(--sidebar-right-w);
-    padding-top: var(--header-h);
-
     > article {
         min-height: calc(100vh - 15rem);
         padding-left: 3rem;
