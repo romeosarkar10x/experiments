@@ -1,0 +1,15 @@
+[ ] sidebar-left
+[ ] toggle sidebar-left
+[ ] sidebar-right
+[ ] toggle sidebar-right
+[ ] article-header
+[ ] homepage
+[ ] sections
+[ ] rss feed
+[ ] tags
+[ ] add website to google search index
+[ ] author's profile-page
+[ ] cloudflare turnstile
+[ ] cloudflare kv store for counting likes/dislikes on posts
+[ ] comments using giscus (https://giscus.app/) or utterances (https://github.com/utterance/utterances)
+[ ] google analytics
