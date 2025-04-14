@@ -1,28 +1,25 @@
 aside.sidebar-right > section {
-    padding-left: var(--sidebar-right-section-padding);
-    padding-right: var(--sidebar-right-section-padding);
-    padding-top: var(--sidebar-right-section-padding);
-    padding-bottom: var(--sidebar-right-section-padding);
+    padding: var(--sidebar-right-section-padding);
 
     > nav {
         a {
+            color: inherit;
             font-size: var(--sidebar-right-font-size);
             line-height: var(--sidebar-right-line-height);
+            text-decoration: none;
+
+            &:hover {
+                color: rgb(155, 65, 65);
+                text-decoration: underline;
+            }
         }
 
         ul,
-        li {
+        li,
+        details > summary {
             list-style-type: none;
             margin: 0;
             padding: 0;
-        }
-
-        ul li {
-            margin-top: var(--sidebar-right-list-elements-gap);
-
-            &:first-child {
-                margin-top: 0;
-            }
         }
 
         details > ul {
@@ -38,50 +35,53 @@ aside.sidebar-right > section {
         }
 
         ul {
-            > li > details > summary {
-                list-style: none;
-            }
+            > li {
+                margin-top: var(--sidebar-right-list-elements-gap);
 
-            > li > details {
-                padding: 0;
-                overflow: hidden;
-
-                &::details-content {
-                    block-size: 0;
+                &:first-child {
+                    margin-top: 0;
                 }
 
-                &[open]::details-content {
-                    block-size: auto;
+                > details {
+                    padding: 0;
+                    overflow: hidden;
+
+                    &::details-content {
+                        block-size: 0;
+                    }
+
+                    &[open]::details-content {
+                        block-size: auto;
+
+                        > summary > div > svg {
+                            transform: rotate(90deg);
+                        }
+                    }
+
+                    > summary > div {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        cursor: pointer;
+
+                        > svg {
+                            height: calc(var(--sidebar-right-font-size) + 0.25rem);
+                            width: calc(var(--sidebar-right-font-size) + 0.25rem);
+                            margin-left: 1rem;
+                            flex-shrink: 0;
+                        }
+                    }
                 }
             }
         }
 
-        > ul li > div,
-        > ul details > summary > div {
+        div.wrapper {
             padding-left: var(--sidebar-right-list-elements-hover-padding-left);
             border-radius: var(--sidebar-right-list-elements-hover-border-radius);
-        }
 
-        > ul summary > div {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            cursor: pointer;
-        }
-
-        > ul div:hover {
-            background-color: var(--sidebar-right-list-elements-hover-bg-color);
-        }
-
-        > ul summary > div > svg {
-            height: calc(var(--sidebar-right-font-size) + 0.25rem);
-            width: calc(var(--sidebar-right-font-size) + 0.25rem);
-            margin-left: 1rem;
-            flex-shrink: 0;
-        }
-
-        > ul details[open] > summary > div > svg {
-            transform: rotate(90deg);
+            &:hover {
+                background-color: var(--sidebar-right-list-elements-hover-bg-color);
+            }
         }
     }
 }
