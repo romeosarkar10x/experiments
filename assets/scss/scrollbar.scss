@@ -25,7 +25,7 @@ body {
         background: var(--scrollbar-thumb);
         transition: background 1s;
         background: repeating-linear-gradient(
-            -45deg,
+            45deg,
             #aeaeae 0rem,
             #aeaeae 0.5rem,
             #cecece 0.5rem,
@@ -40,7 +40,7 @@ body {
     &::-webkit-scrollbar-thumb:hover {
         background: var(--scrollbar-thumb-hover);
         background: repeating-linear-gradient(
-            45deg,
+            -45deg,
             color.adjust(#aeaeae, $blackness: 25%) 0rem,
             color.adjust(#aeaeae, $blackness: 25%) 0.5rem,
             color.adjust(#cecece, $blackness: 25%) 0.5rem,
