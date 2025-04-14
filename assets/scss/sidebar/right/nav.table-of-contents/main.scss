@@ -1,0 +1,87 @@
+aside.sidebar-right > section {
+    padding-left: var(--sidebar-right-section-padding);
+    padding-right: var(--sidebar-right-section-padding);
+    padding-top: var(--sidebar-right-section-padding);
+    padding-bottom: var(--sidebar-right-section-padding);
+
+    > nav {
+        a {
+            font-size: var(--sidebar-right-font-size);
+            line-height: var(--sidebar-right-line-height);
+        }
+
+        ul,
+        li {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            margin-top: var(--sidebar-right-list-elements-gap);
+
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+
+        details > ul {
+            border-left: var(--border-width) var(--border-style) var(--border-color);
+            padding-top: var(--sidebar-right-list-elements-gap);
+            border-bottom-left-radius: var(--sidebar-right-list-elements-dropdown-border-radius);
+            margin-left: var(--sidebar-right-list-elements-hover-padding-left);
+            padding-left: calc(
+                var(--sidebar-right-list-elements-indentation) - var(
+                        --sidebar-right-list-elements-hover-padding-left
+                    ) - var(--border-width)
+            );
+        }
+
+        ul {
+            > li > details > summary {
+                list-style: none;
+            }
+
+            > li > details {
+                padding: 0;
+                overflow: hidden;
+
+                &::details-content {
+                    block-size: 0;
+                }
+
+                &[open]::details-content {
+                    block-size: auto;
+                }
+            }
+        }
+
+        > ul li > div,
+        > ul details > summary > div {
+            padding-left: var(--sidebar-right-list-elements-hover-padding-left);
+            border-radius: var(--sidebar-right-list-elements-hover-border-radius);
+        }
+
+        > ul summary > div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        > ul div:hover {
+            background-color: var(--sidebar-right-list-elements-hover-bg-color);
+        }
+
+        > ul summary > div > svg {
+            height: calc(var(--sidebar-right-font-size) + 0.25rem);
+            width: calc(var(--sidebar-right-font-size) + 0.25rem);
+            margin-left: 1rem;
+            flex-shrink: 0;
+        }
+
+        > ul details[open] > summary > div > svg {
+            transform: rotate(90deg);
+        }
+    }
+}

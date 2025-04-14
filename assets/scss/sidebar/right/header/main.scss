@@ -1,0 +1,13 @@
+aside.sidebar-right > header {
+    width: 100%;
+    height: var(--header-h);
+    border-bottom: var(--border-width) var(--border-style) var(--border-color);
+    display: flex;
+    flex-direction: column;
+
+    > h1 {
+        text-align: center;
+        font-style: italic;
+        font-weight: bold;
+    }
+}
