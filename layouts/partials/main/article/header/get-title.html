@@ -5,7 +5,7 @@
 
 {{ if $firstHeader }}
     {{ $title := replaceRE $firstHeadingRegex "$1" (index $firstHeader 0) }}
-    {{ $.Page.Scratch.Set "Title" $title }}
+    {{ $.Page.Store.Set "Title" $title }}
     {{ $contentWithoutFirstHeading := replaceRE $firstHeadingRegex "" $content 1 }}
-    {{ $.Page.Scratch.Set "RawContent" $contentWithoutFirstHeading }}
+    {{ $.Page.Store.Set "RawContent" $contentWithoutFirstHeading }}
 {{ end }}
