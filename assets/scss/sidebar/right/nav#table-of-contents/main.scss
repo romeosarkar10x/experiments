@@ -1,7 +1,7 @@
 aside.sidebar-right > section {
     padding: var(--sidebar-right-section-padding);
 
-    > nav {
+    > nav#table-of-contents {
         a {
             color: inherit;
             font-size: var(--sidebar-right-font-size);

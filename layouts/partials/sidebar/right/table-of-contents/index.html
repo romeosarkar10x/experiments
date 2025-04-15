@@ -1,9 +1,0 @@
-{{ $headings := findRE "(?m)^(#{1,6}) (.+)$" .RawContent }}
-{{ $subsections := partial "sidebar/right/table-of-contents/get-subsections.html" (dict "headings" $headings "index" 0 "level" 1) }}
-
-
-<ul class="content"
-    ><li
-        >{{ partial "sidebar/right/table-of-contents/generate-table-of-contents-html.html" (dict "headings" $headings "index" 0 "level" 1) }}</li
-    >
-</ul>
