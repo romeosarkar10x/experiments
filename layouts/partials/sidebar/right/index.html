@@ -1,7 +1,4 @@
-<aside class="sidebar-right"
-    ><header
-        ><div style="flex-grow: 1; display: flex; align-items: center; justify-content: space-around;"
-            ><h1>Table of Contents</h1></div
-        ></header
-    >{{- partial "sidebar/right/table-of-contents/index.html" . -}}</aside
->
+<aside class="sidebar-right">
+    {{ partial "sidebar/right/header/index.html" . }}
+    {{- partial "sidebar/right/table-of-contents/index.html" . -}}
+</aside>
