@@ -13,3 +13,4 @@
 [ ] cloudflare kv store for counting likes/dislikes on posts
 [ ] comments using giscus (https://giscus.app/) or utterances (https://github.com/utterance/utterances)
 [ ] google analytics
+[ ] ai summarizer
