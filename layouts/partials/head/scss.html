@@ -7,18 +7,24 @@
     {{ end }}
 {{ end }}
 
+{{ define "partials/head/rel-permalink.html" }}
+    {{ $sourcePath := . }}
+    {{ $targetPath := strings.Replace (add (strings.TrimSuffix ".scss" $sourcePath) ".css") "#" "%23" }}
+    {{ return $targetPath }}
+{{ end }}
+
 {{ if eq hugo.Environment "development" }}
     {{ $options := dict
         "enableSourceMap" true
         "outputStyle" "expanded"
         "transpiler" "dartsass"
     }}
-
     {{ range $scssFiles }}
         {{ $css := . | css.Sass $options }}
         <link
             rel="stylesheet"
-            href="{{ $css.RelPermalink }}" />
+            href="{{ partial "head/rel-permalink.html" . }}" />
+        {{ $css.Publish }}
     {{ end }}
 {{ else if eq hugo.Environment "production" }}
     {{ $options := dict
