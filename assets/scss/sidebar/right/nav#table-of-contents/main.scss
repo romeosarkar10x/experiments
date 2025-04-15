@@ -1,15 +1,20 @@
 aside.sidebar-right > nav#table-of-contents {
     padding: var(--sidebar-right-section-padding);
+    overflow-y: auto;
 
-    a {
-        color: inherit;
-        font-size: var(--sidebar-right-font-size);
+    div.link-container {
         line-height: var(--sidebar-right-line-height);
-        text-decoration: none;
 
-        &:hover {
-            color: rgb(155, 65, 65);
-            text-decoration: underline;
+        > a {
+            color: inherit;
+            font-size: var(--sidebar-right-font-size);
+            line-height: var(--sidebar-right-line-height);
+            text-decoration: none;
+
+            &:hover {
+                color: rgb(155, 65, 65);
+                text-decoration: underline;
+            }
         }
     }
 
@@ -49,10 +54,12 @@ aside.sidebar-right > nav#table-of-contents {
                     block-size: 0;
                 }
 
-                &[open]::details-content {
-                    block-size: auto;
+                &[open] {
+                    &::details-content {
+                        block-size: auto;
+                    }
 
-                    > summary > div > svg {
+                    > summary > div.container > svg {
                         transform: rotate(90deg);
                     }
                 }
@@ -74,7 +81,9 @@ aside.sidebar-right > nav#table-of-contents {
         }
     }
 
-    div.wrapper {
+    div.container {
+        padding-top: 0.125rem;
+        padding-bottom: 0.125rem;
         padding-left: var(--sidebar-right-list-elements-hover-padding-left);
         border-radius: var(--sidebar-right-list-elements-hover-border-radius);
 

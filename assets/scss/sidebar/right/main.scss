@@ -3,7 +3,9 @@ aside.sidebar-right {
     width: var(--sidebar-right-w);
     right: 0;
     top: 0;
-    overflow-y: auto;
     height: 100vh;
     user-select: none;
+
+    display: flex;
+    flex-direction: column;
 }
