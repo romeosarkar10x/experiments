@@ -69,7 +69,7 @@ aside.sidebar-right > nav#table-of-contents {
                     > svg {
                         height: calc(4 * var(--font-size) / 3);
                         width: calc(4 * var(--font-size) / 3);
-                        margin-left: 1rem;
+                        margin-left: 1em;
                         flex-shrink: 0;
                     }
                 }
@@ -78,8 +78,8 @@ aside.sidebar-right > nav#table-of-contents {
     }
 
     div.container {
-        padding-top: 0.125rem;
-        padding-bottom: 0.125rem;
+        padding-top: 0.125em;
+        padding-bottom: 0.125em;
         padding-left: var(--li-hover-padding-left);
         border-radius: var(--li-hover-border-radius);
 
