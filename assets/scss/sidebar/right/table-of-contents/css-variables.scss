@@ -1,11 +1,12 @@
-:root {
-    --sidebar-right-font-size: 0.75rem;
-    --sidebar-right-line-height: 1.0625;
-    --sidebar-right-section-padding: 1rem;
-    --sidebar-right-list-elements-indentation: 0.875rem;
-    --sidebar-right-list-elements-gap: 0.5rem;
-    --sidebar-right-list-elements-dropdown-border-radius: 0.875rem;
-    --sidebar-right-list-elements-hover-bg-color: rgb(225, 225, 225);
-    --sidebar-right-list-elements-hover-padding-left: 0.5rem;
-    --sidebar-right-list-elements-hover-border-radius: calc(var(--sidebar-right-font-size) / 3);
+aside.sidebar-right nav#table-of-contents {
+    --font-size: 0.75rem;
+    --line-height: 1.125;
+    --padding: 1rem;
+
+    --li-indentation: 0.875em;
+    --li-gap: 0.5em;
+    --li-dropdown-border-radius: 0;
+    --li-hover-bg-color: rgb(225, 225, 225);
+    --li-hover-padding-left: 0.5em;
+    --li-hover-border-radius: calc(var(--font-size) / 3);
 }

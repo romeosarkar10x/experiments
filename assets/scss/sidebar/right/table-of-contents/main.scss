@@ -1,14 +1,14 @@
 aside.sidebar-right > nav#table-of-contents {
-    padding: var(--sidebar-right-section-padding);
+    padding: var(--padding);
     overflow-y: auto;
 
     div.link-container {
-        line-height: var(--sidebar-right-line-height);
+        line-height: var(--line-height);
 
         > a {
             color: inherit;
-            font-size: var(--sidebar-right-font-size);
-            line-height: var(--sidebar-right-line-height);
+            font-size: var(--font-size);
+            line-height: var(--line-height);
             text-decoration: none;
 
             &:hover {
@@ -28,19 +28,15 @@ aside.sidebar-right > nav#table-of-contents {
 
     details > ul {
         border-left: var(--border-width) var(--border-style) var(--border-color);
-        padding-top: var(--sidebar-right-list-elements-gap);
-        border-bottom-left-radius: var(--sidebar-right-list-elements-dropdown-border-radius);
-        margin-left: var(--sidebar-right-list-elements-hover-padding-left);
-        padding-left: calc(
-            var(--sidebar-right-list-elements-indentation) - var(
-                    --sidebar-right-list-elements-hover-padding-left
-                ) - var(--border-width)
-        );
+        padding-top: var(--li-gap);
+        border-bottom-left-radius: var(--li-dropdown-border-radius);
+        margin-left: var(--li-hover-padding-left);
+        padding-left: calc(var(--li-indentation) - var(--li-hover-padding-left) - var(--border-width));
     }
 
     ul {
         > li {
-            margin-top: var(--sidebar-right-list-elements-gap);
+            margin-top: var(--li-gap);
 
             &:first-child {
                 margin-top: 0;
@@ -71,8 +67,8 @@ aside.sidebar-right > nav#table-of-contents {
                     cursor: pointer;
 
                     > svg {
-                        height: calc(var(--sidebar-right-font-size) + 0.25rem);
-                        width: calc(var(--sidebar-right-font-size) + 0.25rem);
+                        height: calc(4 * var(--font-size) / 3);
+                        width: calc(4 * var(--font-size) / 3);
                         margin-left: 1rem;
                         flex-shrink: 0;
                     }
@@ -84,11 +80,11 @@ aside.sidebar-right > nav#table-of-contents {
     div.container {
         padding-top: 0.125rem;
         padding-bottom: 0.125rem;
-        padding-left: var(--sidebar-right-list-elements-hover-padding-left);
-        border-radius: var(--sidebar-right-list-elements-hover-border-radius);
+        padding-left: var(--li-hover-padding-left);
+        border-radius: var(--li-hover-border-radius);
 
         &:hover {
-            background-color: var(--sidebar-right-list-elements-hover-bg-color);
+            background-color: var(--li-hover-bg-color);
         }
     }
 }
