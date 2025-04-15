@@ -7,6 +7,7 @@
 [ ] sections
 [ ] rss feed
 [ ] tags
+[ ] light/dark mode toggle
 [ ] add website to google search index
 [ ] author's profile-page
 [ ] cloudflare turnstile
