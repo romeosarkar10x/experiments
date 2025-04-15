@@ -2,7 +2,7 @@
 {{ $index := .index }}
 {{ $level := .level }}
 
-{{ $subsections := partial "sidebar/right/nav#table-of-contents/get-subsections.html" (dict "headings" $headings "level" $level "index" $index) }}
+{{ $subsections := partial "sidebar/right/table-of-contents/subsections.html" (dict "headings" $headings "level" $level "index" $index) }}
 {{ $headingText := replaceRE "^(#{1,6})\\s+(.*)" "$2" (index $headings $index) }}
 {{ if eq (len $subsections) 0 }}
     <div class="container link-container"><a href="#heading-{{ $index }}">{{ $headingText }}</a></div>
@@ -15,7 +15,7 @@
         ><ul
             >{{ range $i := $subsections }}
                 <li
-                    >{{ partial "sidebar/right/nav#table-of-contents/generate-table-of-contents-html.html" (dict "headings" $headings "index" $i "level" (add $level 1)) }}</li
+                    >{{ partial "sidebar/right/table-of-contents/html.html" (dict "headings" $headings "index" $i "level" (add $level 1)) }}</li
                 >
             {{ end }}</ul
         ></details
