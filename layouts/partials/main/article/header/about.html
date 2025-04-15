@@ -28,16 +28,19 @@
             rel="author"
             >{{ $author.name }}</a
         >
-        Created:
-        <time
-            class="creation-date"
-            datetime="{{ $dateMachine }}"
-            >{{ $dateHuman }}</time
-        >
+        <p>
+            Created:
+            <time
+                class="creation-date"
+                datetime="{{ $dateMachine }}"
+                >{{ $dateHuman }}</time
+            >
+        </p>
+        <p> Updated: <time>{{ .Page.Lastmod.Format "January 1, 1970" }}</time> </p>
     </div>
 </div>
 <div class="meta">
-    <p>Read: {{ .Page.Params.readTime }}</p>
+    <p>Read: {{ .Page.ReadingTime }} min ({{ .Page.WordCount }} words)</p>
     <p>Tags: </p>
 </div>
 <hr
