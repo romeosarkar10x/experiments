@@ -10,8 +10,9 @@
     <details>
         <summary
             ><div class="container"
-                ><div class="link-container"><a href="#heading-{{ $index }}">{{ $headingText }}</a></div
-                ><svg><use href="#sidebar-right-caret"></use></svg></div></summary
+                ><svg><use href="#sidebar-right-caret"></use></svg
+                ><div class="link-container"><a href="#heading-{{ $index }}">{{ $headingText }}</a></div></div
+            ></summary
         ><ul
             >{{ range $i := $subsections }}
                 <li

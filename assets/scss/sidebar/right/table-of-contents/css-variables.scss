@@ -1,12 +1,13 @@
 aside.sidebar-right nav#table-of-contents {
     --font-size: 0.75rem;
     --line-height: 1.125;
-    --padding: 1rem;
 
-    --li-indentation: 0.875em;
     --li-gap: 0.5em;
-    --li-dropdown-border-radius: 0;
+
     --li-hover-bg-color: rgb(225, 225, 225);
     --li-hover-padding-left: 0.5em;
     --li-hover-border-radius: calc(var(--font-size) / 3);
+
+    --li-svg-dimensions: calc(var(--font-size) * 4 / 3);
+    --li-svg-margin-right: calc(0.5em - 0.125em);
 }
