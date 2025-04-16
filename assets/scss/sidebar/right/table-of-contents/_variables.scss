@@ -1,0 +1,11 @@
+$font-size: 0.75rem;
+$line-height: 1.125;
+
+$li-gap: 0.5em;
+
+$li-hover-background-color: rgb(225, 225, 225);
+$li-hover-padding-left: 0.5em;
+$li-hover-border-radius: calc($font-size / 3);
+
+$li-svg-dimensions: calc($font-size * 4 / 3);
+$li-svg-margin-right: calc(0.5em - 0.125em);
