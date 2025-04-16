@@ -25,7 +25,7 @@ jobs:
       - name: install dependencies
         run: npm install
 
-      - name: check
+      - name: check formatting
         run: npm run check-format
 
       - name: install hugo
