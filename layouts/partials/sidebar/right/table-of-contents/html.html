@@ -5,13 +5,13 @@
 {{ $subsections := partial "sidebar/right/table-of-contents/subsections.html" (dict "headings" $headings "level" $level "index" $index) }}
 {{ $headingText := replaceRE "^(#{1,6})\\s+(.*)" "$2" (index $headings $index) }}
 {{ if eq (len $subsections) 0 }}
-    <div class="container link-container"><a href="#heading-{{ $index }}">{{ $headingText }}</a></div>
+    <div class="container link-container"><a href="#x-{{ $index }}">{{ $headingText }}</a></div>
 {{ else }}
     <details>
         <summary
             ><div class="container"
                 ><svg><use href="#sidebar-right-caret"></use></svg
-                ><div class="link-container"><a href="#heading-{{ $index }}">{{ $headingText }}</a></div></div
+                ><div class="link-container"><a href="#x-{{ $index }}">{{ $headingText }}</a></div></div
             ></summary
         ><ul
             >{{ range $i := $subsections }}
