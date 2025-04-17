@@ -1,0 +1,7 @@
+aside.sidebar-right nav#table-of-contents.init {
+    ul > li > details::details-content {
+        transition:
+            block-size var(--transition-duration),
+            content-visibility var(--transition-duration) allow-discrete;
+    }
+}
