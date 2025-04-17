@@ -1,11 +1,12 @@
 {{ $content := .RawContent }}
 {{ $firstHeadingRegex := `(?m)^#\s+(.+)$` }}
 {{ $firstHeader := findRE $firstHeadingRegex $content 1 }}
-{{ $title := "404: Title not found!" }}
 
 {{ if $firstHeader }}
     {{ $title := replaceRE $firstHeadingRegex "$1" (index $firstHeader 0) }}
     {{ $.Page.Store.Set "Title" $title }}
     {{ $contentWithoutFirstHeading := replaceRE $firstHeadingRegex "" $content 1 }}
     {{ $.Page.Store.Set "RawContent" $contentWithoutFirstHeading }}
+{{ else }}
+    {{ errorf "missing title in '%s' | 'single' page must begin with a 'heading level 1' e.g. '# Title'" .File.Path }}
 {{ end }}
