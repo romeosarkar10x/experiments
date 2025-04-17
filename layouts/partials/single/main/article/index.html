@@ -1,9 +1,10 @@
-{{ .Store.Delete "RawContent" }}
+{{- .Store.Delete "RawContent" -}}
 
 
 <article>
-    {{ partial "single/main/article/header/index.html" . }}
-    {{ partial "single/main/article/replace-heading-ids.html" (markdownify (.Store.Get "RawContent")) }}</article
-><footer>
+    {{- partial "single/main/article/header/index.html" . -}}
+    {{- partial "single/main/article/replace-heading-ids.html" (markdownify (.Store.Get "RawContent")) -}}
+</article>
+<footer>
     {{- partial "single/footer/index.html" . -}}
 </footer>
