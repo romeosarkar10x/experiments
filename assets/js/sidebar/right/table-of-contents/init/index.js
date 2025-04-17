@@ -27,6 +27,12 @@ document.addEventListener("DOMContentLoaded", function () {
             dfsClosure(function (nodeId, details) {
                 details.open = states[nodeId];
             });
+        } else {
+            const rootDetails = tableOfContents.querySelector(":scope > ul > li > details");
+
+            if (rootDetails != null) {
+                rootDetails.open = true;
+            }
         }
 
         const scrollItem = sessionStorage.getItem(generateKey("scroll"));
