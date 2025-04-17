@@ -19,14 +19,10 @@ function dfsClosure(callback, id = 0) {
 document.addEventListener("DOMContentLoaded", function () {
     (function restoreState() {
         const value = sessionStorage.getItem(generateKey());
+
         if (value != null) {
-            console.log(value.split(","));
             const states = value.split(",").map((element) => element === "true");
-            console.log("restoring States");
-            console.log("states:", states);
             dfsClosure(function (nodeId, details) {
-                console.log(states);
-                console.log("nodeId:", nodeId, "value:", states[nodeId]);
                 details.open = states[nodeId];
             });
         }
@@ -47,5 +43,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     })();
 
-    document.querySelector("aside.sidebar-right nav#table-of-contents").classList.add("init");
+    requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+            document.querySelector("aside.sidebar-right nav#table-of-contents").classList.add("init");
+        });
+    });
 });
