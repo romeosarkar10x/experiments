@@ -1,5 +1,5 @@
-function generateKey() {
-    return `${window.location.hostname}/table-of-contents${window.location.pathname}`;
+function generateKey(hint = "") {
+    return `${window.location.hostname}/table-of-contents:${hint}${window.location.pathname}`;
 }
 
 function dfsClosure(callback, id = 0) {
@@ -17,6 +17,8 @@ function dfsClosure(callback, id = 0) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+    const tableOfContents = document.querySelector("aside.sidebar-right > nav#table-of-contents");
+
     (function restoreState() {
         const value = sessionStorage.getItem(generateKey());
 
@@ -26,10 +28,23 @@ document.addEventListener("DOMContentLoaded", function () {
                 details.open = states[nodeId];
             });
         }
-        // const scrollTop = sessionStorage.getItem(generateKey());
-        // if (scrollTop != null) {
-        // sidebarRight.scrollTop = parseFloat(scrollTop);
-        // }
+
+        const scroll = sessionStorage.getItem(generateKey("scroll"));
+
+        if (scroll != null) {
+            requestAnimationFrame(function () {
+                requestAnimationFrame(function () {
+                    tableOfContents.scrollTop = parseFloat(scroll);
+                    tableOfContents.classList.add("init");
+                });
+            });
+        } else {
+            requestAnimationFrame(function () {
+                requestAnimationFrame(function () {
+                    tableOfContents.classList.add("init");
+                });
+            });
+        }
     })();
 
     (function saveState() {
@@ -39,13 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 states[nodeId] = details.open;
             });
             sessionStorage.setItem(generateKey(), states);
-            // sessionStorage.setItem(generateKey(), sidebarRight.scrollTop);
+            sessionStorage.setItem(generateKey("scroll"), tableOfContents.scrollTop);
         });
     })();
-
-    requestAnimationFrame(function () {
-        requestAnimationFrame(function () {
-            document.querySelector("aside.sidebar-right nav#table-of-contents").classList.add("init");
-        });
-    });
 });
