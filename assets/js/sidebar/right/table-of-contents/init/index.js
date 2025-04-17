@@ -20,22 +20,22 @@ document.addEventListener("DOMContentLoaded", function () {
     const tableOfContents = document.querySelector("aside.sidebar-right > nav#table-of-contents");
 
     (function restoreState() {
-        const value = sessionStorage.getItem(generateKey());
+        const statesItem = sessionStorage.getItem(generateKey());
 
-        if (value != null) {
-            const states = value.split(",").map((element) => element === "true");
+        if (statesItem != null) {
+            const states = statesItem.split(",").map((element) => element === "true");
             dfsClosure(function (nodeId, details) {
                 details.open = states[nodeId];
             });
         }
 
-        const scroll = sessionStorage.getItem(generateKey("scroll"));
+        const scrollItem = sessionStorage.getItem(generateKey("scroll"));
 
-        if (scroll != null) {
+        if (scrollItem != null) {
             requestAnimationFrame(function () {
                 requestAnimationFrame(function () {
-                    tableOfContents.scrollTop = parseFloat(scroll);
                     tableOfContents.classList.add("init");
+                    tableOfContents.scrollTop = parseFloat(scrollItem);
                 });
             });
         } else {
