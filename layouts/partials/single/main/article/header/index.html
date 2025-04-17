@@ -1,0 +1,8 @@
+{{ .Store.Delete "Title" }}
+{{ partial "single/main/article/header/get-title.html" . }}
+
+
+<header>
+    <h1 id="x-0">{{ .Store.Get "Title" }}</h1>
+    {{ partial "single/main/article/header/about.html" . }}
+</header>

@@ -4,7 +4,7 @@
     content="width=device-width" />
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
 
-{{ partialCached "head/font.html" . }}
+{{ partialCached "single/head/font.html" . }}
 
 
 <link
@@ -38,6 +38,6 @@
     });
 </script>
 
-{{ partialCached "head/css.html" . }}
-{{ partialCached "head/js.html" . }}
-{{ partialCached "head/scss.html" . }}
+{{ partialCached "single/head/css.html" . }}
+{{ partialCached "single/head/js.html" . }}
+{{ partialCached "single/head/scss.html" . }}

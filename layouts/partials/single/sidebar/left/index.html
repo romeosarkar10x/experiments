@@ -1,4 +1,4 @@
-{{- partial "sidebar/left/svg.html" | strings.TrimSpace | safeHTML -}}
+{{- partial "single/sidebar/left/svg.html" | strings.TrimSpace | safeHTML -}}
 <aside class="sidebar-left"
     ><div class="inner-when-collapsed"
         ><div class="svg-wrapper"
@@ -13,5 +13,5 @@
                 stroke="currentColor">
                 <use href="#right-arrow-2"></use></svg></div
     ></div>
-    {{ partial "sidebar/left/sitemap/index.html" . }}
+    {{ partial "single/sidebar/left/sitemap/index.html" . }}
 </aside>
