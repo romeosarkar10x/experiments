@@ -5,8 +5,9 @@
     <head
         >{{ partial "single/head/index.html" . }}</head
     >
-    <body
-        >{{ partial "single/svg.html" }}<header>{{ partial "single/header/index.html" . }}</header>
+    <body>
+        {{- partialCached "single/svg.html" . -}}
+        <header>{{ partial "single/header/index.html" . }}</header>
         {{- partial "single/sidebar/left/index.html" . -}}
         {{- partial "single/main/index.html" . -}}
         {{- partial "single/sidebar/right/index.html" . -}}
