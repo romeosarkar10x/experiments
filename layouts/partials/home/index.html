@@ -1,0 +1,11 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{{ .Site.Title }}</title>
+    </head>
+    <body>
+        {{ range site.Pages }}
+            <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+        {{ end }}
+    </body>
+</html>
