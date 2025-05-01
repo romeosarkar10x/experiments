@@ -16,7 +16,7 @@
         ><ul
             >{{- range $i := $subsections -}}
                 <li
-                    >{{- partial "single/sidebar/right/table-of-contents/html.html" (dict "headings" $headings "index" $i "level" (add $level 1)) -}}</li
+                    >{{- partial "single/sidebar/right/table-of-contents/generate-table-of-contents-html" (dict "headings" $headings "index" $i "level" (add $level 1)) -}}</li
                 >
             {{- end -}}</ul
         ></details
