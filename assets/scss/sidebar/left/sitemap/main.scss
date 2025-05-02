@@ -1,4 +1,13 @@
-aside.sidebar-left > nav {
+@use "variables";
+
+aside.sidebar-left > nav#sitemap {
+    margin-right: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1.25rem;
+
+    font-size: variables.$font-size;
+    line-height: normal;
+
     ul,
     li {
         list-style-type: none;
@@ -6,21 +15,23 @@ aside.sidebar-left > nav {
         padding: 0;
     }
 
-    > ul {
-        padding-top: 1rem;
-        padding-bottom: 1.25rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
-
-        li {
-            margin-top: var(--sidebar-left-ul-li-gap);
+    ul {
+        > li {
+            margin-top: variables.$li-gap;
+            padding-left: calc(
+                (variables.$li-svg-dimensions - var(--border-width)) / 2 + variables.$li-svg-margin-right -
+                    variables.$li-hover-padding-left
+            );
 
             &:first-child {
                 margin-top: 0;
             }
 
+            > div.link-container /* leaf nodes */ {
+                padding-left: variables.$li-hover-padding-left;
+            }
+
             a {
-                font-size: 0.875rem;
                 color: var(--text-color);
                 text-decoration: none;
 
@@ -36,9 +47,9 @@ aside.sidebar-left > nav {
             overflow: hidden;
 
             > ul {
-                margin-left: 1rem;
+                margin-left: calc((variables.$li-svg-dimensions - var(--border-width)) / 2);
                 border-left: var(--border-width) solid var(--border-color);
-                padding-top: var(--sidebar-left-ul-li-gap);
+                padding-top: variables.$li-gap;
             }
 
             &::details-content {
@@ -66,22 +77,19 @@ aside.sidebar-left > nav {
                     > svg {
                         flex-shrink: 0;
                         fill: rgb(55, 0, 110);
-                        height: 1.5rem;
-                        width: 1.5rem;
+                        height: variables.$li-svg-dimensions;
+                        width: variables.$li-svg-dimensions;
+                        margin-right: variables.$li-svg-margin-right;
                     }
                 }
             }
         }
 
-        li {
-            > div, /* Leaf nodes */
-            > details > summary > div /* Parent nodes */ {
-                padding-right: var(--list-element-padding-left);
-                border-radius: 0.375rem;
+        div.container {
+            border-radius: 0.375rem;
 
-                &:hover {
-                    background-color: rgb(225, 225, 225);
-                }
+            &:hover {
+                background-color: rgb(225, 225, 225);
             }
         }
     }
