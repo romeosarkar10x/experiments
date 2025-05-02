@@ -63,7 +63,6 @@ aside.sidebar-left > nav {
                 > div {
                     display: flex;
                     align-items: center;
-                    justify-content: space-between;
                     cursor: pointer;
 
                     > svg {
@@ -79,7 +78,6 @@ aside.sidebar-left > nav {
         li {
             > div, /* Leaf nodes */
             > details > summary > div /* Parent nodes */ {
-                padding-left: var(--sidebar-left-ul-li-indentation);
                 padding-right: var(--list-element-padding-left);
                 border-radius: 0.375rem;
 

@@ -13,7 +13,7 @@
                 {{ $class = " this" }}
             {{ end }}
             <li class="leaf"
-                ><div
+                ><div class="container link-container"
                     ><a
                         class="exists"
                         href="{{ $currentPage }}"
@@ -31,15 +31,18 @@
             {{ end }}
             <li class="parent">
                 <details>
-                    <summary
-                        ><div
-                            ><a
-                                class="{{ $class }}"
-                                {{ $attribute | safeHTMLAttr }}
-                                >{{ $filename }}</a
+                    <summary>
+                        <div class="container">
+                            <svg aria-hidden="true"><use href="#caret"></use></svg>
+                            <div class="link-container"
+                                ><a
+                                    class="{{ $class }}"
+                                    {{ $attribute | safeHTMLAttr }}
+                                    >{{ $filename }}</a
+                                ></div
                             >
-                            <svg aria-hidden="true"><use href="#caret"></use></svg></div
-                    ></summary>
+                        </div>
+                    </summary>
                     {{ partial "single/sidebar/left/sitemap/generate-sitemap-html.html" (dict "page" $currentPage "Context" $Context) }}
                 </details>
             </li>
