@@ -11,9 +11,9 @@
     {{ end }}
 {{ end }}
 
-{{ $classname := "penultimate" }}
+{{ $classname := "" }}
 {{ if eq $isPenultimate false }}
-    {{ $classname = "" }}
+    {{ $classname = "non-penultimate" }}
 {{ end }}
 
 

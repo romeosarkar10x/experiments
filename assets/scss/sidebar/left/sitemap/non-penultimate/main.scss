@@ -1,0 +1,7 @@
+@use "variables";
+
+aside.sidebar-left > nav#sitemap {
+    ul.non-penultimate > li.leaf {
+        padding-left: calc(variables.$li-svg-dimensions + variables.$li-svg-margin-right);
+    }
+}

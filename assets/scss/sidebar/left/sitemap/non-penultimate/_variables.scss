@@ -1,0 +1,4 @@
+@use "../variables" as parent-variables;
+
+$li-svg-dimensions: parent-variables.$li-svg-dimensions;
+$li-svg-margin-right: parent-variables.$li-svg-margin-right;
