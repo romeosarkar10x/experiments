@@ -2,7 +2,22 @@
 {{ $Context := .Context }}
 
 {{ $subpages := partial "single/sidebar/left/sitemap/get-subpages.html" (dict "page" $page "Context" .Context) }}
-<ul>
+{{ $isPenultimate := true }}
+
+{{ range $currentPage := $subpages }}
+    {{ $subpages := partial "single/sidebar/left/sitemap/get-subpages.html" (dict "page" $currentPage "Context" $.Context) }}
+    {{ if ne 0 (len $subpages) }}
+        {{ $isPenultimate = false }}
+    {{ end }}
+{{ end }}
+
+{{ $classname := "penultimate" }}
+{{ if eq $isPenultimate false }}
+    {{ $classname = "" }}
+{{ end }}
+
+
+<ul class="{{ $classname }}">
     {{ range $currentPage := $subpages }}
         {{ $currentSubpages := partial "single/sidebar/left/sitemap/get-subpages.html" (dict "page" $currentPage "Context" $Context) }}
         {{ $filename := partial "single/sidebar/left/sitemap/beautify-filename" (strings.TrimSuffix "/" (strings.TrimPrefix $page $currentPage)) }}
