@@ -3,18 +3,6 @@
 {{ $author := partial "single/main/article/header/get-author.html" . }}
 
 
-<hr
-    style="border: none;height: 0.125rem;             background: repeating-linear-gradient(
-            -45deg,
-            #aeaeae 0rem,
-            #aeaeae 0.5rem,
-            #cecece 0.5rem,
-            #cecece 1rem,
-            #e0e0e0 1rem,
-            #e0e0e0 1.5rem,
-            #cecece 1.5rem,
-            #cecece 2rem
-            );" />
 <div
     class="info"
     style="display: flex; align-items: center; margin-top: 1rem">
@@ -36,22 +24,10 @@
                 >{{ $dateHuman }}</time
             >
         </p>
-        <p> Updated: <time>{{ .Page.Lastmod.Format "January 1, 1970" }}</time> </p>
+        <p> Updated: <time>{{ .Page.Lastmod.Format "January 2, 2006" }}</time> </p>
     </div>
 </div>
 <div class="meta">
     <p>Read: {{ .Page.ReadingTime }} min ({{ .Page.WordCount }} words)</p>
     <p>Tags: </p>
 </div>
-<hr
-    style="border: none;height: 0.125rem;             background: repeating-linear-gradient(
-            -45deg,
-            #aeaeae 0rem,
-            #aeaeae 0.5rem,
-            #cecece 0.5rem,
-            #cecece 1rem,
-            #e0e0e0 1rem,
-            #e0e0e0 1.5rem,
-            #cecece 1.5rem,
-            #cecece 2rem
-            );" />
