@@ -1,5 +1,7 @@
 main > article > header {
+    border-bottom: var(--border-width) var(--border-style) var(--border-color);
     margin-bottom: 3rem;
+
     h1 {
         line-height: 1.25;
         font-size: 2.5rem;
