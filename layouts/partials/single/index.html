@@ -7,7 +7,7 @@
     >
     <body>
         {{- partialCached "single/svg.html" . -}}
-        <header>{{ partial "single/header/index.html" . }}</header>
+        {{ partial "single/header/index.html" . }}
         {{- partial "single/sidebar/left/index.html" . -}}
         {{- partial "single/main/index.html" . -}}
         {{- partial "single/sidebar/right/index.html" . -}}
