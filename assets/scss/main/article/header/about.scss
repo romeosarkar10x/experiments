@@ -4,6 +4,8 @@ main > article > header {
         width: 4rem;
         border-radius: 50%;
         border: var(--border-width) var(--border-style) var(--border-color);
+        flex-shrink: 0;
+        min-width: fit-content;
     }
 
     a.author-name {
