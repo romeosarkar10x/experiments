@@ -30,7 +30,7 @@ jobs:
 
       - name: install git
         run: |
-          if !which git; then
+          if !command -v git; then
             apt-get install git -y
           fi
 
