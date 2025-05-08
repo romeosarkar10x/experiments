@@ -12,6 +12,7 @@ jobs:
   check-build-and-deploy:
     runs-on: [self-hosted, Linux, X64]
     environment: production
+    options: --user root
 
     steps:
       - name: checkout repository
