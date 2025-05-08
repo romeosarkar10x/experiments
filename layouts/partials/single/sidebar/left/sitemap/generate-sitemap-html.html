@@ -28,9 +28,14 @@
                 {{ $class = " this" }}
             {{ end }}
             <li class="leaf"
-                ><div class="container link-container"
-                    ><a
-                        class="exists"
+                ><div class="container link-container">
+                    {{ $classname := "" }}
+
+                    {{ if eq $Context.Page.RelPermalink $currentPage }}
+                        {{ $classname = " this" }}
+                    {{ end }}
+                    <a
+                        class="exists{{ $classname }}"
                         href="{{ $currentPage }}"
                         >{{ $filename }}</a
                     ></div

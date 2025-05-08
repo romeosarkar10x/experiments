@@ -39,6 +39,11 @@ aside.sidebar-left > nav#sitemap {
                     color: var(--sidebar-left-link-hover-color);
                     text-decoration: underline;
                 }
+
+                &.this {
+                    font-weight: bold;
+                    text-decoration: underline;
+                }
             }
         }
 
