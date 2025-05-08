@@ -3,6 +3,7 @@ title: "Home"
 description: "Your site description"
 draft: false
 cascade:
+    title: "Experiments"
     params:
         author: "romeosarkar10x"
 ---
