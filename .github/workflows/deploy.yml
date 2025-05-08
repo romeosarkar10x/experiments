@@ -12,7 +12,6 @@ jobs:
   check-build-and-deploy:
     runs-on: [self-hosted, Linux, X64]
     environment: production
-    options: --user root
 
     steps:
       - name: checkout repository
@@ -32,7 +31,7 @@ jobs:
       - name: install git
         run: |
           if ! git -v; then
-            apt-get install git -y
+            sudo apt-get install git -y
           fi
 
       - name: install hugo
