@@ -8,6 +8,8 @@ aside.sidebar-left > nav#sitemap {
     font-size: variables.$font-size;
     line-height: normal;
 
+    overflow-y: auto;
+
     ul,
     li {
         list-style-type: none;
