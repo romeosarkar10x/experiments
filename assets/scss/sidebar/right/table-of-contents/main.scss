@@ -1,4 +1,5 @@
 @use "variables";
+@use "../../mixins";
 
 aside.sidebar-right > nav#table-of-contents {
     margin-right: 1rem;
@@ -7,7 +8,8 @@ aside.sidebar-right > nav#table-of-contents {
 
     font-size: var(--font-size);
     line-height: variables.$line-height;
-    overflow-y: auto;
+
+    @include mixins.hide-scrollbar;
 
     div.link-container {
         line-height: variables.$line-height;
