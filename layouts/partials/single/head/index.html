@@ -5,6 +5,7 @@
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
 
 {{ partialCached "single/head/font.html" . }}
+{{ partialCached "single/head/highlight.js.html" . }}
 
 
 <link
