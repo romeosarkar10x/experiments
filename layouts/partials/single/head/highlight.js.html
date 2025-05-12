@@ -9,5 +9,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js"></script>
 
 <script>
-    hljs.highlightAll();
+    window.addEventListener("DOMContentLoaded", () => {
+        document
+            .querySelectorAll("body > main > article > div.shortcode.html-css-javascript pre > code")
+            .forEach((dom_element) => {
+                hljs.highlightElement(dom_element);
+            });
+    });
 </script>
