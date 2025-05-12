@@ -1,0 +1,43 @@
+{{ $html := .Get "html" }}
+{{ $css := .Get "css" }}
+{{ $javascript := .Get "javascript" }}
+
+{{ $numOfLinesHtml := len (split $html "\n") }}
+{{ $numOfLinesCss := len (split $css "\n") }}
+{{ $numOfLinesJavascript := len (split $javascript "\n") }}
+
+
+<div class="shortcode html-css-javascript"
+    ><div class="states"
+        ><button
+            class="html"
+            onclick='expt_radioButtonSelect(event, "html")'
+            >HTML</button
+        ><button
+            class="css"
+            onclick='expt_radioButtonSelect(event, "css")'
+            >CSS</button
+        ><button
+            class="javascript"
+            onclick='expt_radioButtonSelect(event, "javascript")'
+            >Javascript</button
+        ></div
+    ><div class="consoles">
+        <pre class="console html"><code class="language-xml">{{- $html -}}</code></pre>
+        <pre class="console css"><code class="language-css">{{- $css -}}</code></pre>
+        <pre class="console javascript"><code class="language-javascript">{{- $javascript -}}</code></pre>
+        <iframe
+            style="width: 100%; display: block"
+            srcdoc="{{ fmt.Printf `<!doctype html>
+                <html>
+                <head>
+                <style>%s</style>
+                </head>
+
+                <body>%s</body>
+
+                <script>%s</script>
+                </html
+                >` $css $html $javascript
+            }}"></iframe></div
+></div>
