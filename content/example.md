@@ -229,4 +229,35 @@ int main()
 }
 ```
 
+## Shortcodes
+
+code/html:
+
+{{< code/html-css-javascript
+html=`<h1>Hugo Shortcodes</h1>
+
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+
+<button>Click Me</button>
+
+<p>The above button has been clicked <span>0</span> times.</p>`
+
+css=`
+body { background-color: wheat; }
+button {
+background-color: yellowgreen;
+border-radius: 0.25rem;
+cursor: pointer;
+}`
+
+javascript=`window.addEventListener("DOMContentLoaded", () => {
+const dom_button = document.querySelector("button");
+dom_button.addEventListener("click", () => {
+const dom_span = document.querySelector("span");
+const count = parseInt(dom_span.textContent);
+dom_span.textContent = count + 1;
+});
+});`>}}
+
 this is the end of document!
