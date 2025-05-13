@@ -71,13 +71,15 @@ window.addEventListener("DOMContentLoaded", () => {
             htmlCssJavascriptConsoles.selectAll(dom_element),
             "html",
             function selectState(dom_element, state) {
-                dom_element.style.display = "block";
-                dom_element.parentNode.parentNode.querySelector(`div.states > button.${state}`).classList.add("active");
+                dom_element.style.display = "flex";
+                dom_element.parentNode.parentNode
+                    .querySelector(`div.radio-button > button.radio-button-state.${state}`)
+                    .classList.add("active");
             },
             function unselectState(dom_element, state) {
                 dom_element.style.display = "none";
                 dom_element.parentNode.parentNode
-                    .querySelector(`div.states > button.${state}`)
+                    .querySelector(`div.radio-button > button.radio-button-state.${state}`)
                     .classList.remove("active");
             },
         );
