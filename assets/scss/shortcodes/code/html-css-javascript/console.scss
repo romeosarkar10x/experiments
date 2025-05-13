@@ -1,13 +1,14 @@
 body > main > article > div.shortcode.html-css-javascript {
     > div.consoles {
+        overflow: auto;
+        border: var(--border-width) dashed var(--border-color);
+        border-radius: 1em;
+
         pre.console {
             display: flex;
             padding: 0.5rem;
 
-            overflow: hidden;
-
-            border: var(--border-width) dashed var(--border-color);
-            border-radius: 1em;
+            min-width: fit-content;
 
             > div.line-numbers {
                 margin-left: 0.5rem;
