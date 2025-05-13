@@ -1,0 +1,54 @@
+{{ $html := .Get "html" }}
+{{ $css := .Get "css" }}
+{{ $javascript := .Get "javascript" }}
+
+{{ $numOfLinesHTML := len (split $html "\n") }}
+{{ $numOfLinesCSS := len (split $css "\n") }}
+{{ $numOfLinesJavascript := len (split $javascript "\n") }}
+
+
+<p>numOfLinesHtml: {{ $numOfLinesHTML }}</p>
+<p>numOfLinesCss: {{ $numOfLinesCSS }}</p>
+<p>numOfLinesJavascript: {{ $numOfLinesJavascript }}</p>
+
+<div class="shortcode html-css-javascript"
+    ><div class="radio-button"
+        ><button
+            class="radio-button-state html"
+            onclick='expt_radioButtonSelect(event, "html")'
+            >HTML</button
+        ><button
+            class="radio-button-state css"
+            onclick='expt_radioButtonSelect(event, "css")'
+            >CSS</button
+        ><button
+            class="radio-button-state javascript"
+            onclick='expt_radioButtonSelect(event, "javascript")'
+            >Javascript</button
+        ></div
+    ><div class="consoles">
+        <pre class="console html">
+            {{- partial "single/main/article/shortcodes/code/html-css-javascript/line-numbers" $numOfLinesHTML -}}
+            <code class="language-xml">{{- $html -}}</code></pre>
+        <pre class="console css">
+            {{- partial "single/main/article/shortcodes/code/html-css-javascript/line-numbers" $numOfLinesCSS -}}
+            <code class="language-css">{{- $css -}}</code></pre>
+        <pre class="console javascript">
+            {{- partial "single/main/article/shortcodes/code/html-css-javascript/line-numbers" $numOfLinesJavascript -}}
+            <code class="language-javascript">{{- $javascript -}}</code></pre>
+        <iframe
+            style="margin-top: 1rem; width: 100%; height: 250px;
+            display: block; border: var(--border-width) solid var(--border-color); border-radius: 1em;"
+            srcdoc="{{ fmt.Printf `<!doctype html>
+                <html>
+                <head>
+                <style>%s</style>
+                </head>
+
+                <body>%s</body>
+
+                <script>%s</script>
+                </html
+                >` $css $html $javascript
+            }}"></iframe></div
+></div>

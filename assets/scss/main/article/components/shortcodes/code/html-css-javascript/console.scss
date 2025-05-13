@@ -1,0 +1,29 @@
+body > main > article > div.shortcode.html-css-javascript {
+    > div.consoles {
+        pre.console {
+            display: flex;
+            padding: 0.5rem;
+
+            overflow: hidden;
+
+            border: var(--border-width) dashed var(--border-color);
+            border-radius: 1em;
+
+            > div.line-numbers {
+                margin-right: 1rem;
+
+                > div.line-number {
+                    font-family: "JetBrains Mono";
+                    margin: 0;
+                    padding: 0;
+                    text-align: right;
+                }
+            }
+
+            > code {
+                padding: 0;
+                overflow: visible;
+            }
+        }
+    }
+}

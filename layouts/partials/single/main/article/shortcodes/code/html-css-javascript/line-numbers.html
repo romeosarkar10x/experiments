@@ -1,0 +1,8 @@
+{{ $n := . }}
+
+
+<div class="line-numbers">
+    {{- range $index := (seq 1 $n) -}}
+        <div class="line-number">{{- $index -}}</div>
+    {{- end -}}
+</div>
