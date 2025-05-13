@@ -10,6 +10,8 @@
 <p>numOfLinesHtml: {{ $numOfLinesHTML }}</p>
 <p>numOfLinesCss: {{ $numOfLinesCSS }}</p>
 <p>numOfLinesJavascript: {{ $numOfLinesJavascript }}</p>
+{{ $maxNumOfLines := math.Max $numOfLinesHTML (math.Max $numOfLinesCSS $numOfLinesJavascript) }}
+
 
 <div class="shortcode html-css-javascript"
     ><div class="radio-button"
@@ -28,11 +30,13 @@
         ></div
     ><div class="consoles">
         <pre class="console html">
-            {{- partial "shortcodes/code/html-css-javascript/line-numbers.html" $numOfLinesHTML -}}
+            {{- partial "shortcodes/code/html-css-javascript/line-numbers.html" $maxNumOfLines -}}
             <code class="language-xml">{{- $html -}}</code></pre>
         <pre class="console css">
+            {{- partial "shortcodes/code/html-css-javascript/line-numbers.html" $maxNumOfLines -}}
             <code class="language-css">{{- $css -}}</code></pre>
         <pre class="console javascript">
+            {{- partial "shortcodes/code/html-css-javascript/line-numbers.html" $maxNumOfLines -}}
             <code class="language-javascript">{{- $javascript -}}</code></pre>
         <iframe
             style="margin-top: 1rem; width: 100%; height: 250px;
