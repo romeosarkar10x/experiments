@@ -233,7 +233,7 @@ int main()
 
 code/html:
 
-{{< code/html-css-javascript
+{{< code/html-css-javascript/index
 html=`<h1>Hugo Shortcodes</h1>
 
 <p>This is a paragraph.</p>
@@ -241,10 +241,12 @@ html=`<h1>Hugo Shortcodes</h1>
 
 <button>Click Me</button>
 
-<p>The above button has been clicked <span>0</span> times.</p>`
+<p>The above button has been clicked <span>0</span> times.</p>
+<p>Para-1</p>
+<p>Para-2</p>`
 
 css=`
-body { background-color: wheat; }
+body { background-color: wheat; scrollbar-color: red orange; }
 button {
 background-color: yellowgreen;
 border-radius: 0.25rem;
