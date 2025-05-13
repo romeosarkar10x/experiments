@@ -28,13 +28,11 @@
         ></div
     ><div class="consoles">
         <pre class="console html">
-            {{- partial "single/main/article/shortcodes/code/html-css-javascript/line-numbers" $numOfLinesHTML -}}
+            {{- partial "shortcodes/code/html-css-javascript/line-numbers.html" $numOfLinesHTML -}}
             <code class="language-xml">{{- $html -}}</code></pre>
         <pre class="console css">
-            {{- partial "single/main/article/shortcodes/code/html-css-javascript/line-numbers" $numOfLinesCSS -}}
             <code class="language-css">{{- $css -}}</code></pre>
         <pre class="console javascript">
-            {{- partial "single/main/article/shortcodes/code/html-css-javascript/line-numbers" $numOfLinesJavascript -}}
             <code class="language-javascript">{{- $javascript -}}</code></pre>
         <iframe
             style="margin-top: 1rem; width: 100%; height: 250px;
