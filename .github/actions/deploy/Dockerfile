@@ -4,8 +4,8 @@ ENV DART_SASS_VERSION="1.88.0"
 ENV HUGO_VERSION="0.147.3"
 
 RUN <<EOF
-apt-get update > /dev/null
-apt-get install -y nodejs npm git wget > /dev/null
+apt-get update
+apt-get install -y nodejs npm git wget
 EOF
 
 # Install `dart-sass`
