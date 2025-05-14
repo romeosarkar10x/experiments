@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # Print version information
 echo "Node version: $(node --version)"
 echo "NPM version: $(npm --version)"
