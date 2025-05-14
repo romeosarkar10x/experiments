@@ -26,6 +26,8 @@ EOF
 
 ENV PATH=/dart-sass:/hugo:${PATH}
 
+RUN pwd
+
 COPY entrypoint.sh entrypoint.sh
 RUN chmod +x entrypoint.sh
 
