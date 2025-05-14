@@ -9,6 +9,11 @@ echo "NPM version: $(npm --version)"
 echo "Hugo version: $(hugo version)"
 echo "Dart-sass version: $(sass --version)"
 
+# Copy repository to /expt
+mkdir /expt
+cp -r . /expt
+
+pushd /expt
 
 # Build site
 hugo
@@ -18,3 +23,5 @@ npm install -g wrangler
 
 # Deploy to `Cloudflare Pages`
 wrangler pages deploy ./public --project-name=expt --branch=main --commit-dirty=true
+
+popd
