@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Exit immediately if any command exits with a non-zero status
+set -e
+
 # Print version information
 echo "Node version: $(node --version)"
 echo "NPM version: $(npm --version)"
