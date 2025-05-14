@@ -4,7 +4,7 @@ ENV DART_SASS_VERSION="1.88.0"
 ENV HUGO_VERSION="0.147.3"
 
 RUN <<EOF
-apt-get update && apt-get upgrade -y
+apt-get update
 apt-get install -y nodejs npm git wget
 EOF
 
