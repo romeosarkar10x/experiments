@@ -5,7 +5,13 @@ ENV HUGO_VERSION="0.147.3"
 
 RUN <<EOF
 apt-get update
-apt-get install -y nodejs npm git wget
+apt-get install -y git wget
+EOF
+
+# Install `node` and `npm`
+RUN <<EOF
+curl -o- https://fnm.vercel.app/install | bash
+fnm install 24
 EOF
 
 # Install `dart-sass`
