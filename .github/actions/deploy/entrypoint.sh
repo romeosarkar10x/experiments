@@ -9,8 +9,6 @@ echo "NPM version: $(npm --version)"
 echo "Hugo version: $(hugo version)"
 echo "Dart-sass version: $(sass --version)"
 
-# Trust the current directory despite ownership differences
-git config --global --add safe.directory $(pwd)
 
 # Build site
 hugo
