@@ -5,12 +5,12 @@ ENV HUGO_VERSION="0.147.3"
 
 RUN <<EOF
 apt-get update
-apt-get install -y git wget
+apt-get install -y git wget curl unzip
 EOF
 
 # Install `node` and `npm`
 RUN <<EOF
-wget -O - https://fnm.vercel.app/install | bash
+curl -o - https://fnm.vercel.app/install | bash
 fnm install 24
 EOF
 
