@@ -10,7 +10,7 @@ EOF
 
 # Install `node` and `npm`
 RUN <<EOF
-curl -o- https://fnm.vercel.app/install | bash
+wget -O - https://fnm.vercel.app/install | bash
 fnm install 24
 EOF
 
