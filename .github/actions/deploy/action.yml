@@ -1,0 +1,6 @@
+name: deploy
+description: "Github docker action to check formatting, build and deploy to `Cloudflare Pages`."
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
