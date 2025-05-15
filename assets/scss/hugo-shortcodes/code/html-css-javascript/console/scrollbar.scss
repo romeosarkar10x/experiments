@@ -1,0 +1,5 @@
+@use "../../../../mixins";
+
+body > main > article > div.shortcode.html-css-javascript > div.consoles {
+    @include mixins.ghost-scrollbar;
+}
