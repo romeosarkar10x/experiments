@@ -10,21 +10,24 @@
         class="profile-photo"
         src="{{ $author.imageRelPermalink }}" />
     <div>
-        <a
-            class="author-name"
-            href=""
-            rel="author"
-            >{{ $author.name }}</a
+        <div class="link-container"
+            >Author:
+            <a
+                class="author"
+                href=""
+                rel="author"
+                >{{ $author.name }}</a
+            ></div
         >
-        <p>
-            Created:
+        <p
+            >Created:
             <time
-                class="creation-date"
+                class="created"
                 datetime="{{ $dateMachine }}"
                 >{{ $dateHuman }}</time
             >
         </p>
-        <p> Updated: <time>{{ .Page.Lastmod.Format "January 2, 2006" }}</time> </p>
+        <p>Updated: <time class="updated">{{ .Page.Lastmod.Format "January 2, 2006" }}</time> </p>
     </div>
 </div>
 <div class="meta">

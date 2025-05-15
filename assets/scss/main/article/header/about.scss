@@ -8,8 +8,11 @@ main > article > header {
         min-width: fit-content;
     }
 
-    a.author-name {
-        display: block;
+    a.author {
+        font-weight: bold;
+    }
+
+    time {
         font-weight: bold;
     }
 
