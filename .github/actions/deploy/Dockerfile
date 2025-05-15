@@ -1,5 +1,6 @@
 FROM debian:latest
 
+ENV NODE_VERSION="24.0.1"
 ENV DART_SASS_VERSION="1.88.0"
 ENV HUGO_VERSION="0.147.3"
 
@@ -10,8 +11,9 @@ EOF
 
 # Install `node` and `npm`
 RUN <<EOF
-curl -o - https://fnm.vercel.app/install | bash
-fnm install 24
+mkdir /node.js
+wget https://nodejs.org/download/release/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.xz
+tar -xf node-v${NODE_VERSION}-linux-x64.tar.xz -C /node.js --strip-components=1
 EOF
 
 # Install `dart-sass`
