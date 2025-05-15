@@ -1,0 +1,45 @@
+@use "sass:color";
+
+@mixin ghost-scrollbar {
+    &::-webkit-scrollbar {
+        width: 0.5rem;
+        height: 0.5rem;
+        display: block;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: var(--scrollbar-track);
+        border-left: var(--border-width) var(--border-style) var(--border-color);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: var(--scrollbar-thumb);
+        transition: background 1s;
+        background: repeating-linear-gradient(
+            45deg,
+            #aeaeae 0rem,
+            #aeaeae 0.5rem,
+            #cecece 0.5rem,
+            #cecece 1rem,
+            #eeeeee 1rem,
+            #eeeeee 1.5rem,
+            #cecece 1.5rem,
+            #cecece 2rem
+        );
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: var(--scrollbar-thumb-hover);
+        background: repeating-linear-gradient(
+            -45deg,
+            color.adjust(#aeaeae, $blackness: 25%) 0rem,
+            color.adjust(#aeaeae, $blackness: 25%) 0.5rem,
+            color.adjust(#cecece, $blackness: 25%) 0.5rem,
+            color.adjust(#cecece, $blackness: 25%) 1rem,
+            color.adjust(#eeeeee, $blackness: 25%) 1rem,
+            color.adjust(#eeeeee, $blackness: 25%) 1.5rem,
+            color.adjust(#cecece, $blackness: 25%) 1.5rem,
+            color.adjust(#cecece, $blackness: 25%) 2rem
+        );
+    }
+}
