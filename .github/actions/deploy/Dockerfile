@@ -13,7 +13,6 @@ EOF
 RUN <<EOF
 mkdir /node.js
 wget https://nodejs.org/download/release/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.xz
-ls
 tar -xf node-v${NODE_VERSION}-linux-x64.tar.xz -C /node.js --strip-components=1
 EOF
 
