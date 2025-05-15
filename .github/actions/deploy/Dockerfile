@@ -6,7 +6,7 @@ ENV HUGO_VERSION="0.147.3"
 
 RUN <<EOF
 apt-get update
-apt-get install -y git wget curl unzip
+apt-get install -y git wget curl unzip xz-utils
 EOF
 
 # Install `node` and `npm`
