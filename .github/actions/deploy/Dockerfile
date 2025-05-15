@@ -32,7 +32,7 @@ tar -xzf hugo_${HUGO_VERSION}_linux-amd64.tar.gz -C /hugo
 rm hugo_${HUGO_VERSION}_linux-amd64.tar.gz
 EOF
 
-ENV PATH=/node.js:/dart-sass:/hugo:${PATH}
+ENV PATH=/node.js/bin:/dart-sass:/hugo:${PATH}
 
 RUN pwd
 
