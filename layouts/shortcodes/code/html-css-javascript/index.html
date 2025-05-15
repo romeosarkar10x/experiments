@@ -5,11 +5,6 @@
 {{ $numOfLinesHTML := len (split $html "\n") }}
 {{ $numOfLinesCSS := len (split $css "\n") }}
 {{ $numOfLinesJavascript := len (split $javascript "\n") }}
-
-
-<p>numOfLinesHtml: {{ $numOfLinesHTML }}</p>
-<p>numOfLinesCss: {{ $numOfLinesCSS }}</p>
-<p>numOfLinesJavascript: {{ $numOfLinesJavascript }}</p>
 {{ $maxNumOfLines := math.Max $numOfLinesHTML (math.Max $numOfLinesCSS $numOfLinesJavascript) }}
 
 
