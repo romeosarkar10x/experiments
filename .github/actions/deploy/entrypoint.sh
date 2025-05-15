@@ -4,7 +4,7 @@
 set -e
 
 # Print version information
-echo "Node version: $(node --version)"
+echo "Node.js version: $(node --version)"
 echo "NPM version: $(npm --version)"
 echo "Hugo version: $(hugo version)"
 echo "Dart-sass version: $(sass --version)"
