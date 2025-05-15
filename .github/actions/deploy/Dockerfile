@@ -4,6 +4,7 @@ ENV NODE_VERSION="24.0.1"
 ENV DART_SASS_VERSION="1.88.0"
 ENV HUGO_VERSION="0.147.3"
 
+# Install necessary packages
 RUN <<EOF
 apt-get update
 apt-get install -y git wget xz-utils
@@ -33,8 +34,6 @@ rm hugo_${HUGO_VERSION}_linux-amd64.tar.gz
 EOF
 
 ENV PATH=/node.js/bin:/dart-sass:/hugo:${PATH}
-
-RUN pwd
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
