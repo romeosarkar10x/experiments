@@ -1,10 +1,10 @@
-{{ $page := .page }}
-{{ $predicate := false }}
+{{- $page := .page -}}
+{{- $predicate := false -}}
 
-{{ range .Context.Site.AllPages }}
-    {{ if eq $page .RelPermalink }}
-        {{ $predicate = true }}
-    {{ end }}
-{{ end }}
+{{- range .Context.Site.AllPages -}}
+    {{- if eq $page .RelPermalink -}}
+        {{- $predicate = true -}}
+    {{- end -}}
+{{- end -}}
 
-{{ return $predicate }}
+{{- return $predicate -}}

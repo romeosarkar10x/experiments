@@ -1,71 +1,74 @@
-{{ $page := .page }}
-{{ $Context := .Context }}
+{{- $page := .page -}}
+{{- $Context := .Context -}}
 
-{{ $subpages := partial "single/sidebar/left/sitemap/get-subpages.html" (dict "page" $page "Context" .Context) }}
-{{ $isPenultimate := true }}
+{{- $subpages := partial "single/sidebar/left/sitemap/get-subpages.html" (dict "page" $page "Context" .Context) -}}
+{{- $isPenultimate := true -}}
 
-{{ range $currentPage := $subpages }}
-    {{ $subpages := partial "single/sidebar/left/sitemap/get-subpages.html" (dict "page" $currentPage "Context" $.Context) }}
-    {{ if ne 0 (len $subpages) }}
-        {{ $isPenultimate = false }}
-    {{ end }}
-{{ end }}
+{{- range $currentPage := $subpages -}}
+    {{- $subpages := partial "single/sidebar/left/sitemap/get-subpages.html" (dict "page" $currentPage "Context" $.Context) -}}
+    {{- if ne 0 (len $subpages) -}}
+        {{- $isPenultimate = false -}}
+    {{- end -}}
+{{- end -}}
 
-{{ $classname := "" }}
-{{ if eq $isPenultimate false }}
-    {{ $classname = "non-penultimate" }}
-{{ end }}
+{{- $classname := "" -}}
+{{- if eq $isPenultimate false -}}
+    {{- $classname = "non-penultimate" -}}
+{{- end -}}
 
 
-<ul class="{{ $classname }}">
-    {{ range $currentPage := $subpages }}
-        {{ $currentSubpages := partial "single/sidebar/left/sitemap/get-subpages.html" (dict "page" $currentPage "Context" $Context) }}
-        {{ $filename := partial "single/sidebar/left/sitemap/beautify-filename" (strings.TrimSuffix "/" (strings.TrimPrefix $page $currentPage)) }}
+<ul class="{{- $classname -}}">
+    {{- range $currentPage := $subpages -}}
+        {{- $currentSubpages := partial "single/sidebar/left/sitemap/get-subpages.html" (dict "page" $currentPage "Context" $Context) -}}
+        {{- $filename := partial "single/sidebar/left/sitemap/beautify-filename" (strings.TrimSuffix "/" (strings.TrimPrefix $page $currentPage)) -}}
 
-        {{ if eq (len $currentSubpages) 0 }}
-            {{ $class := "" }}
-            {{ if eq $currentPage $Context.Page.RelPermalink }}
-                {{ $class = " this" }}
-            {{ end }}
+        {{- if eq (len $currentSubpages) 0 -}}
+            {{- $class := "" -}}
+            {{- if eq $currentPage $Context.Page.RelPermalink -}}
+                {{- $class = " this" -}}
+            {{- end -}}
             <li class="leaf"
                 ><div class="container link-container">
-                    {{ $classname := "" }}
+                    {{- $classname := "" -}}
 
-                    {{ if eq $Context.Page.RelPermalink $currentPage }}
-                        {{ $classname = " this" }}
-                    {{ end }}
+                    {{- if eq $Context.Page.RelPermalink $currentPage -}}
+                        {{- $classname = " this" -}}
+                    {{- end -}}
                     <a
-                        class="exists{{ $classname }}"
-                        href="{{ $currentPage }}"
-                        >{{ $filename }}</a
+                        class="exists{{- $classname -}}"
+                        href="{{- $currentPage -}}"
+                        >{{- $filename -}}</a
                     ></div
                 ></li
             >
-        {{ else }}
-            {{ $pageExists := partial "single/sidebar/left/sitemap/page-exists.html" (dict "page" $currentPage "Context" $Context) }}
-            {{ $class := " exists" }}
-            {{ $attribute := printf `href="%s"` $currentPage }}
-            {{ if not $pageExists }}
-                {{ $class = "" }}
-                {{ $attribute = "" }}
-            {{ end }}
-            <li class="parent">
-                <details>
-                    <summary>
-                        <div class="container">
-                            <svg aria-hidden="true"><use href="#caret"></use></svg>
-                            <div class="link-container"
+        {{- else -}}
+            {{- $pageExists := partial "single/sidebar/left/sitemap/page-exists.html" (dict "page" $currentPage "Context" $Context) -}}
+            {{- $class := " exists" -}}
+            {{- $attribute := printf `href="%s"` $currentPage -}}
+            {{- if not $pageExists -}}
+                {{- $class = "" -}}
+                {{- $attribute = "" -}}
+            {{- end -}}
+            <li class="parent"
+                ><details
+                    ><summary
+                        ><div class="container"
+                            ><svg aria-hidden="true"><use href="#caret"></use></svg
+                            ><div class="link-container"
                                 ><a
-                                    class="{{ $class }}"
-                                    {{ $attribute | safeHTMLAttr }}
-                                    >{{ $filename }}</a
+                                    class="{{- $class -}}"
+                                    {{- $attribute | safeHTMLAttr -}}
+                                    >{{- $filename -}}</a
                                 ></div
-                            >
-                        </div>
-                    </summary>
-                    {{ partial "single/sidebar/left/sitemap/generate-sitemap-html.html" (dict "page" $currentPage "Context" $Context) }}
-                </details>
-            </li>
-        {{ end }}
-    {{ end }}
+                            ></div
+                        ></summary
+                    >
+                    {{- partial "single/sidebar/left/sitemap/generate-sitemap-html.html" (dict "page" $currentPage "Context" $Context)
+                        | strings.TrimSpace
+                        | safeHTML
+                    -}}
+                </details></li
+            >
+        {{- end -}}
+    {{- end -}}
 </ul>

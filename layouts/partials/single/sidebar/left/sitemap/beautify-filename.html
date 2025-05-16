@@ -1,15 +1,15 @@
-{{ $result := "" }}
-{{ $words := split . "-" }}
+{{- $result := "" -}}
+{{- $words := split . "-" -}}
 
-{{ range $index, $word := $words }}
-    {{ $firstCharacter := substr . 0 1 }}
-    {{ if eq $index 0 }}
-        {{ $firstCharacter = $firstCharacter | upper }}
-    {{ end }}
+{{- range $index, $word := $words -}}
+    {{- $firstCharacter := substr . 0 1 -}}
+    {{- if eq $index 0 -}}
+        {{- $firstCharacter = $firstCharacter | upper -}}
+    {{- end -}}
 
-    {{ $rest := substr . 1 }}
-    {{ $result = add $result (add " " (add $firstCharacter $rest)) }}
-{{ end }}
+    {{- $rest := substr . 1 -}}
+    {{- $result = add $result (add " " (add $firstCharacter $rest)) -}}
+{{- end -}}
 
-{{ $result = strings.TrimPrefix " " $result }}
-{{ return $result }}
+{{- $result = strings.TrimPrefix " " $result -}}
+{{- return $result -}}

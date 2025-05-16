@@ -1,3 +1,6 @@
 <nav id="sitemap"
-    >{{ partial "single/sidebar/left/sitemap/generate-sitemap-html.html" (dict "page" "/" "Context" .) }}</nav
+    >{{- partial "single/sidebar/left/sitemap/generate-sitemap-html.html" (dict "page" "/" "Context" .)
+        | strings.TrimSpace
+        | safeHTML
+    -}}</nav
 >
