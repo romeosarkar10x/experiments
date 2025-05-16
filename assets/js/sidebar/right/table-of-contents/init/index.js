@@ -2,7 +2,7 @@ function generateKey(hint = "") {
     return `${window.location.hostname}/table-of-contents:${hint}${window.location.pathname}`;
 }
 
-function dfsClosure(callback, id = 0) {
+function dfsFactory(callback, id = 0) {
     const root = document.querySelector("aside.sidebar-right > nav#table-of-contents > ul > li");
 
     (function dfs(node) {
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (statesItem != null) {
             const states = statesItem.split(",").map((element) => element === "true");
-            dfsClosure(function (nodeId, details) {
+            dfsFactory(function (nodeId, details) {
                 details.open = states[nodeId];
             });
         } else {
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
     (function saveState() {
         window.addEventListener("beforeunload", function () {
             const states = [];
-            dfsClosure(function (nodeId, details) {
+            dfsFactory(function (nodeId, details) {
                 states[nodeId] = details.open;
             });
             sessionStorage.setItem(generateKey(), states);
