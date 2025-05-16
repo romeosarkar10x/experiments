@@ -1,3 +1,8 @@
+---
+params:
+    author: romeosarkar10x
+---
+
 # Modern Frontend Development: A Comprehensive Guide
 
 ## Introduction

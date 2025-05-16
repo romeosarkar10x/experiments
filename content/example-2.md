@@ -1,3 +1,8 @@
+---
+params:
+    author: romeosarkar10x
+---
+
 # The Complete Guide to Markdown
 
 This comprehensive document showcases various heading levels and formatting options available in markdown.

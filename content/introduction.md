@@ -1,3 +1,8 @@
+---
+params:
+    author: romeosarkar10x
+---
+
 # Introduction
 
 ⚡️ Docusaurus will help you ship a **beautiful documentation site in no time**.

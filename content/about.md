@@ -1,5 +1,8 @@
 ---
+author: romeosarkar10x
 date: "2025-03-31"
+params:
+    author: romeosarkar10x
 ---
 
 # Romeo Sarkar's Experiments

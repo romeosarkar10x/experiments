@@ -1,3 +1,8 @@
+---
+params:
+    author: romeosarkar10x
+---
+
 # Fuzzy Set Cross Product
 
 ## Introduction
