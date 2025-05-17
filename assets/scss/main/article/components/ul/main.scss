@@ -4,7 +4,10 @@ main > article > ul > li {
 
     &::marker {
         font-size: 1.25rem;
-        display: block;
         align-items: center;
+    }
+
+    > p {
+        display: inline;
     }
 }
