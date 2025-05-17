@@ -1,4 +1,9 @@
 {{ $username := .Page.Params.author }}
+
+{{ if not $username }}
+    {{ errorf "missing author field in '%s' { 'single' page must contain an params.author field }" .File.Path }}
+{{ end }}
+
 {{ $author := index .Site.Data.authors $username }}
 
 {{ $author = merge $author (dict "username" $username) }}
