@@ -8,5 +8,5 @@
     {{ $contentWithoutFirstHeading := replaceRE $firstHeadingRegex "" $content 1 }}
     {{ $.Page.Store.Set "RawContent" $contentWithoutFirstHeading }}
 {{ else }}
-    {{ errorf "missing title in '%s' | 'single' page must begin with a 'heading level 1' e.g. '# Title'" .File.Path }}
+    {{ errorf "missing title in '%s' { 'single' page must begin with a 'heading level 1' e.g. '# Title' }" .File.Path }}
 {{ end }}
