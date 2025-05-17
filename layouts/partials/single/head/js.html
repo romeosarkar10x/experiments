@@ -2,14 +2,18 @@
 
 {{- if eq hugo.Environment "development" }}
     {{ range $scripts }}
-        <script src="{{ .RelPermalink }}"></script>
+        {{ with . | js.Build }}
+            <script src="{{ .RelPermalink }}"></script>
+        {{ end }}
     {{ end }}
 {{- else }}
     {{- $opts := dict "minify" true }}
     {{ range $scripts }}
-        <script
-            src="{{ .RelPermalink }}"
-            integrity="{{- .Data.Integrity }}"
-            crossorigin="anonymous"></script>
+        {{ with . | js.Build }}
+            <script
+                src="{{ .RelPermalink }}"
+                integrity="{{- .Data.Integrity }}"
+                crossorigin="anonymous"></script>
+        {{ end }}
     {{ end }}
 {{- end }}
