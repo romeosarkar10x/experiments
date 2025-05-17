@@ -1,0 +1,4 @@
+{{- $filename := index .Params 0 -}}
+
+
+<div class="shortcode image"><img src="{{ add (add "/hugo-content" .Page.RelPermalink) $filename }}" /></div>

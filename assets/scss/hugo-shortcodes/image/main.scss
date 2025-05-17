@@ -1,0 +1,15 @@
+body > main > article div.shortcode.image {
+    width: 100%;
+
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+    text-align: center;
+
+    > img {
+        max-width: 100%;
+
+        border: var(--border-width) var(--border-style) var(--border-color);
+        border-radius: 0.5em;
+    }
+}
