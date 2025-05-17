@@ -3,7 +3,7 @@
 
 <article>
     {{- partial "single/main/article/header/index.html" . -}}
-    {{- partial "single/main/article/replace-heading-ids.html" (markdownify (.Store.Get "RawContent")) -}}
+    {{- partial "single/main/article/replace-heading-ids.html" (.Store.Get "RawContent" | .Page.RenderString) -}}
     {{- partial "single/main/article/comment/index.html" -}}
 </article>
 <footer>
