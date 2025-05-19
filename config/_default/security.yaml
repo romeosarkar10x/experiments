@@ -1,0 +1,2 @@
+funcs:
+  getenv: ["^HUGO_", "^CI$", "^GITHUB_API$"]
