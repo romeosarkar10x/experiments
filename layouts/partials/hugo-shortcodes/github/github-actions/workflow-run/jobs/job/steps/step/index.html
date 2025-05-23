@@ -8,8 +8,12 @@
 {{- $groupBegin := 0 -}}
 
 
-<details
-    ><summary>{{- $step.label -}}</summary
+<details class="step"
+    ><summary
+        ><div class="container"
+            ><svg><use href="#hugo-shortcodes_github_github-actions_workflow-run_caret"></use></svg
+            >{{- $step.label -}}</div
+        ></summary
     ><ul>
         {{- range $i := seq $begin (sub $end 1) -}}
             {{- $log := index $logs $i -}}

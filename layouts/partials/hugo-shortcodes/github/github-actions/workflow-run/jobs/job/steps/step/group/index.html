@@ -4,8 +4,12 @@
 {{- $end := .end -}}
 
 
-<details
-    ><summary>{{- (index $logs $begin).text }}</summary
+<details class="group"
+    ><summary
+        ><div class="container"
+            ><svg><use href="#hugo-shortcodes_github_github-actions_workflow-run_caret"></use></svg
+            >{{- (index $logs $begin).text }}</div
+        ></summary
     ><ul
         >{{- range $i := seq (add $begin 1) (sub $end 1) -}}
             {{- $log := index $logs $i -}}

@@ -1,0 +1,36 @@
+body
+    > main
+    > article
+    > section.shortcode.github_github-actions_workflow-run
+    > section.jobs
+    > pre.job
+    > details.step
+    > ul
+    > li
+    > details.group {
+    > summary {
+        display: inline;
+
+        > div.container {
+            vertical-align: top;
+
+            display: inline-flex;
+            align-items: center;
+
+            cursor: pointer;
+
+            padding-right: 1em;
+            border-radius: 0.375em;
+
+            &:hover {
+                background-color: rgb(230, 215, 215);
+            }
+
+            > svg {
+                width: 1.25em;
+                height: 1.25em;
+                margin-right: 0.25em;
+            }
+        }
+    }
+}

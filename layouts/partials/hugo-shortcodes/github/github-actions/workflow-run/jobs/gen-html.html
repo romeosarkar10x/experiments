@@ -10,10 +10,9 @@
     ><select>
         {{- range $jobs -}}
             <option>{{- .name -}}</option>
-        {{- end -}}
-    </select>
-    <pre>
-{{- range $jobs -}}
+        {{- end -}} </select
+    ><pre class="job">
+        {{- range $jobs -}}
             {{- partial "hugo-shortcodes/github/github-actions/workflow-run/jobs/job/index" (dict
                 "CONTEXT" $CONTEXT
                 "repositoryOwnerName" $repositoryOwnerName
@@ -22,6 +21,7 @@
                 "job" .
                 ) | strings.TrimSpace | safeHTML
             -}}
-        {{- end -}}</pre
+        {{- end -}}
+        </pre
     >
 </section>

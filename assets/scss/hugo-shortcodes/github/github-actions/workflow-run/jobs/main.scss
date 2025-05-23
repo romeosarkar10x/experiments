@@ -1,10 +1,50 @@
 body > main > article > section.shortcode.github_github-actions_workflow-run > section.jobs {
-    background-color: red;
     ul > li {
         list-style-type: none;
     }
 
     details > summary {
         list-style-type: none;
+    }
+
+    > pre {
+        border: var(--border-width) var(--border-style) var(--border-color);
+        padding: 1em;
+        border-radius: 0.5em;
+
+        details > ul {
+            margin-left: 0.625em;
+            padding-left: calc(0.625em + 0.25em);
+        }
+
+        > details.step {
+            > summary {
+                div.container {
+                    vertical-align: top;
+
+                    display: inline-flex;
+                    align-items: center;
+
+                    cursor: pointer;
+
+                    padding-right: 1em;
+                    border-radius: 0.375em;
+
+                    &:hover {
+                        background-color: rgb(230, 215, 215);
+                    }
+
+                    > svg {
+                        width: 1.25em;
+                        height: 1.25em;
+                        margin-right: 0.25em;
+                    }
+                }
+            }
+        }
+
+        > details[open].step > summary > div.container > svg {
+            transform: rotate(90deg);
+        }
     }
 }
