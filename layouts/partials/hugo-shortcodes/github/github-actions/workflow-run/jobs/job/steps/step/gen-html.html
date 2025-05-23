@@ -1,0 +1,35 @@
+{{- $CONTEXT := .CONTEXT -}}
+{{- $logs := .logs -}}
+{{- $start := .start -}}
+{{- $end := .end -}}
+{{- $index := 0 -}}
+{{- $length := 0 -}}
+
+{{- range $i := seq $index (sub $length 1) -}}
+    {{- if gt $i ($CONTEXT.Scratch.Get "i") -}}
+        {{- $type := (index $logs $i).type -}}
+        {{- $text := (index $logs $i).text -}}
+
+        {{- if eq $type "start" -}}
+            <li
+                ><details
+                    ><summary>{{- $text -}}</summary
+                    ><ul
+                        >{{- partial "hugo-shortcodes/github/github-actions/workflow-run/gen-html"
+                            (dict "CONTEXT" $CONTEXT "logs" $logs "index" (add $i 1)) |
+                            strings.TrimSpace |
+                            safeHTML
+                        -}}</ul
+                    ></details
+                ></li
+            >
+        {{- else if eq $type "end" -}}
+            {{- $CONTEXT.Scratch.Set "i" $i -}}
+            {{- break -}}
+        {{- else if eq $type "command" -}}
+            <li>{{- $text -}}</li>
+        {{- else -}}
+            <li>{{- $text -}}</li>
+        {{- end -}}
+    {{- end -}}
+{{- end -}}

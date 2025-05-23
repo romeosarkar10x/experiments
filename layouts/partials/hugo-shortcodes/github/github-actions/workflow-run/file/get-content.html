@@ -1,0 +1,35 @@
+{{- $CONTEXT := .CONTEXT -}}
+{{- $repositoryOwnerName := .repositoryOwnerName -}}
+{{- $repositoryName := .repositoryName -}}
+{{- $workflowRun := .workflowRun -}}
+
+{{- $workflowRunFilePath := $workflowRun.path -}}
+{{- $workflowRunCommitSHA := $workflowRun.head_sha -}}
+
+{{- $workflowRunFileURL := collections.Delimit (slice
+    "https://api.github.com/repos"
+    $repositoryOwnerName
+    $repositoryName
+    "contents"
+    $workflowRunFilePath
+    ) "/"
+-}}
+
+{{- $workflowRunFileURLWithParams := add
+    (add $workflowRunFileURL "?")
+    (add "ref=" $workflowRunCommitSHA)
+-}}
+
+{{- $headers := (dict
+    "Authorization" (add "Bearer " (os.Getenv "GITHUB_API"))
+    "Accept" "*/*"
+    )
+-}}
+
+{{- $content := (resources.GetRemote $workflowRunFileURLWithParams (dict
+    "method" "GET"
+    "headers" $headers
+    )).Content | strings.TrimSpace | safeHTML
+-}}
+
+{{- return encoding.Base64Decode (strings.Replace ($content | transform.Unmarshal).content "\n" "") -}}

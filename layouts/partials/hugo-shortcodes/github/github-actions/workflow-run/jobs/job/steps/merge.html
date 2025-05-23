@@ -1,0 +1,52 @@
+{{ $CONTEXT := .CONTEXT }}
+{{ $job := .job }}
+{{ $steps := .steps }}
+
+{{ $merged := slice }}
+{{ $indexSteps := 0 }}
+
+{{ range $i, $jobStep := $job.steps }}
+    {{ $newStep := dict
+        "label" (index $jobStep 0)
+        "conclusion" (index $jobStep 1)
+        "status" (index $jobStep 2)
+    }}
+
+    {{ if eq $i 0 }}
+        {{ $newStep = merge $newStep (dict
+            "type" "initialize"
+            "logText" (add "Complete job name: " $job.name)
+            )
+        }}
+    {{ else }}
+        {{ if ge $indexSteps (len $steps) }}
+            {{ if lt (len $merged) (sub (len $job.steps) 1) }}
+                {{ $newStep = merge $newStep (dict
+                    "type" "post"
+                    "logText" "Post job cleanup."
+                    )
+                }}
+            {{ else }}
+                {{ $newStep = merge $newStep (dict
+                    "type" "cleanup"
+                    "logText" "Cleaning up orphan processes"
+                    )
+                }}
+            {{ end }}
+        {{ else }}
+            {{ $step := index $steps $indexSteps }}
+
+            {{ $newStep = merge $newStep (dict
+                "type" $step.type
+                "logText" $step.logString
+                )
+            }}
+
+            {{ $indexSteps = add $indexSteps 1 }}
+        {{ end }}
+    {{ end }}
+
+    {{ $merged = $merged | append $newStep }}
+{{ end }}
+
+{{ return $merged }}

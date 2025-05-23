@@ -1,0 +1,27 @@
+{{- $CONTEXT := .CONTEXT -}}
+{{- $repositoryOwnerName := .repositoryOwnerName -}}
+{{- $repositoryName := .repositoryName -}}
+{{- $workflowRun := .workflowRun -}}
+{{- $jobs := .jobs -}}
+
+
+<section class="jobs">
+    <label>Job: </label
+    ><select>
+        {{- range $jobs -}}
+            <option>{{- .name -}}</option>
+        {{- end -}}
+    </select>
+    <pre>
+{{- range $jobs -}}
+            {{- partial "hugo-shortcodes/github/github-actions/workflow-run/jobs/job/index" (dict
+                "CONTEXT" $CONTEXT
+                "repositoryOwnerName" $repositoryOwnerName
+                "repositoryName" $repositoryName
+                "workflowRun" $workflowRun
+                "job" .
+                ) | strings.TrimSpace | safeHTML
+            -}}
+        {{- end -}}</pre
+    >
+</section>

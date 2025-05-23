@@ -1,0 +1,43 @@
+{{/* type: { start, end, command, none } */}}
+
+{{ $log := . }}
+{{ $time := "" }}
+{{ $flagTime := true }}
+{{ $type := "none" }}
+{{ $flagType := true }}
+{{ $text := "" }}
+
+{{ range strings.Split $log "" }}
+    {{ if and $flagTime (ne . " ") }}
+        {{ $time = add $time . }}
+    {{ else }}
+        {{ if not $flagTime }}
+            {{ $text = add $text . }}
+
+            {{ if $flagType }}
+                {{ if eq $text "##[group]" }}
+                    {{ $type = "start" }}
+                    {{ $text = "" }}
+                    {{ $flagType = false }}
+                {{ else if eq $text "##[endgroup]" }}
+                    {{ $type = "end" }}
+                    {{ $text = "" }}
+                    {{ $flagType = false }}
+                {{ else if eq $text "[command]" }}
+                    {{ $type = "command" }}
+                    {{ $text = "" }}
+                    {{ $flagType = false }}
+                {{ end }}
+            {{ end }}
+        {{ else }}
+            {{ $flagTime = false }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ return (dict
+    "time" $time
+    "type" $type
+    "text" $text
+    )
+}}

@@ -1,0 +1,21 @@
+{{- $CONTEXT := .CONTEXT -}}
+{{- $logs := .logs -}}
+{{- $begin := .begin -}}
+{{- $end := .end -}}
+
+
+<details
+    ><summary>{{- (index $logs $begin).text }}</summary
+    ><ul
+        >{{- range $i := seq (add $begin 1) (sub $end 1) -}}
+            {{- $log := index $logs $i -}}
+            <li
+                >{{- partial "hugo-shortcodes/github/github-actions/workflow-run/jobs/job/steps/step/logs/log/gen-html" (dict
+                    "CONTEXT" $CONTEXT
+                    "log" $log
+                    ) | strings.TrimSpace | safeHTML
+                -}}</li
+            >
+        {{- end -}}</ul
+    ></details
+>

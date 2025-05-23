@@ -1,0 +1,67 @@
+{{- $CONTEXT := .CONTEXT -}}
+{{- $repositoryOwnerName := .repositoryOwnerName -}}
+{{- $repositoryName := .repositoryName -}}
+{{- $workflowRun := .workflowRun -}}
+{{- $job := .job -}}
+{{- $logs := .logs -}}
+
+{{- $workflowRunFileContent := partial "hugo-shortcodes/github/github-actions/workflow-run/file/get-content" (dict
+    "CONTEXT" $CONTEXT
+    "repositoryOwnerName" $repositoryOwnerName
+    "repositoryName" $repositoryName
+    "workflowRun" $workflowRun)
+-}}
+
+{{- $steps := partial "hugo-shortcodes/github/github-actions/workflow-run/jobs/job/steps/merge" (dict
+    "CONTEXT" $CONTEXT
+    "job" $job
+    "steps" (partial "hugo-shortcodes/github/github-actions/workflow-run/file/parse-steps" (dict
+    "CONTEXT" $CONTEXT
+    "workflowRunFileContent" $workflowRunFileContent
+    "job" $job))
+    )
+-}}
+
+{{- $indexSteps := 0 -}}
+{{- $begin := 0 -}}
+
+{{- range $i, $log := $logs -}}
+    {{- $step := index $steps $indexSteps -}}
+    {{- if eq $log.text $step.logText -}}
+        {{- if eq $indexSteps 0 -}}
+            {{- partial "hugo-shortcodes/github/github-actions/workflow-run/jobs/job/steps/step/index" (dict
+                "CONTEXT" $CONTEXT
+                "step" $step
+                "logs" $logs
+                "begin" $begin
+                "end" (add $i 1)
+                ) | strings.TrimSpace | safeHTML
+            -}}
+
+            {{- $begin = (add $i 1) -}}
+            {{- $indexSteps = add $indexSteps 1 -}}
+        {{- else -}}
+            {{- partial "hugo-shortcodes/github/github-actions/workflow-run/jobs/job/steps/step/index" (dict
+                "CONTEXT" $CONTEXT
+                "step" (index $steps (sub $indexSteps 1))
+                "logs" $logs
+                "begin" $begin
+                "end" $i
+                ) | strings.TrimSpace | safeHTML
+            -}}
+
+            {{- $begin = $i -}}
+        {{- end -}}
+
+        {{- $indexSteps = add $indexSteps 1 -}}
+    {{- end -}}
+{{- end -}}
+
+{{- partial "hugo-shortcodes/github/github-actions/workflow-run/jobs/job/steps/step/index" (dict
+    "CONTEXT" $CONTEXT
+    "step" (index $steps (sub $indexSteps 1))
+    "logs" $logs
+    "begin" $begin
+    "end" (len $logs)
+    ) | strings.TrimSpace | safeHTML
+-}}

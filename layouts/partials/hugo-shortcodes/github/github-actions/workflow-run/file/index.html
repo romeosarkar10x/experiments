@@ -1,0 +1,15 @@
+{{- $CONTEXT := .CONTEXT -}}
+{{- $repositoryOwnerName := .repositoryOwnerName -}}
+{{- $repositoryName := .repositoryName -}}
+{{- $workflowRun := .workflowRun -}}
+
+{{- $workflowRunFileContent := partial "hugo-shortcodes/github/github-actions/workflow-run/file/get-content" (dict
+    "CONTEXT" $CONTEXT
+    "repositoryOwnerName" $repositoryOwnerName
+    "repositoryName" $repositoryName
+    "workflowRun" $workflowRun
+    )
+-}}
+
+
+<pre><code>{{- transform.Highlight $workflowRunFileContent "yaml" -}}</code></pre>

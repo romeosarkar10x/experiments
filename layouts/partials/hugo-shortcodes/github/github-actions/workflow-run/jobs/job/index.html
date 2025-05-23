@@ -1,0 +1,26 @@
+{{- $CONTEXT := .CONTEXT -}}
+{{- $repositoryOwnerName := .repositoryOwnerName -}}
+{{- $repositoryName := .repositoryName -}}
+{{- $workflowRun := .workflowRun -}}
+{{- $job := .job -}}
+
+{{- $content := partial "hugo-shortcodes/github/github-actions/workflow-run/jobs/job/get-logs" (dict
+    "CONTEXT" $CONTEXT
+    "repositoryOwnerName" $repositoryOwnerName
+    "repositoryName" $repositoryName
+    "workflowRun" $workflowRun
+    "job" $job
+    )
+-}}
+
+{{- $logs := partial "hugo-shortcodes/github/github-actions/workflow-run/jobs/job/steps/step/logs/parse" $content -}}
+
+{{- partial "hugo-shortcodes/github/github-actions/workflow-run/jobs/job/steps/index" (dict
+    "CONTEXT" $CONTEXT
+    "repositoryOwnerName" $repositoryOwnerName
+    "repositoryName" $repositoryName
+    "workflowRun" $workflowRun
+    "job" $job
+    "logs" $logs
+    ) | strings.TrimSpace | safeHTML
+-}}

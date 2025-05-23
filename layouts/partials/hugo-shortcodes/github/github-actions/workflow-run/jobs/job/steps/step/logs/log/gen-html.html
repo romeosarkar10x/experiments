@@ -1,0 +1,16 @@
+{{- $CONTEXT := .CONTEXT -}}
+{{- $log := .log -}}
+
+{{- if eq $log.type "command" -}}
+    {{- partial "hugo-shortcodes/github/github-actions/workflow-run/jobs/job/steps/step/logs/log/gen-html-command" (dict
+        "CONTEXT" $CONTEXT
+        "log" $log
+        ) | strings.TrimSpace | safeHTML
+    -}}
+{{- else if eq $log.type "none" -}}
+    {{- partial "hugo-shortcodes/github/github-actions/workflow-run/jobs/job/steps/step/logs/log/gen-html-none" (dict
+        "CONTEXT" $CONTEXT
+        "log" $log
+        ) | strings.TrimSpace | safeHTML
+    -}}
+{{- end -}}

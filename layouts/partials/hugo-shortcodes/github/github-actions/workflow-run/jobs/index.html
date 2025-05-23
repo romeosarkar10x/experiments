@@ -1,0 +1,31 @@
+{{- $CONTEXT := .CONTEXT -}}
+{{- $repositoryOwnerName := .repositoryOwnerName -}}
+{{- $repositoryName := .repositoryName -}}
+{{- $workflowRun := .workflowRun -}}
+{{- $workflowRunId := $workflowRun.id | cast.ToString -}}
+
+{{- $jobsUrl := add (add (add (add (add (add "https://api.github.com/repos/" $repositoryOwnerName) "/") $repositoryName) "/actions/runs/") $workflowRunId) "/jobs" -}}
+
+{{- $headers := (dict
+    "Authorization" (add "Bearer " (os.Getenv "GITHUB_API"))
+    "Accept" "*/*"
+    )
+-}}
+
+{{- $jobs := partial "hugo-shortcodes/github/github-actions/workflow-run/jobs/parse" (dict
+    "CONTEXT" .
+    "content" (resources.GetRemote $jobsUrl (dict
+    "method" "GET"
+    "headers" $headers
+    )).Content
+    )
+-}}
+
+{{- partial "hugo-shortcodes/github/github-actions/workflow-run/jobs/gen-html" (dict
+    "CONTEXT" $CONTEXT
+    "repositoryOwnerName" $repositoryOwnerName
+    "repositoryName" $repositoryName
+    "workflowRun" $workflowRun
+    "jobs" $jobs
+    ) | strings.TrimSpace | safeHTML
+-}}

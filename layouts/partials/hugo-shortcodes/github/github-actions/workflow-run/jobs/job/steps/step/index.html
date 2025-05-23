@@ -1,0 +1,41 @@
+{{- $CONTEXT := .CONTEXT -}}
+{{- $step := .step -}}
+{{- $logs := .logs -}}
+{{- $begin := .begin -}}
+{{- $end := .end -}}
+
+{{- $started := false -}}
+{{- $groupBegin := 0 -}}
+
+
+<details
+    ><summary>{{- $step.label -}}</summary
+    ><ul>
+        {{- range $i := seq $begin (sub $end 1) -}}
+            {{- $log := index $logs $i -}}
+            {{- if eq $log.type "start" -}}
+                {{- $groupBegin = $i -}}
+                {{- $started = true -}}
+            {{- else if eq $log.type "end" -}}
+                <li
+                    >{{- partial "hugo-shortcodes/github/github-actions/workflow-run/jobs/job/steps/step/group/index" (dict
+                        "CONTEXT" $CONTEXT
+                        "logs" $logs
+                        "begin" $groupBegin
+                        "end" $i
+                        ) | strings.TrimSpace | safeHTML
+                    -}}</li
+                >
+                {{- $started = false -}}
+            {{- else if not $started -}}
+                <li
+                    >{{- partial "hugo-shortcodes/github/github-actions/workflow-run/jobs/job/steps/step/logs/log/gen-html" (dict
+                        "CONTEXT" $CONTEXT
+                        "log" $log
+                        ) | strings.TrimSpace | safeHTML
+                    -}}</li
+                >
+            {{- end -}}
+        {{- end -}}</ul
+    ></details
+>

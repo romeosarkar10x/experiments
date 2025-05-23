@@ -1,0 +1,11 @@
+{{ $CONTEXT := .CONTEXT }}
+{{ $content := .content }}
+
+{{ $contentUnmarshalled := transform.Unmarshal $content }}
+{{ $jobs := slice }}
+
+{{ range $contentUnmarshalled.jobs }}
+    {{ $jobs = $jobs | append (partial "hugo-shortcodes/github/github-actions/workflow-run/jobs/job/parse" .) }}
+{{ end }}
+
+{{ return $jobs }}

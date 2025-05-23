@@ -1,0 +1,27 @@
+{{- $CONTEXT := .CONTEXT -}}
+{{- $workflowRunFileContent := .workflowRunFileContent -}}
+{{- $job := .job -}}
+
+{{- $parsed := (index (transform.Unmarshal $workflowRunFileContent).jobs $job.name).steps -}}
+{{- $steps := slice -}}
+
+{{ range $parsed }}
+    {{ $logString := "" }}
+    {{ $step := dict "name" .name }}
+
+    {{ if .run }}
+        {{ $step = merge $step (dict "type" "run") }}
+        {{ $logString = .run }}
+    {{ else if .uses }}
+        {{ $step = merge $step (dict "type" "uses") }}
+        {{ $logString = .uses }}
+    {{ end }}
+
+    {{ $logString := index (split $logString "\n") 0 }}
+    {{ $logString := add "Run " $logString }}
+    {{ $step = merge $step (dict "logString" $logString) }}
+
+    {{ $steps = $steps | append $step }}
+{{ end }}
+
+{{ return $steps }}

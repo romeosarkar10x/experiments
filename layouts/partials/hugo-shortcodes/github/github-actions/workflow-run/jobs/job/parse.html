@@ -1,0 +1,21 @@
+{{ $jobId := .id }}
+{{ $jobName := .name }}
+{{ $runId := .run_id }}
+{{ $workflowName := .workflowName }}
+{{ $conclusion := .conclusion }}
+{{ $status := .status }}
+{{ $steps := slice (slice "name" "conclusion") }}
+
+{{ range .steps }}
+    {{ $steps = $steps | append (slice .name .conclusion .status) }}
+{{ end }}
+
+{{ return dict
+    "id" (.id | cast.ToString)
+    "name" .name
+    "runId" (.run_id | cast.ToString)
+    "workflowName" .workflow_name
+    "steps" (collections.After 1 $steps)
+    "status" .status
+    "conclusion" .conclusion
+}}

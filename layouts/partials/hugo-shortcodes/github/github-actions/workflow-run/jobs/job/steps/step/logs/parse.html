@@ -1,0 +1,8 @@
+{{ $logs := strings.Split . "\n" }}
+{{ $parsed := collections.Slice }}
+
+{{ range $logs }}
+    {{ $parsed = $parsed | append (partial "hugo-shortcodes/github/github-actions/workflow-run/jobs/job/steps/step/logs/log/parse" .) }}
+{{ end }}
+
+{{ return $parsed }}

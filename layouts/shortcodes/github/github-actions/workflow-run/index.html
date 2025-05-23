@@ -1,0 +1,7 @@
+{{- partial "hugo-shortcodes/github/github-actions/workflow-run/index" (dict
+    "CONTEXT" .
+    "repositoryOwnerName" (index .Params 0)
+    "repositoryName" (index .Params 1)
+    "workflowRunId" (index .Params 2)
+    )
+-}}
