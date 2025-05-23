@@ -7,7 +7,7 @@
 {{- $jobsUrl := add (add (add (add (add (add "https://api.github.com/repos/" $repositoryOwnerName) "/") $repositoryName) "/actions/runs/") $workflowRunId) "/jobs" -}}
 
 {{- $headers := (dict
-    "Authorization" (add "Bearer " (os.Getenv "GITHUB_API"))
+    "Authorization" (add "Bearer " (os.Getenv "GITHUB_TOKEN"))
     "Accept" "*/*"
     )
 -}}

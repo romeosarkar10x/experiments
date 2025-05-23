@@ -21,7 +21,7 @@
 -}}
 
 {{- $headers := (dict
-    "Authorization" (add "Bearer " (os.Getenv "GITHUB_API"))
+    "Authorization" (add "Bearer " (os.Getenv "GITHUB_TOKEN"))
     "Accept" "*/*"
     )
 -}}
