@@ -1,5 +1,4 @@
-name: "deploy"
-description: "Check formatting, build (hugo) and deploy to Cloudflare Pages."
+name: "Deploy-to-Cloudflare-Pages"
 
 on:
   push:
@@ -19,3 +18,4 @@ jobs:
       - uses: ./.github/actions/deploy
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
