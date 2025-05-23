@@ -33,25 +33,7 @@ https://github.com/romeosarkar10x-experiment/printing-secrets
 - Create a file .github/workflows/&lt;filename&gt;.[yml|yaml]
 - Write a workflow
 
-```yml
-name: printing-secrets
-on: [push]
-
-jobs:
-  print-secrets:
-    runs-on: ubuntu-latest
-    steps:
-      - name: hello-world
-        run: echo "hello world"
-
-      - name: print-secrets
-        run: echo "REPO_SECRET_KEY_1: ${{ secrets.REPO_SECRET_KEY_1 }}"
-```
-
 The above workflow directly echoes the secret by running the echo command.
 
 The following output is generated:
-
-```
-
-```
+{{< github/github-actions/workflow-run/index "romeosarkar10x" "expt" "14521301932" >}}
